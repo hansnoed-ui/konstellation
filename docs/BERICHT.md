@@ -1,6 +1,6 @@
 # Bericht: Tests, angebundene Quellen, Einschränkungen
 
-Stand 6. November 2026, Version 0.2.0 (Online zuerst).
+Stand 6. November 2026, Version 0.3.0 (Online zuerst; weitere Bilddatenbanken; Astronomie wählbar).
 
 ## Ausgeführte Tests
 
@@ -18,6 +18,8 @@ Stand 6. November 2026, Version 0.2.0 (Online zuerst).
 | 10 | Gespeicherte Konstellation und ZIP-Paket ohne Anbieterzugriff anzeigbar, Bild/Text stimmen mit Protokoll | UI-Test öffnet gespeicherte Konstellation (S1 identisch) und lädt ZIP; ZIP mit `zipfile.testzip()` geprüft; Prüfsummen im Protokoll |
 | 12 | Online zuerst: Bild und Werk aus simulierten Anbietern (echter HTTP-Server); nicht freigegebene Objekte, ID-Lücken, fremde Rechteangabe, falsche Sprache, defekte Bilddatei → verworfen und ersetzt; Zeitüberschreitung → Rückfall auf Bestand je Fund; Schalter aus → Bestand; Browser-Variante ohne Bilddownload | `test/online.test.js`: 6 Tests bestanden |
 | 13 | Live: Server-Modus gegen Met, AIC, Gutenberg (6. 11. 2026): Bild `met-416534` (CC0, lokal geprüft), Werk `gutenberg-41931` Hamsun (70 p. m. a.), 2,8 s gesamt, `verifyRecord` ok, ZIP mit Bilddatei geprüft; statischer Browser-Modus (Playwright, echtes Netz): Bild online vom Met, Text ohne Proxy aus dem Bestand | bestanden |
+| 14 | Cleveland (skip-Index, nicht-CC0 verworfen); Astronomie online: Kleinkörper (Nummer = Index + 1), Gaia (random_index), Ausfall → Exoplanet aus dem Bestand mit unveränderter Seed-Form | `test/online.test.js`: bestanden (8 Tests) |
+| 15 | Live (6. 11. 2026, Server-Modus): Exoplaneten live über TAP (WASP-3 b, 5,3 s), JPL-Kleinkörper (559930 (2015 EG35), 2,2 s), Cleveland im Bild-Gesamtraum (aic 287 848 + cma 41 806 + met 503 179); Gaia-Archiv am Abend mit «SERVICE ERROR»/Zeitüberschreitung → Rückfall funktioniert; am Vormittag Punktabfrage in < 1 s | bestanden |
 | 11 | Oberfläche Desktop (1280 px) und Mobil (360 px): kein schwarzes Bildfeld, lesbar, kein horizontales Überlaufen, Karte nicht blockierend | Screenshots `docs/beispiel/oberflaeche-*.png`; Überlaufprüfung im UI-Test |
 
 Zusätzlich: Kern-Tests (kanonische Serialisierung, Normalisierung, S0/S1, Gleichverteilung der Ziehung über 7 000 Seeds), `npm run verify` ohne Befund, Live-Test gegen Open-Meteo (`KONSTELLATION_LIVE_TEST=1`, 6. 11. 2026): Wetter Zürich, Wetter Meerespunkt (0, −30), Ortssuche «Bern» mit mehreren Ländern – bestanden.
@@ -37,6 +39,13 @@ Zusätzlich: Kern-Tests (kanonische Serialisierung, Normalisierung, S0/S1, Gleic
 | Project Gutenberg (RDF + Volltext, Katalog `pg_catalog.csv`) | **Live überprüft** als Online-Anbieter (Text), Katalogindex 79 712 Zeilen, 2 455 deutsche Texte |
 | Art Institute of Chicago (public API + IIIF) | **Live überprüft** als Online-Anbieter (Bild) im Server-Modus; braucht einen User-Agent (Cloudflare); aus Headless-Chromium ohne CORS-Antwort → Anbieter wird übersprungen |
 | Met Museum Collection API (Live-Ziehung) | **Live überprüft** in Server- und Browser-Modus (CORS vorhanden) |
+| Cleveland Museum of Art Open Access API | **Live überprüft** (41 806 CC0-Werke mit Bild, CORS vorhanden) |
+| Europeana Search API | Anbieter gebaut, **nicht live geprüft** (API-Schlüssel fehlt) |
+| NASA Exoplanet Archive TAP (Live-Ziehung) | **Live überprüft** |
+| Gaia DR3 TAP (ESA) | **Live überprüft** (Punktabfrage über `random_index`), später vorübergehend 503 |
+| JPL Small-Body Database (`sbdb.api`, `sbdb_query.api`) | **Live überprüft** (896 520 nummerierte Kleinkörper) |
+| Internet Archive, Wellcome Collection | geprüft, nicht angebunden: Suche auf 10 000 Treffer begrenzt |
+| Rijksmuseum, Wikimedia Commons, Smithsonian API, SIMBAD | geprüft, nicht angebunden (Token-Paging / kein deterministischer Index und 429 / Schlüssel / nicht erreichbar) |
 | NOAA ISD (AWS Open Data) | **Live überprüft**, 8 Stationen |
 | Natural Earth (GitHub-Spiegel) | **Live überprüft** |
 | OpenStreetMap-Kacheln | im Browser bei Bedarf; in der Entwicklungsumgebung gesperrt, daher nur der Rückfall auf die Natural-Earth-Karte getestet |

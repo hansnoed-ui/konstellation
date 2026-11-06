@@ -97,6 +97,18 @@ Jede Konstellation ist ein JSON-Protokoll (`konstellation-record/1`) mit Anzeige
 |---|---|---|---|
 | The Metropolitan Museum of Art, Collection API | alle Objekt-IDs (≈ 503 000) | `isPublicDomain=true` | `cc0` (Met Open Access) |
 | Art Institute of Chicago, public API + IIIF | ID-Raum bis zur höchsten ID (≈ 288 000; ≈ 133 000 Werke) | `is_public_domain=true` | `cc0` (AIC Open Access); Cloudflare kann automatisierte Zugriffe abweisen – dann wird der Anbieter übersprungen |
+| Cleveland Museum of Art, Open Access API | alle Werke mit `cc0=1&has_image=1` (≈ 41 800), direkt über `skip` adressierbar | `share_license_status=CC0` | `cc0` |
+| Europeana Search API (nur mit kostenlosem API-Schlüssel: `config/local.json` → `online.keys.europeana`, Umgebungsvariable `EUROPEANA_API_KEY` oder auf dem Webspace `keys.js` mit `window.KONSTELLATION_KEYS`) | Bilder mit `reusability=open` und Mediendatei, adressiert über `start` | `edmRights` ∈ CC0 / Public Domain Mark / CC BY / CC BY-SA | `cc0`, `pdm`, `cc-by`, `cc-by-sa` (Namensnennung wird angezeigt) |
+
+**Astronomie (Stufe A, wählbar):** Standard bleibt der Exoplanetenbestand. Auf Wunsch (`astro_source`) wird das Himmelsobjekt online gezogen, Index aus `S0|astro-online`; der verwendete Datensatz geht wie bisher in S1 ein.
+
+| Archiv | Auswahlraum | Zugriff |
+|---|---|---|
+| NASA Exoplanet Archive, `pscomppars` live (TAP) | alle Planeten, Namensliste sortiert (≈ 6 500) | Zeile des gezogenen Planeten |
+| Gaia DR3 (ESA Gaia Archive, TAP) | `random_index` 0 … 1 811 709 770 (eingefrorene Veröffentlichung, 1,8 Mrd. Quellen) | `where random_index = <Index>` |
+| JPL Small-Body Database | nummerierte Asteroiden und Kometen 1 … Anzahl (≈ 896 500, `sbdb_query` count) | `sbdb.api?sstr=<Nummer>` |
+
+Geprüft und **nicht** angebunden: Internet Archive und Wellcome Collection (Suche auf 10 000 Treffer begrenzt, kein gleichverteilter Zugriff), Rijksmuseum (nur Token-Paging), Wikimedia Commons (Zufall nur serverseitig, kein deterministischer Index, Ratenbegrenzung), Smithsonian Open Access API (Schlüssel, Tiefe der Paginierung unklar), SIMBAD (TAP aus der Entwicklungsumgebung nicht erreichbar).
 | Project Gutenberg (RDF-Metadaten + UTF-8-Volltext) | Werke der gewählten Sprache laut `pg_catalog.csv` (Deutsch ≈ 2 455) oder ID-Raum (≈ 79 900) | `dcterms:rights = «Public domain in the USA.»`, Typ `Text` | `public-domain-70pma`, wenn alle Urheber:innen laut Todesjahr seit > 70 Jahren tot sind (CH/EU), sonst `public-domain-usa` (ausserhalb der USA unter Vorbehalt) |
 
 Die Einordnung folgt den Metadaten der Anbieter und ist keine Rechtsgarantie; jede Angabe steht mit Feld und Wert unter `rights_evidence`. jev ist an keiner Rechteentscheidung beteiligt. In der statischen Browser-Fassung laden Met und AIC direkt (CORS); Project Gutenberg sendet keine CORS-Kopfzeilen, deshalb braucht der Webspace den kleinen Textproxy `proxy.php` (nur gutenberg.org, nur GET) – ohne ihn kommt der Text aus dem Bestand. Weitere Datenbanken lassen sich als Anbieter unter `public/core/online/` ergänzen (zwei Funktionen: Grösse des Auswahlraums, Auflösen eines Index).
@@ -114,7 +126,8 @@ jev wird **nicht** im Durchlauf verwendet und trifft keine Auswahl. Vorbereitet 
 - Wetter: Open-Meteo liefert Modelldaten, keine Stationsmessung; die Archivfunde sind räumlich und zeitlich abweichend und so gekennzeichnet.
 - Astronomie: Katalogauswahl, keine Sichtbarkeitsrechnung.
 - Texte online: Project Gutenberg enthält auch Dramen, Lyrik, Sachtexte und Übersetzungen; die Volltextregel ist heuristisch (Überschriften, Verserkennung, Inhaltsverzeichnis) und kann einzelne Stellen falsch abgrenzen. Bestand: deutsche Romane 1840–1920 aus ELTeC-deu.
-- Bilder online: Met und AIC liefern auch Gebrauchsgrafik, Textilien, Münzen usw.; es gibt keine ästhetische Vorauswahl (gewollt). Im Browser werden Online-Bilder nicht byteweise geprüft (`verified_locally=false`), im Node-Server schon.
+- Astronomie online: Gaia-Quellen sind meist lichtschwache Sterne ohne Namen (nur Kennung und Messwerte); das ESA-Archiv antwortet gelegentlich mit Fehlern oder langsam, dann kommt der Exoplanet aus dem Bestand.
+- Bilder online: Met, AIC und Cleveland liefern auch Gebrauchsgrafik, Textilien, Münzen usw.; es gibt keine ästhetische Vorauswahl (gewollt). Im Browser werden Online-Bilder nicht byteweise geprüft (`verified_locally=false`), im Node-Server schon.
 - Bilder: Stichprobe aus wenigen Met-Abteilungen und dem SAAM; kultureller Schwerpunkt Europa, Nordamerika, Japan.
 - Kartenkacheln kommen von OpenStreetMap (nur bei Bedarf, keine Massenabrufe); ohne Netz die einfache Natural-Earth-Karte.
 - Open-Meteo: kostenlos nur für nichtkommerzielle Nutzung; Abrufgrenzen beachten (die Historische API war beim Import bereits am Tageslimit, deshalb nutzt das Archiv die Forecast-API mit `past_days`).

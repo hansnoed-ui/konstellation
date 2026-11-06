@@ -45,7 +45,7 @@ export function createServer(cfg, depsOverrides = {}) {
     const url = new URL(req.url, 'http://x');
     const p = decodeURIComponent(url.pathname);
     try {
-      if (p === '/api/config') return send(res, 200, { mode: 'server', map: cfg.map, geocodingOnline: cfg.geocoding.online, weatherLive: cfg.weather.live !== false, online: cfg.online?.enabled !== false ? { images: cfg.online?.images ?? ['met', 'aic'], texts: cfg.online?.texts ?? ['gutenberg'], textLanguages: cfg.online?.textLanguages ?? ['de'] } : null });
+      if (p === '/api/config') return send(res, 200, { mode: 'server', map: cfg.map, geocodingOnline: cfg.geocoding.online, weatherLive: cfg.weather.live !== false, online: cfg.online?.enabled !== false ? { images: (cfg.online?.images ?? ['met', 'aic', 'cma', 'europeana']).filter((k) => k !== 'europeana' || cfg.online?.keys?.europeana || process.env.EUROPEANA_API_KEY), texts: cfg.online?.texts ?? ['gutenberg'], textLanguages: cfg.online?.textLanguages ?? ['de'], astro: cfg.online?.astro ?? ['exoplanets-live', 'gaia', 'sbdb'] } : null });
       if (p === '/api/geocode') {
         const q = (url.searchParams.get('q') || '').slice(0, 100);
         let results = []; let source = 'lokal'; let note = null;
@@ -59,7 +59,7 @@ export function createServer(cfg, depsOverrides = {}) {
         let input; try { input = JSON.parse(body); } catch { return send(res, 400, { error: 'ungültiges JSON' }); }
         busy = true;
         try {
-          const record = await runConstellation({ name: input.name, lat: input.lat, lon: input.lon, place_label: input.place_label, place_label_source: input.place_label_source, online_first: input.online_first !== false, text_languages: Array.isArray(input.text_languages) ? input.text_languages.slice(0, 5) : undefined }, deps);
+          const record = await runConstellation({ name: input.name, lat: input.lat, lon: input.lon, place_label: input.place_label, place_label_source: input.place_label_source, online_first: input.online_first !== false, text_languages: Array.isArray(input.text_languages) ? input.text_languages.slice(0, 5) : undefined, astro_source: typeof input.astro_source === 'string' ? input.astro_source.slice(0, 30) : 'local' }, deps);
           writeAtomic(path.join(recDir, record.id + '.json'), JSON.stringify(record, null, 2));
           return send(res, 201, record);
         } catch (e) { return send(res, 400, { error: e.message }); } finally { busy = false; }

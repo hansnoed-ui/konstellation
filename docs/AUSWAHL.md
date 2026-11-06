@@ -42,7 +42,7 @@ Mengen sind die nach `id` sortierten `items` des jeweiligen Manifests (UTF-16-Re
 
 1. Zeit erfassen, Eingabe normalisieren, Manifeste laden (Versionen binden).
 2. S0.
-3. Stufe A: Wetter beschaffen (Live → Cache → Archiv) und Astronomie ziehen – unabhängig, Reihenfolge ohne Einfluss.
+3. Stufe A: Wetter beschaffen (Live → Cache → Archiv) und Astronomie ziehen – Bestand (`S0|astro`) oder auf Wunsch ein Online-Archiv (`S0|astro-online`, Regel `online/1` mit genau einem Anbieter: NASA live, Gaia DR3 oder JPL Small-Body Database; bei Ausfall Bestand) – unabhängig, Reihenfolge ohne Einfluss. Die Seed-Form des Bestands ist seit 0.1.0 unverändert (`{catalog:"NASA Exoplanet Archive pscomppars", id, record}`).
 4. S1.
 5. Stufe B: Bild und Werk zuerst online (`online/1`, unten), bei Ausfall je einzeln aus dem Bestand (mit Ersatzregel: Datei beschädigt / Stellen-Datei fehlt); dann die Stelle.
 6. Protokoll schreiben.
@@ -61,7 +61,7 @@ Nur `<body>`; `<head>`, `<note>`, `<lg>` (Verse) ausgeschlossen. Einheit ist der
 
 Standardmässig werden Bild und Werk nicht aus dem mitgelieferten Bestand, sondern direkt aus grossen offenen Datenbanken gezogen; der Bestand ist nur Rückfall. Die Ziehung bleibt dieselbe Mathematik:
 
-1. Jeder Anbieter meldet zu Beginn die Grösse seines **Auswahlraums** zum Abfragezeitpunkt samt Abrufzeit: Met Museum = Liste aller Objekt-IDs (≈ 503 000); Art Institute of Chicago = ID-Raum 1 … höchste Werk-ID (≈ 288 000, davon ≈ 133 000 belegt); Project Gutenberg = Werkliste der gewählten Sprache(n) aus dem mitgelieferten Katalogindex (`pg_catalog.csv`, Deutsch ≈ 2 455) oder bei «alle Sprachen» der ID-Raum 1 … höchste ID (≈ 79 900).
+1. Jeder Anbieter meldet zu Beginn die Grösse seines **Auswahlraums** zum Abfragezeitpunkt samt Abrufzeit: Met Museum = Liste aller Objekt-IDs (≈ 503 000); Art Institute of Chicago = ID-Raum 1 … höchste Werk-ID (≈ 288 000, davon ≈ 133 000 belegt); Cleveland Museum of Art = Anzahl der CC0-Werke mit Bild (≈ 41 800, `skip`); Europeana (mit Schlüssel) = Treffer mit offener Lizenz und Mediendatei (`start`); Project Gutenberg = Werkliste der gewählten Sprache(n) aus dem mitgelieferten Katalogindex (`pg_catalog.csv`, Deutsch ≈ 2 455) oder bei «alle Sprachen» der ID-Raum 1 … höchste ID (≈ 79 900).
 2. Die Räume werden in fester Reihenfolge (Anbieter-ID alphabetisch) zu einem **Gesamtraum** n = Σ nᵢ aneinandergereiht. Index = uniformIndex(S1, `image-online`, n) bzw. uniformIndex(S1, `text-online`, n). Der Index fällt in den Raum genau eines Anbieters (Gewichtung automatisch proportional zur Grösse) und wird dort aufgelöst (ID → Metadaten → Datei).
 3. Ein Treffer gilt nur, wenn der Anbieter die Freigabe **maschinenlesbar** bestätigt (`isPublicDomain=true`, `is_public_domain=true`, `dcterms:rights = «Public domain in the USA.»` und Typ `Text`) und die Datei bzw. der Volltext ladbar und formal gültig ist (JPEG/PNG vollständig; Gutenberg-Markierungen vorhanden, mindestens 20 Stellen). Alles andere – Lücken im ID-Raum, nicht freigegebene Objekte, bildlose Objekte, fremde Sprache, defekte Dateien, HTTP-Fehler – wird **verworfen und ersetzt**: `image-online#ersatz<i>` bzw. `text-online#ersatz<i>` über denselben Gesamtraum. Jeder Versuch steht mit Anbieter, Index, ID, Ergebnis und Dauer im Protokoll.
 4. Zeitbudget (Standard 12 s) und Versuche (Standard 12) sind endlich; danach kommt der betreffende Fund aus dem Bestand (`image` bzw. `text-work` wie bisher). Bild und Text fallen unabhängig voneinander zurück.

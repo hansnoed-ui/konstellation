@@ -4,7 +4,7 @@
   "catalogDir": "data/catalog",
   "runtimeDir": "data/runtime",
   "weather": { "live": true, "forecastUrl": "https://api.open-meteo.com/v1/forecast", "budgetMs": 5000, "cacheMaxAgeHours": 3 },
-  "online": { "enabled": true, "budgetMs": 12000, "maxTries": 12, "images": ["met", "aic"], "texts": ["gutenberg"], "textLanguages": ["de"], "note": "Bild und Werk werden zuerst online gezogen (Met, Art Institute of Chicago, Project Gutenberg); der Bestand ist Rückfall. enabled=false erzwingt den Bestand." },
+  "online": { "enabled": true, "budgetMs": 12000, "maxTries": 12, "images": ["met", "aic", "cma", "europeana"], "texts": ["gutenberg"], "textLanguages": ["de"], "astro": ["exoplanets-live", "gaia", "sbdb"], "keys": {}, "note": "Bild und Werk werden zuerst online gezogen (Met, Art Institute of Chicago, Project Gutenberg); der Bestand ist Rückfall. enabled=false erzwingt den Bestand. Europeana braucht einen Schlüssel: config/local.json → online.keys.europeana oder Umgebungsvariable EUROPEANA_API_KEY. astro: wählbare Online-Archive für Stufe A." },
   "geocoding": { "online": true, "timeoutMs": 4000 },
   "map": {
     "tiles": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",

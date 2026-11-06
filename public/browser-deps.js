@@ -18,7 +18,8 @@ export function makeBrowserDeps({ base = 'catalog/', weatherLive = true, online 
   // Online-Ziehung im Browser: Met und AIC erlauben CORS direkt; Project Gutenberg nicht – dafür ein optionaler Textproxy
   // (textProxy, z. B. «proxy.php?u=» auf dem Webspace). Ohne Proxy fällt der Text auf den Bestand zurück.
   // Bilddateien werden im Browser nicht heruntergeladen und geprüft (verified_locally=false), die Anzeige lädt sie vom Anbieter.
-  const onlineDeps = online ? makeOnline({ texts: textProxy ? ['gutenberg'] : [] }, {
+  // Schlüssel (z. B. Europeana) kommen aus einer optionalen Datei keys.js auf dem Webspace: window.KONSTELLATION_KEYS = { europeana: '…' } – nicht im Repository.
+  const onlineDeps = online ? makeOnline({ texts: textProxy ? ['gutenberg'] : [], keys: globalThis.KONSTELLATION_KEYS || {} }, {
     loadIndex: async () => { const r = await fetch(`${base}online/gutenberg-index.json`, { cache: 'no-cache' }); if (!r.ok) throw new Error(`Gutenberg-Index: HTTP ${r.status}`); return r.json(); },
     rewrite: textProxy ? (u) => textProxy + encodeURIComponent(u) : undefined,
   }) : null;

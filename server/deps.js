@@ -58,6 +58,7 @@ export function makeNodeDeps(cfg, overrides = {}) {
     headers: { 'User-Agent': UA, 'AIC-User-Agent': UA },
     fetchImage: makeImageFetcher(path.join(runtimeDir, 'online-images')),
     loadIndex: async () => JSON.parse(fs.readFileSync(path.join(catalogDir, 'online', 'gutenberg-index.json'), 'utf8')),
+    keys: { ...(process.env.EUROPEANA_API_KEY ? { europeana: process.env.EUROPEANA_API_KEY } : {}) }, // zusätzlich config/local.json → online.keys
     ...(cfg.online?.providerOptions || {}),
   });
   const cacheFile = path.join(runtimeDir, 'weather-cache.json');

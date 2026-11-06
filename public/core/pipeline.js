@@ -11,7 +11,8 @@ export const RULES = {
   s0: 'S0 = SHA-256(kanonisch({algorithm, stage:"S0", name: NFC+Leerraum normalisiert, lat/lon: 6 Nachkommastellen als Text, query_time_utc}))',
   s1: 'S1 = SHA-256(kanonisch({algorithm, stage:"S1", s0, weather: verwendeter Wetterdatensatz, astro: verwendeter Katalogeintrag}))',
   draw: 'Index = u mod n mit u = erste 8 Bytes von SHA-256(seed|label|k), verworfen solange u ≥ floor(2^64/n)·n',
-  streams: { astro: 'S0|astro', image: 'S1|image', text_work: 'S1|text-work', text_passage: 'S1|text-passage' },
+  streams: { astro: 'S0|astro', astro_online: 'S0|astro-online', image: 'S1|image', image_online: 'S1|image-online', text_work: 'S1|text-work', text_online: 'S1|text-online', text_passage: 'S1|text-passage' },
+  astro_online: 'Auf Wunsch (astro_source): Index aus S0|astro-online über den Auswahlraum eines Archivs – NASA Exoplanet Archive live (Namensliste), Gaia DR3 (random_index 0…max) oder JPL Small-Body Database (Nummern 1…Anzahl); bei Ausfall Bestand. Der verwendete Datensatz geht wie bisher in S1 ein.',
   replacement: 'Ist ein gezogener Bild-/Texteintrag lokal beschädigt (Prüfsumme/Datei), wird er aus der sortierten Menge entfernt und mit dem Label «<label>#ersatz<i>» erneut gezogen; jeder Ersatz wird protokolliert.',
   weather_order: 'Live (Open-Meteo, gesamt höchstens 5 s, höchstens 2 Versuche, kein Wiederholen nach 429) → Cache (gleiche Koordinaten auf 2 Nachkommastellen, Datenzeit höchstens 3 h vor Abfragezeitpunkt) → Archiv (' + ARCHIVE_RULE + ')',
   weather_archive: ARCHIVE_RULE,
@@ -107,13 +108,32 @@ export async function runConstellation(input, deps) {
   };
   const s0 = await computeS0({ normalizedName, lat6: c.lat6, lon6: c.lon6, queryTimeUtc: queryTime });
 
-  // Stufe A – Wetter und Astronomie (unabhängig voneinander; Reihenfolge ohne Einfluss auf das Ergebnis)
-  const [weather, astroDraw] = await Promise.all([
-    obtainWeather({ lat: c.lat, lon: c.lon, queryTime, deps, log }),
-    uniformIndex(s0.hex, 'astro', manifests.exoplanets.items.length),
-  ]);
-  const astroItem = manifests.exoplanets.items[astroDraw.index];
-  const astroForSeed = { catalog: 'NASA Exoplanet Archive pscomppars', id: astroItem.id, record: astroItem.record };
+  // Stufe A – Wetter und Astronomie (unabhängig voneinander; Reihenfolge ohne Einfluss auf das Ergebnis).
+  // Astronomie: Bestand (Exoplaneten) oder – auf Wunsch – ein Online-Archiv (Strom S0|astro-online), bei Ausfall Bestand.
+  const onlineDeps = typeof deps.online === 'function' ? deps.online(input) : deps.online;
+  const onlineWanted = input.online_first !== false && input.online_first !== 0;
+  let astroOnline = null;
+  const astroTask = (async () => {
+    if (onlineWanted && onlineDeps?.astro) {
+      const t0 = deps.monotonic();
+      try {
+        const r = await onlineDeps.astro(s0.hex, log);
+        astroOnline = { ...r.online, outcome: 'ok', duration_ms: Math.round(deps.monotonic() - t0) };
+        log.push({ step: 'astro.online', outcome: 'ok', id: r.item.id, provider: r.item.provider, tries: r.online.draws.length, total: r.online.total, duration_ms: astroOnline.duration_ms });
+        return { item: r.item, draw: { ...r.online.draws.at(-1), draws: r.online.draws.map(({ outcome, duration_ms, ...d }) => d) } };
+      } catch (e) {
+        astroOnline = { outcome: 'fehlgeschlagen – Rückfall auf Bestand', error: String(e.message || e), draws: e.draws || [], spaces: e.spaces || [], duration_ms: Math.round(deps.monotonic() - t0) };
+        log.push({ step: 'astro.online', outcome: 'fehlgeschlagen – Rückfall auf Bestand', error: String(e.message || e), tries: (e.draws || []).length, duration_ms: astroOnline.duration_ms });
+      }
+    } else if (onlineWanted && onlineDeps?.astroSource && onlineDeps.astroSource !== 'local') log.push({ step: 'astro.online', outcome: 'nicht verfügbar in dieser Betriebsart – Bestand' });
+    const d = await uniformIndex(s0.hex, 'astro', manifests.exoplanets.items.length);
+    const it = manifests.exoplanets.items[d.index];
+    return { item: { id: it.id, kind: 'exoplanet', provider: 'local', source_mode: 'local', record: it.record, units: manifests.exoplanets.units, catalog: 'NASA Exoplanet Archive – Planetary Systems Composite Parameters (pscomppars)', source_url: `https://exoplanetarchive.ipac.caltech.edu/overview/${encodeURIComponent(it.record.hostname || it.id)}`, rights: manifests.exoplanets.source?.rights ?? null, retrieved_at: null, catalog_retrieved_at: manifests.exoplanets.source?.retrieved_at ?? null }, draw: d };
+  })();
+  const [weather, astro] = await Promise.all([obtainWeather({ lat: c.lat, lon: c.lon, queryTime, deps, log }), astroTask]);
+  const astroItem = astro.item; const astroDraw = astro.draw;
+  // Bestand: unveränderte Seed-Form seit 0.1.0 (gleiche Daten → gleiches S1); online: Katalogname des Archivs.
+  const astroForSeed = { catalog: astroItem.source_mode === 'local' ? 'NASA Exoplanet Archive pscomppars' : astroItem.catalog, id: astroItem.id, record: astroItem.record };
   const wSeed = weatherForSeed(weather);
 
   // Stufe B – S1 aus S0 und den tatsächlich verwendeten wissenschaftlichen Daten
@@ -121,8 +141,6 @@ export async function runConstellation(input, deps) {
 
   // Stufe B, kulturelle Funde: standardmässig «online zuerst» (grosse offene Datenbanken), der lokale Bestand ist Rückfall.
   // Bild und Werk werden unabhängig voneinander gezogen und fallen unabhängig zurück.
-  const onlineWanted = input.online_first !== false && input.online_first !== 0;
-  const onlineDeps = typeof deps.online === 'function' ? deps.online(input) : deps.online;
   const online = { image: null, text: null };
   let img = null; let work = null; let passagesDoc = null;
   const tryOnline = async (kind) => {
@@ -163,12 +181,12 @@ export async function runConstellation(input, deps) {
       display_name: input.name, normalized_name: normalizedName, name_normalization: 'Unicode NFC; Leerraum zusammengefasst; aussen gekürzt',
       lat: c.lat, lon: c.lon, lat6: c.lat6, lon6: c.lon6, place_label: input.place_label || null, place_label_source: input.place_label_source || null,
       coordinate_note: 'Die Koordinaten sind die verbindliche Eingabe; der Ortsname ist nur Beschriftung.',
-      online_first: onlineWanted, text_languages: onlineDeps?.languages ?? null,
+      online_first: onlineWanted, text_languages: onlineDeps?.languages ?? null, astro_source: onlineDeps?.astroSource ?? 'local',
     },
     seeds: {
       S0: { hex: s0.hex, canonical_input: s0.canonical },
       S1: { hex: s1.hex, canonical_input: s1.canonical },
-      draws: { astro: astroDraw, image: img.draws, image_source: img.item.source_mode || 'local', text_work: work.draws, text_source: work.item.source_mode || 'local', text_passage: { ...pDraw, n_passages: passages.length } },
+      draws: { astro: astroDraw, astro_source: astroItem.source_mode, image: img.draws, image_source: img.item.source_mode || 'local', text_work: work.draws, text_source: work.item.source_mode || 'local', text_passage: { ...pDraw, n_passages: passages.length } },
     },
     science: {
       weather: {
@@ -179,12 +197,13 @@ export async function runConstellation(input, deps) {
         raw: weather.raw ?? null, used_for_seed: wSeed,
       },
       astro: {
-        id: astroItem.id, catalog: 'NASA Exoplanet Archive – Planetary Systems Composite Parameters (pscomppars)',
-        record: astroItem.record, units: manifests.exoplanets.units,
-        source_url: `https://exoplanetarchive.ipac.caltech.edu/overview/${encodeURIComponent(astroItem.record.hostname || astroItem.id)}`,
-        catalog_retrieved_at: manifests.exoplanets.source?.retrieved_at ?? null,
-        note: 'Katalogauswahl. Keine Aussage über Sichtbarkeit am gewählten Ort oder Zeitpunkt.',
+        id: astroItem.id, kind: astroItem.kind, source_mode: astroItem.source_mode, provider: astroItem.provider, catalog: astroItem.catalog,
+        record: astroItem.record, units: astroItem.units,
+        source_url: astroItem.source_url, rights: astroItem.rights ?? null,
+        catalog_retrieved_at: astroItem.catalog_retrieved_at ?? null, retrieved_at: astroItem.retrieved_at ?? null,
+        note: astroItem.kind === 'exoplanet' ? 'Katalogauswahl. Keine Aussage über Sichtbarkeit am gewählten Ort oder Zeitpunkt.' : astroItem.kind === 'star' ? 'Katalogauswahl aus Gaia DR3 (meist ein lichtschwacher Stern der Milchstrasse). Keine Aussage über Sichtbarkeit.' : 'Katalogauswahl aus der Small-Body Database. Keine Aussage über Sichtbarkeit.',
         used_for_seed: astroForSeed,
+        online: astroOnline,
       },
     },
     culture: {
@@ -216,6 +235,7 @@ export async function verifyRecord(record, deps) {
   for (const k of ['exoplanets', 'images', 'texts']) {
     const m = await deps.loadCatalog(k);
     if (m.version !== record.catalogs[k].version) { issues.push(`Bestand ${k}: Version ${m.version.slice(0, 12)} ≠ ${record.catalogs[k].version.slice(0, 12)} – Neuauswahl nicht prüfbar`); continue; }
+    if (k === 'exoplanets' && record.seeds.draws.astro_source === 'online') { notes.push('Astronomie online gezogen (' + record.science.astro.provider + '): über ID im Protokoll wiederholbar, gegen einen späteren Archivstand nicht neu berechenbar'); continue; }
     if (k === 'exoplanets') { const d = await uniformIndex(s0.hex, 'astro', m.items.length); if (m.items[d.index].id !== record.science.astro.id) issues.push('Astronomie-Ziehung weicht ab'); }
     if (k === 'images' && record.seeds.draws.image_source === 'online') { notes.push('Bild online gezogen (' + record.culture.image.provider + '): über ID/URL/Prüfsumme im Protokoll wiederholbar, gegen einen späteren Datenbankstand nicht neu berechenbar'); continue; }
     if (k === 'texts' && record.seeds.draws.text_source === 'online') { notes.push('Text online gezogen (' + record.culture.text.work.provider + '): über ID/URL im Protokoll wiederholbar, gegen einen späteren Datenbankstand nicht neu berechenbar'); continue; }

@@ -3,16 +3,28 @@ import { makeOnlineDraw } from './online.js';
 import { metProvider } from './online/met.js';
 import { aicProvider } from './online/aic.js';
 import { gutenbergProvider } from './online/gutenberg.js';
+import { clevelandProvider } from './online/cleveland.js';
+import { europeanaProvider } from './online/europeana.js';
+import { exoplanetsLiveProvider, gaiaProvider, sbdbProvider } from './online/astro.js';
 
-export const ONLINE_DEFAULTS = { enabled: true, budgetMs: 12000, maxTries: 12, images: ['met', 'aic'], texts: ['gutenberg'], textLanguages: ['de'] };
+export const ONLINE_DEFAULTS = { enabled: true, budgetMs: 12000, maxTries: 12, images: ['met', 'aic', 'cma', 'europeana'], texts: ['gutenberg'], textLanguages: ['de'], astro: ['exoplanets-live', 'gaia', 'sbdb'], keys: {} };
+export const ASTRO_SOURCES = { local: 'Exoplaneten (Bestand)', 'exoplanets-live': 'Exoplaneten live (NASA Exoplanet Archive)', gaia: 'Sterne, Gaia DR3 (ESA, 1,8 Mrd. Quellen)', sbdb: 'Asteroiden und Kometen (JPL Small-Body Database)' };
 
 // opts: { fetchImpl, headers, fetchImage (Node: lädt und prüft die Bilddatei), loadIndex (Gutenberg-Index), rewrite (URL-Umschreibung für einen Textproxy), nowMs }
 export function makeOnline(cfgIn = {}, opts = {}) {
   const cfg = { ...ONLINE_DEFAULTS, ...cfgIn };
   if (cfg.enabled === false) return null;
   const ctx = { fetchImpl: opts.fetchImpl || globalThis.fetch.bind(globalThis), headers: opts.headers, fetchImage: opts.fetchImage || null };
-  const imgProviders = { met: () => metProvider(opts.met), aic: () => aicProvider(opts.aic) };
+  const keys = { ...(cfg.keys || {}), ...(opts.keys || {}) };
+  const imgProviders = { met: () => metProvider(opts.met), aic: () => aicProvider(opts.aic), cma: () => clevelandProvider(opts.cma), europeana: () => (keys.europeana ? europeanaProvider({ key: keys.europeana, ...opts.europeana }) : null) };
   const imageProviders = cfg.images.map((k) => imgProviders[k]?.()).filter(Boolean);
+  const astroProviders = { 'exoplanets-live': () => exoplanetsLiveProvider(opts.nasa), gaia: () => gaiaProvider(opts.gaia), sbdb: () => sbdbProvider(opts.sbdb) };
+  const astroDraws = new Map();
+  const astroFor = (source) => {
+    if (!source || source === 'local' || !cfg.astro.includes(source) || !astroProviders[source]) return null;
+    if (!astroDraws.has(source)) astroDraws.set(source, makeOnlineDraw({ kind: 'astro', providers: [astroProviders[source]()], budgetMs: cfg.budgetMs, maxTries: Math.min(cfg.maxTries, 6), nowMs: opts.nowMs, ctx }));
+    return astroDraws.get(source);
+  };
   const imageDraw = imageProviders.length ? makeOnlineDraw({ kind: 'image', providers: imageProviders, budgetMs: cfg.budgetMs, maxTries: cfg.maxTries, nowMs: opts.nowMs, ctx }) : null;
   const textCache = new Map();
   return function online(input = {}) {
@@ -22,6 +34,7 @@ export function makeOnline(cfgIn = {}, opts = {}) {
       const textProviders = cfg.texts.includes('gutenberg') && opts.loadIndex ? [gutenbergProvider({ languages, loadIndex: opts.loadIndex, rewrite: opts.rewrite, ...opts.gutenberg })] : [];
       textCache.set(key, textProviders.length ? makeOnlineDraw({ kind: 'text', providers: textProviders, budgetMs: cfg.budgetMs, maxTries: cfg.maxTries, nowMs: opts.nowMs, ctx }) : null);
     }
-    return { image: imageDraw, text: textCache.get(key), languages, providers: { images: cfg.images, texts: cfg.texts } };
+    const astroSource = typeof input.astro_source === 'string' && cfg.astro.includes(input.astro_source) ? input.astro_source : 'local';
+    return { image: imageDraw, text: textCache.get(key), astro: astroFor(astroSource), astroSource, languages, providers: { images: imageProviders.map((p) => p.id), texts: cfg.texts, astro: cfg.astro } };
   };
 }
