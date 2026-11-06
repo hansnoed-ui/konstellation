@@ -18,7 +18,7 @@ async function detectMode() {
   } catch {}
   const offline = new URLSearchParams(location.search).has('offline');
   const textProxy = document.documentElement.dataset.textproxy || null;
-  return { mode: 'static', cfg: { map: { tiles: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', tilesAttribution: '© OpenStreetMap-Mitwirkende', tilesEnabled: !offline }, geocodingOnline: !offline, weatherLive: !offline, online: offline ? null : { images: ['met', 'aic', 'cma', ...(globalThis.KONSTELLATION_KEYS?.europeana ? ['europeana'] : [])], texts: textProxy ? ['gutenberg'] : [], textLanguages: ['de'], astro: ['exoplanets-live', 'gaia', 'sbdb'] }, textProxy } };
+  return { mode: 'static', cfg: { map: { tiles: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', tilesAttribution: '© OpenStreetMap-Mitwirkende', tilesEnabled: !offline }, geocodingOnline: !offline, weatherLive: !offline, online: offline ? null : { images: ['met', 'aic', 'cma', ...(globalThis.KONSTELLATION_KEYS?.europeana ? ['europeana'] : [])], texts: textProxy ? ['gutenberg'] : [], textLanguages: ['de'], astro: textProxy ? ['exoplanets-live', 'gaia', 'sbdb'] : [] }, textProxy } };
 }
 
 async function loadJson(url) { const r = await fetch(url, { cache: 'no-cache' }); if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`); return r.json(); }

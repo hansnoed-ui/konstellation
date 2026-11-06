@@ -42,7 +42,7 @@ Mengen sind die nach `id` sortierten `items` des jeweiligen Manifests (UTF-16-Re
 
 1. Zeit erfassen, Eingabe normalisieren, Manifeste laden (Versionen binden).
 2. S0.
-3. Stufe A: Wetter beschaffen (Live → Cache → Archiv) und Astronomie ziehen – Bestand (`S0|astro`) oder auf Wunsch ein Online-Archiv (`S0|astro-online`, Regel `online/1` mit genau einem Anbieter: NASA live, Gaia DR3 oder JPL Small-Body Database; bei Ausfall Bestand) – unabhängig, Reihenfolge ohne Einfluss. Die Seed-Form des Bestands ist seit 0.1.0 unverändert (`{catalog:"NASA Exoplanet Archive pscomppars", id, record}`).
+3. Stufe A: Wetter beschaffen (Live → Cache → Archiv) und Astronomie ziehen – Bestand (`S0|astro`) oder auf Wunsch ein Online-Archiv (`S0|astro-online`, Regel `online/1` mit genau einem Anbieter: NASA live, Gaia DR3 oder JPL Small-Body Database; bei Ausfall Bestand; im Browser über den Durchreicher `proxy.php`, da die Archive kein CORS erlauben) – unabhängig, Reihenfolge ohne Einfluss. Die Seed-Form des Bestands ist seit 0.1.0 unverändert (`{catalog:"NASA Exoplanet Archive pscomppars", id, record}`).
 4. S1.
 5. Stufe B: Bild und Werk zuerst online (`online/1`, unten), bei Ausfall je einzeln aus dem Bestand (mit Ersatzregel: Datei beschädigt / Stellen-Datei fehlt); dann die Stelle.
 6. Protokoll schreiben.

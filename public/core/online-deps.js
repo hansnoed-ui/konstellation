@@ -10,15 +10,15 @@ import { exoplanetsLiveProvider, gaiaProvider, sbdbProvider } from './online/ast
 export const ONLINE_DEFAULTS = { enabled: true, budgetMs: 12000, maxTries: 12, images: ['met', 'aic', 'cma', 'europeana'], texts: ['gutenberg'], textLanguages: ['de'], astro: ['exoplanets-live', 'gaia', 'sbdb'], keys: {} };
 export const ASTRO_SOURCES = { local: 'Exoplaneten (Bestand)', 'exoplanets-live': 'Exoplaneten live (NASA Exoplanet Archive)', gaia: 'Sterne, Gaia DR3 (ESA, 1,8 Mrd. Quellen)', sbdb: 'Asteroiden und Kometen (JPL Small-Body Database)' };
 
-// opts: { fetchImpl, headers, fetchImage (Node: lädt und prüft die Bilddatei), loadIndex (Gutenberg-Index), rewrite (URL-Umschreibung für einen Textproxy), nowMs }
+// opts: { fetchImpl, headers, fetchImage (Node: lädt und prüft die Bilddatei), loadIndex (Gutenberg-Index), rewrite (URL-Umschreibung für den Durchreicher im Browser: Gutenberg und die Astronomie-Archive senden keine CORS-Kopfzeilen), nowMs }
 export function makeOnline(cfgIn = {}, opts = {}) {
   const cfg = { ...ONLINE_DEFAULTS, ...cfgIn };
   if (cfg.enabled === false) return null;
   const ctx = { fetchImpl: opts.fetchImpl || globalThis.fetch.bind(globalThis), headers: opts.headers, fetchImage: opts.fetchImage || null };
   const keys = { ...(cfg.keys || {}), ...(opts.keys || {}) };
-  const imgProviders = { met: () => metProvider(opts.met), aic: () => aicProvider(opts.aic), cma: () => clevelandProvider(opts.cma), europeana: () => (keys.europeana ? europeanaProvider({ key: keys.europeana, ...opts.europeana }) : null) };
+  const imgProviders = { met: () => metProvider(opts.met), aic: () => aicProvider(opts.aic), cma: () => clevelandProvider({ rewrite: opts.rewrite, ...opts.cma }), europeana: () => (keys.europeana ? europeanaProvider({ key: keys.europeana, ...opts.europeana }) : null) };
   const imageProviders = cfg.images.map((k) => imgProviders[k]?.()).filter(Boolean);
-  const astroProviders = { 'exoplanets-live': () => exoplanetsLiveProvider(opts.nasa), gaia: () => gaiaProvider(opts.gaia), sbdb: () => sbdbProvider(opts.sbdb) };
+  const astroProviders = { 'exoplanets-live': () => exoplanetsLiveProvider({ rewrite: opts.rewrite, ...opts.nasa }), gaia: () => gaiaProvider({ rewrite: opts.rewrite, ...opts.gaia }), sbdb: () => sbdbProvider({ rewrite: opts.rewrite, ...opts.sbdb }) };
   const astroDraws = new Map();
   const astroFor = (source) => {
     if (!source || source === 'local' || !cfg.astro.includes(source) || !astroProviders[source]) return null;

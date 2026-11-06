@@ -148,3 +148,16 @@ test('Astronomie online: Kleinkörper (Nummer = Index + 1) und Gaia (random_inde
   assert.equal(l.science.astro.source_mode, 'local'); assert.equal(l.science.astro.used_for_seed.catalog, 'NASA Exoplanet Archive pscomppars'); assert.equal(l.science.astro.online, null);
   assert.equal(l.seeds.S1.hex, f.seeds.S1.hex, 'Rückfall liefert dieselbe Auswahl wie der Bestand');
 });
+
+test('Browser-Fassung: Astronomie-Archive laufen über den Durchreicher (rewrite), ohne ihn keine Online-Astronomie', async () => {
+  const seen = [];
+  const rewrite = (u) => `${base}/proxy?u=${encodeURIComponent(u)}`;
+  const fetchImpl = async (u, o) => { seen.push(u); const real = new URL(u).searchParams.get('u'); return fetch(real, o); };
+  const on = makeOnline({ budgetMs: 8000, maxTries: 6, images: [], texts: [], astro: ['sbdb', 'gaia'] }, { fetchImpl, rewrite, sbdb: { api: `${base}/sbdb` }, gaia: { tap: `${base}/gaia/sync`, total: 1000 } });
+  reset();
+  const r = await runConstellation({ ...input, online_first: true, astro_source: 'sbdb' }, fakeDeps({ weatherLive: async () => okWeather(), online: on }));
+  assert.equal(r.science.astro.kind, 'small-body'); assert.equal(r.science.astro.source_mode, 'online');
+  assert.ok(seen.length >= 2 && seen.every((u) => u.startsWith(`${base}/proxy?u=`)), 'alle Astronomie-Abfragen über den Durchreicher');
+  const off = makeOnline({ astro: [] }, { fetchImpl })({ astro_source: 'sbdb' });
+  assert.equal(off.astro, null); assert.equal(off.astroSource, 'local');
+});

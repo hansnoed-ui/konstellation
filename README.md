@@ -33,7 +33,7 @@ Weitere Befehle:
 | `npm run import:weather-archive` | Wetterarchiv: NOAA-ISD-Stationen (echte Messungen) und Open-Meteo-Vergangenheitswerte |
 | `npm run import:basemap` | Weltkarte und Ortsliste aus Natural Earth |
 | `npm run import:gutenberg-index -- [Sprachen]` | Katalogindex für die Online-Ziehung bei Project Gutenberg (`pg_catalog.csv`): IDs je Sprache und höchste ID; Standard `de` |
-| `node tools/build-static.js <ziel> [--ornament]` | Statische Fassung (Oberfläche + Bestand ohne Rohdaten) für einen Webspace; `--ornament` fügt Kopfzeilen für ornament.cloud ein und legt den Textproxy `proxy.php` bei |
+| `node tools/build-static.js <ziel> [--ornament]` | Statische Fassung (Oberfläche + Bestand ohne Rohdaten) für einen Webspace; `--ornament` fügt Kopfzeilen für ornament.cloud ein und legt den Durchreicher `proxy.php` bei (Gutenberg und Astronomie-Archive ohne CORS) |
 | `node tools/jev-check.js` | Optionale jev-Prüfung des Textbestands (braucht `TYPESAFE_API_KEY`), siehe unten |
 
 Importe schreiben Manifeste atomar und versioniert (`data/catalog/<bestand>/manifest.json`, Kopie unter `manifests/<version>.json`). Ein laufender Durchlauf bindet die Manifestversionen zu Beginn; Importe verändern seine Auswahlmenge nicht.
@@ -111,7 +111,7 @@ Jede Konstellation ist ein JSON-Protokoll (`konstellation-record/1`) mit Anzeige
 Geprüft und **nicht** angebunden: Internet Archive und Wellcome Collection (Suche auf 10 000 Treffer begrenzt, kein gleichverteilter Zugriff), Rijksmuseum (nur Token-Paging), Wikimedia Commons (Zufall nur serverseitig, kein deterministischer Index, Ratenbegrenzung), Smithsonian Open Access API (Schlüssel, Tiefe der Paginierung unklar), SIMBAD (TAP aus der Entwicklungsumgebung nicht erreichbar).
 | Project Gutenberg (RDF-Metadaten + UTF-8-Volltext) | Werke der gewählten Sprache laut `pg_catalog.csv` (Deutsch ≈ 2 455) oder ID-Raum (≈ 79 900) | `dcterms:rights = «Public domain in the USA.»`, Typ `Text` | `public-domain-70pma`, wenn alle Urheber:innen laut Todesjahr seit > 70 Jahren tot sind (CH/EU), sonst `public-domain-usa` (ausserhalb der USA unter Vorbehalt) |
 
-Die Einordnung folgt den Metadaten der Anbieter und ist keine Rechtsgarantie; jede Angabe steht mit Feld und Wert unter `rights_evidence`. jev ist an keiner Rechteentscheidung beteiligt. In der statischen Browser-Fassung laden Met und AIC direkt (CORS); Project Gutenberg sendet keine CORS-Kopfzeilen, deshalb braucht der Webspace den kleinen Textproxy `proxy.php` (nur gutenberg.org, nur GET) – ohne ihn kommt der Text aus dem Bestand. Weitere Datenbanken lassen sich als Anbieter unter `public/core/online/` ergänzen (zwei Funktionen: Grösse des Auswahlraums, Auflösen eines Index).
+Die Einordnung folgt den Metadaten der Anbieter und ist keine Rechtsgarantie; jede Angabe steht mit Feld und Wert unter `rights_evidence`. jev ist an keiner Rechteentscheidung beteiligt. In der statischen Browser-Fassung laden Met und AIC direkt (CORS); Project Gutenberg, das NASA Exoplanet Archive (TAP), das Gaia-Archiv (TAP) und die JPL Small-Body Database senden keine CORS-Kopfzeilen, deshalb braucht der Webspace den kleinen Durchreicher `proxy.php` (fünf Hosts, feste URL-Muster, nur GET; auch Cleveland, dessen API die CORS-Kopfzeile nicht zuverlässig sendet) – ohne ihn kommt der Text aus dem Bestand und die Online-Astronomie ist in der Oberfläche gesperrt. Weitere Datenbanken lassen sich als Anbieter unter `public/core/online/` ergänzen (zwei Funktionen: Grösse des Auswahlraums, Auflösen eines Index).
 
 ## Bestand (Rückfall)
 

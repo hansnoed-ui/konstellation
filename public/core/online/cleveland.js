@@ -1,5 +1,6 @@
 // Anbieter Cleveland Museum of Art (Open Access API): Auswahlraum = alle Werke mit cc0=1 und has_image=1
 // (info.total), direkt über skip/limit adressierbar. Freigabe: share_license_status = «CC0».
+// Die Open-Access-API sendet die CORS-Kopfzeile nicht zuverlässig (fehlt bei zwischengespeicherten Antworten), deshalb im Browser über den Durchreicher (rewrite).
 import { fetchWithTimeout } from '../openmeteo.js';
 import { Reject } from '../online.js';
 import { fileFields } from './met.js';
@@ -7,20 +8,20 @@ import { fileFields } from './met.js';
 export const CMA_API = 'https://openaccess-api.clevelandart.org/api/artworks/';
 const FIELDS = 'id,accession_number,title,creators,creation_date,technique,culture,department,type,url,share_license_status,images,creditline,tombstone';
 
-export function clevelandProvider({ api = CMA_API, maxAgeMs = 3600e3 } = {}) {
+export function clevelandProvider({ api = CMA_API, maxAgeMs = 3600e3, rewrite = (u) => u } = {}) {
   let cache = null;
   return {
     id: 'cma', name: 'Cleveland Museum of Art, Open Access API',
     async space(ctx) {
       if (cache && ctx.nowMs() - cache.at < maxAgeMs) return { total: cache.total, retrieved_at: cache.retrieved_at, note: 'Werke mit cc0=1 und has_image=1' };
-      const r = await fetchWithTimeout(ctx.fetchImpl, `${api}?cc0=1&has_image=1&limit=1&fields=id`, Math.min(ctx.left(), 6000), ctx.headers);
+      const r = await fetchWithTimeout(ctx.fetchImpl, rewrite(`${api}?cc0=1&has_image=1&limit=1&fields=id`), Math.min(ctx.left(), 6000), ctx.headers);
       if (!r.ok) throw new Error(`Gesamtzahl: HTTP ${r.status}`);
       const total = Number((await r.json()).info?.total); if (!(total > 0)) throw new Error('Gesamtzahl unerwartet');
       cache = { total, retrieved_at: new Date(ctx.nowMs()).toISOString(), at: ctx.nowMs() };
       return { total, retrieved_at: cache.retrieved_at, note: 'Werke mit cc0=1 und has_image=1 (skip/limit)' };
     },
     async resolve(index, ctx) {
-      const r = await fetchWithTimeout(ctx.fetchImpl, `${api}?cc0=1&has_image=1&limit=1&skip=${index}&fields=${FIELDS}`, Math.min(ctx.left(), 6000), ctx.headers);
+      const r = await fetchWithTimeout(ctx.fetchImpl, rewrite(`${api}?cc0=1&has_image=1&limit=1&skip=${index}&fields=${FIELDS}`), Math.min(ctx.left(), 6000), ctx.headers);
       if (!r.ok) throw new Reject(`HTTP ${r.status}`, { id: `cma-#${index}` });
       const obj = (await r.json()).data?.[0];
       if (!obj) throw new Reject('kein Eintrag an dieser Stelle (Liste verändert)', { id: `cma-#${index}` });
