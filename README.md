@@ -3,11 +3,11 @@
 Aus einem Namen, einem frei gewählten Ort und dem Zeitpunkt der Abfrage entsteht in zwei Stufen eine Konstellation:
 
 1. **Stufe A (wissenschaftlich):** ein Wetterdatensatz zum Ort und ein Exoplanet aus dem NASA Exoplanet Archive.
-2. **Stufe B (kulturell):** aus der Eingabe **und** den tatsächlich gefundenen wissenschaftlichen Daten werden ein Kunstbild und eine Textstelle aus einem Roman gezogen.
+2. **Stufe B (kulturell):** aus der Eingabe **und** den tatsächlich gefundenen wissenschaftlichen Daten werden ein Kunstbild und eine Textstelle gezogen – **standardmässig direkt online** aus grossen offenen Datenbanken (Met Museum ≈ 503 000 Objekte, Art Institute of Chicago ≈ 133 000 Werke, Project Gutenberg ≈ 79 000 Werke); der mitgelieferte Bestand ist nur Rückfall bei Ausfall, Zeitüberschreitung oder fehlender Freigabe.
 
-Alle vier Funde sind echt, lokal mitgeliefert und mit Herkunfts- und Rechteangaben versehen. Die Beziehungen entstehen rein zahlenbasiert (SHA-256); es gibt keine Deutung, keine Persönlichkeitsanalyse und keine astrologische Aussage.
+Alle vier Funde sind echt und mit Herkunfts- und Rechteangaben versehen; Online-Funde werden nur angenommen, wenn der Anbieter die Freigabe maschinenlesbar bestätigt (CC0-Feld bzw. «Public domain in the USA»), und jede Rechteangabe ist im Protokoll belegt und eingeordnet. Die Beziehungen entstehen rein zahlenbasiert (SHA-256); es gibt keine Deutung, keine Persönlichkeitsanalyse und keine astrologische Aussage.
 
-Lokal lauffähig ohne Konto, ohne Cloud-Abonnement, ohne LLM im Durchlauf. Nach der Installation funktioniert der erste Start auch mit gesperrtem Internet über den mitgelieferten Bestand.
+Lokal lauffähig ohne Konto, ohne Cloud-Abonnement, ohne LLM im Durchlauf. Nach der Installation funktioniert der erste Start auch mit gesperrtem Internet über den mitgelieferten Bestand (Schalter «Online zuerst» oder `KONSTELLATION_OFFLINE=1`).
 
 ## Schnellstart
 
@@ -32,7 +32,8 @@ Weitere Befehle:
 | `npm run import:texts:eltec -- [Anzahl Werke]` | ELTeC-deu (deutsche Romane, Textgrundlage TextGrid/DTA); bis 100 Werke, je Autor:in eines |
 | `npm run import:weather-archive` | Wetterarchiv: NOAA-ISD-Stationen (echte Messungen) und Open-Meteo-Vergangenheitswerte |
 | `npm run import:basemap` | Weltkarte und Ortsliste aus Natural Earth |
-| `node tools/build-static.js <ziel> [--ornament]` | Statische Fassung (Oberfläche + Bestand ohne Rohdaten) für einen Webspace; `--ornament` fügt Kopfzeilen für ornament.cloud ein |
+| `npm run import:gutenberg-index -- [Sprachen]` | Katalogindex für die Online-Ziehung bei Project Gutenberg (`pg_catalog.csv`): IDs je Sprache und höchste ID; Standard `de` |
+| `node tools/build-static.js <ziel> [--ornament]` | Statische Fassung (Oberfläche + Bestand ohne Rohdaten) für einen Webspace; `--ornament` fügt Kopfzeilen für ornament.cloud ein und legt den Textproxy `proxy.php` bei |
 | `node tools/jev-check.js` | Optionale jev-Prüfung des Textbestands (braucht `TYPESAFE_API_KEY`), siehe unten |
 
 Importe schreiben Manifeste atomar und versioniert (`data/catalog/<bestand>/manifest.json`, Kopie unter `manifests/<version>.json`). Ein laufender Durchlauf bindet die Manifestversionen zu Beginn; Importe verändern seine Auswahlmenge nicht.
@@ -48,7 +49,9 @@ public/core/      Auswahlkern, Adapter, Paketexport – identisch in Node und im
   pipeline.js     Ablauf einer Konstellation, Rückfallreihenfolge, Protokoll, Nachrechnen
   weather.js      Wetterfelder/Einheiten, Open-Meteo-Normalisierung, Archivregel
   openmeteo.js    Live-Wetter und Ortssuche (Zeitlimit, 429/Retry-After, Schutzschalter)
-  passages.js     Regel für Textstellen (TEI → Stellen)
+  passages.js     Regel für Textstellen (TEI → Stellen); text-plain.js: Volltext → Stellen (Gutenberg)
+  online.js       Online-Ziehung über aneinandergereihte Auswahlräume mehrerer Anbieter, Ersatz, Zeitbudget
+  online/         Anbieter: met.js, aic.js (Bilder), gutenberg.js (Werke); online-deps.js baut sie aus der Konfiguration
   package.js, zip.js   portabler ZIP-Export
 public/           Oberfläche (index.html, app.js, app.css), browser-deps.js, vendor/leaflet
 server/           lokaler Node-Server (index.js), Dateisystem-Abhängigkeiten (deps.js)
@@ -74,11 +77,13 @@ Ausführlich in [docs/AUSWAHL.md](docs/AUSWAHL.md).
 - **Astronomie:** Index aus dem Strom `S0|astro`, gleichverteilt über die sortierte Planetenliste.
 - **Wetter:** aktueller Open-Meteo-Abruf (gesamt ≤ 5 s, ≤ 2 Versuche, keine Wiederholung nach 429) → Cache (≤ 3 h alt) → Archiv (nächster Ort, dann nächster Tag im Jahr und nächste Stunde).
 - **S1** = SHA-256 der kanonischen Form von `{algorithm, stage:"S1", s0, weather (verwendete Werte, Einheiten, Datenzeit, gelieferte Koordinaten), astro (verwendeter Katalogeintrag)}`. Abrufzeiten, Latenzen, Rohantworten und Protokolldaten gehen nicht ein.
-- **Bild:** Strom `S1|image` über die sortierte Bildmenge. **Text:** Strom `S1|text-work` über die sortierten Werke, danach `S1|text-passage` über die Stellen des gewählten Werks (lange Bücher werden nicht bevorzugt).
+- **Online zuerst (Standard):** Die Auswahlräume der Anbieter (Met: alle Objekt-IDs; AIC: ID-Raum bis zur höchsten Werk-ID; Gutenberg: Werkliste der gewählten Sprache aus dem Katalogindex, bei «alle Sprachen» der ganze ID-Raum) werden zu einem Gesamtraum aneinandergereiht; Index aus `S1|image-online` bzw. `S1|text-online`. Nicht freigegebene, bildlose, fremdsprachige oder nicht ladbare Treffer und Lücken im ID-Raum werden mit `…#ersatz<i>` neu gezogen; höchstens 12 Versuche und 12 s, sonst Bestand. Bild und Text fallen unabhängig zurück.
+- **Bestand (Rückfall):** Strom `S1|image` über die sortierte Bildmenge. Strom `S1|text-work` über die sortierten Werke.
+- **Stelle:** in beiden Fällen `S1|text-passage` über die Stellen des gezogenen Werks (lange Bücher werden nicht bevorzugt).
 - **Ziehung:** `u` = erste 8 Bytes von `SHA-256(seed|label|k)`, akzeptiert falls `u < floor(2^64/n)·n`, Index `u mod n`; sonst `k+1`. Keine Modulo-Verzerrung, keine ungesäten Zufallsaufrufe im Kern.
 - **Ersatz:** ein lokal beschädigter Eintrag (Prüfsumme/Format) wird entfernt und mit Label `image#ersatz1` usw. nachgezogen; jeder Ersatz steht im Protokoll.
 
-Gleichverteilung gilt für den konkreten Auswahlbestand, nicht für alle Werke oder Daten weltweit.
+Gleichverteilung gilt für den konkreten Auswahlraum zum Abfragezeitpunkt (Online-Räume wachsen und sind nicht eingefroren), nicht für alle Werke oder Daten weltweit. Online-Funde sind über das Protokoll (ID, URL, Prüfsummen) wiederholbar, aber nicht gegen einen späteren Datenbankstand neu berechenbar.
 
 ## Gespeicherte Daten und Wiederholbarkeit
 
@@ -86,7 +91,17 @@ Jede Konstellation ist ein JSON-Protokoll (`konstellation-record/1`) mit Anzeige
 
 `verifyRecord` rechnet S0, S1 und alle Ziehungen gegen die geladenen Bestände nach und meldet abweichende Bestandsversionen. Eine gespeicherte Konstellation lässt sich ohne Onlineabfrage öffnen; der ZIP-Export (Protokoll, Bild, Textstelle, `anzeige.html`) genügt zum erneuten Anzeigen. Eine vollständige Neuauswahl braucht zusätzlich die referenzierten Manifestversionen.
 
-## Bestand
+## Online-Quellen und Rechte
+
+| Anbieter | Auswahlraum | Freigabeprüfung | Rechteeinordnung im Protokoll |
+|---|---|---|---|
+| The Metropolitan Museum of Art, Collection API | alle Objekt-IDs (≈ 503 000) | `isPublicDomain=true` | `cc0` (Met Open Access) |
+| Art Institute of Chicago, public API + IIIF | ID-Raum bis zur höchsten ID (≈ 288 000; ≈ 133 000 Werke) | `is_public_domain=true` | `cc0` (AIC Open Access); Cloudflare kann automatisierte Zugriffe abweisen – dann wird der Anbieter übersprungen |
+| Project Gutenberg (RDF-Metadaten + UTF-8-Volltext) | Werke der gewählten Sprache laut `pg_catalog.csv` (Deutsch ≈ 2 455) oder ID-Raum (≈ 79 900) | `dcterms:rights = «Public domain in the USA.»`, Typ `Text` | `public-domain-70pma`, wenn alle Urheber:innen laut Todesjahr seit > 70 Jahren tot sind (CH/EU), sonst `public-domain-usa` (ausserhalb der USA unter Vorbehalt) |
+
+Die Einordnung folgt den Metadaten der Anbieter und ist keine Rechtsgarantie; jede Angabe steht mit Feld und Wert unter `rights_evidence`. jev ist an keiner Rechteentscheidung beteiligt. In der statischen Browser-Fassung laden Met und AIC direkt (CORS); Project Gutenberg sendet keine CORS-Kopfzeilen, deshalb braucht der Webspace den kleinen Textproxy `proxy.php` (nur gutenberg.org, nur GET) – ohne ihn kommt der Text aus dem Bestand. Weitere Datenbanken lassen sich als Anbieter unter `public/core/online/` ergänzen (zwei Funktionen: Grösse des Auswahlraums, Auflösen eines Index).
+
+## Bestand (Rückfall)
 
 Stand und Herkunft in [docs/BESTAND.md](docs/BESTAND.md): 6 464 Exoplaneten (NASA, Abruf 6. 11. 2026), 60 Bilder (40 Met Museum, 20 Smithsonian American Art Museum, alle CC0/Public Domain), 30 Romane von 30 Autor:innen (ELTeC-deu, Textgrundlage TextGrid/DTA, 21 753 Stellen), Wetterarchiv mit 28 Orten (9 NOAA-Stationen mit Stundenmessungen an vier Stichtagen 2025, 19 Open-Meteo-Orte inkl. drei Meerespunkten), Weltkarte (177 Länder) und 2 700 Orte (Natural Earth), Namenslisten.
 
@@ -98,7 +113,8 @@ jev wird **nicht** im Durchlauf verwendet und trifft keine Auswahl. Vorbereitet 
 
 - Wetter: Open-Meteo liefert Modelldaten, keine Stationsmessung; die Archivfunde sind räumlich und zeitlich abweichend und so gekennzeichnet.
 - Astronomie: Katalogauswahl, keine Sichtbarkeitsrechnung.
-- Texte: deutsche Romane 1840–1920 aus ELTeC-deu; Lyrik ist noch nicht enthalten. Die Stellenregel arbeitet mit Absätzen und Satzgrenzen; vereinzelte Stellen können mit einem Nebensatz beginnen.
+- Texte online: Project Gutenberg enthält auch Dramen, Lyrik, Sachtexte und Übersetzungen; die Volltextregel ist heuristisch (Überschriften, Verserkennung, Inhaltsverzeichnis) und kann einzelne Stellen falsch abgrenzen. Bestand: deutsche Romane 1840–1920 aus ELTeC-deu.
+- Bilder online: Met und AIC liefern auch Gebrauchsgrafik, Textilien, Münzen usw.; es gibt keine ästhetische Vorauswahl (gewollt). Im Browser werden Online-Bilder nicht byteweise geprüft (`verified_locally=false`), im Node-Server schon.
 - Bilder: Stichprobe aus wenigen Met-Abteilungen und dem SAAM; kultureller Schwerpunkt Europa, Nordamerika, Japan.
 - Kartenkacheln kommen von OpenStreetMap (nur bei Bedarf, keine Massenabrufe); ohne Netz die einfache Natural-Earth-Karte.
 - Open-Meteo: kostenlos nur für nichtkommerzielle Nutzung; Abrufgrenzen beachten (die Historische API war beim Import bereits am Tageslimit, deshalb nutzt das Archiv die Forecast-API mit `past_days`).

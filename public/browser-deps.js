@@ -2,6 +2,7 @@
 // Wetter direkt bei Open-Meteo, Speicherung im Browser (localStorage).
 import { makeWeatherLive } from './core/openmeteo.js';
 import { sha256Hex } from './core/canonical.js';
+import { makeOnline } from './core/online-deps.js';
 
 const LS = { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } } };
 export { LS };
@@ -12,11 +13,19 @@ function sniff(b) {
   return null;
 }
 
-export function makeBrowserDeps({ base = 'catalog/', weatherLive = true } = {}) {
+export function makeBrowserDeps({ base = 'catalog/', weatherLive = true, online = true, textProxy = null } = {}) {
   const catalogs = new Map();
+  // Online-Ziehung im Browser: Met und AIC erlauben CORS direkt; Project Gutenberg nicht – dafür ein optionaler Textproxy
+  // (textProxy, z. B. «proxy.php?u=» auf dem Webspace). Ohne Proxy fällt der Text auf den Bestand zurück.
+  // Bilddateien werden im Browser nicht heruntergeladen und geprüft (verified_locally=false), die Anzeige lädt sie vom Anbieter.
+  const onlineDeps = online ? makeOnline({ texts: textProxy ? ['gutenberg'] : [] }, {
+    loadIndex: async () => { const r = await fetch(`${base}online/gutenberg-index.json`, { cache: 'no-cache' }); if (!r.ok) throw new Error(`Gutenberg-Index: HTTP ${r.status}`); return r.json(); },
+    rewrite: textProxy ? (u) => textProxy + encodeURIComponent(u) : undefined,
+  }) : null;
   const key = (lat, lon) => `${lat.toFixed(2)},${lon.toFixed(2)}`;
   return {
     mode: 'statisch (Browser)',
+    online: onlineDeps,
     timeSource: 'Gerätezeit des Browsers (Date) beim Klick auf «Konstellation erzeugen»',
     now: () => new Date(),
     monotonic: () => performance.now(),

@@ -44,7 +44,7 @@ Mengen sind die nach `id` sortierten `items` des jeweiligen Manifests (UTF-16-Re
 2. S0.
 3. Stufe A: Wetter beschaffen (Live → Cache → Archiv) und Astronomie ziehen – unabhängig, Reihenfolge ohne Einfluss.
 4. S1.
-5. Stufe B: Bild (mit Ersatzregel), Werk (mit Ersatzregel: Stellen-Datei fehlt/Prüfsumme falsch), Stelle.
+5. Stufe B: Bild und Werk zuerst online (`online/1`, unten), bei Ausfall je einzeln aus dem Bestand (mit Ersatzregel: Datei beschädigt / Stellen-Datei fehlt); dann die Stelle.
 6. Protokoll schreiben.
 
 ### Wetter-Rückfall
@@ -57,13 +57,28 @@ Mengen sind die nach `id` sortierten `items` des jeweiligen Manifests (UTF-16-Re
 
 Nur `<body>`; `<head>`, `<note>`, `<lg>` (Verse) ausgeschlossen. Einheit ist der TEI-Absatz. Ausschluss von Inhaltsverzeichnis-/Verzeichniszeilen, zahlenlastigen Absätzen und Lizenz-/URL-Vermerken (protokolliert pro Werk unter `excluded`). Absätze 80–180 Wörter = eine Stelle; kürzere aufeinanderfolgende Absätze desselben Kapitels werden bis mindestens 80 (höchstens 180) zusammengefasst; längere Absätze an Satzgrenzen in 80–180-Wörter-Stücke geteilt (Teil x/y). Reste unter 40 Wörtern entfallen. Fundstelle: Kapitelnummer, Kapitelüberschrift(en), Absatznummern innerhalb des Kapitels, Teil.
 
+### Online zuerst (`online/1`)
+
+Standardmässig werden Bild und Werk nicht aus dem mitgelieferten Bestand, sondern direkt aus grossen offenen Datenbanken gezogen; der Bestand ist nur Rückfall. Die Ziehung bleibt dieselbe Mathematik:
+
+1. Jeder Anbieter meldet zu Beginn die Grösse seines **Auswahlraums** zum Abfragezeitpunkt samt Abrufzeit: Met Museum = Liste aller Objekt-IDs (≈ 503 000); Art Institute of Chicago = ID-Raum 1 … höchste Werk-ID (≈ 288 000, davon ≈ 133 000 belegt); Project Gutenberg = Werkliste der gewählten Sprache(n) aus dem mitgelieferten Katalogindex (`pg_catalog.csv`, Deutsch ≈ 2 455) oder bei «alle Sprachen» der ID-Raum 1 … höchste ID (≈ 79 900).
+2. Die Räume werden in fester Reihenfolge (Anbieter-ID alphabetisch) zu einem **Gesamtraum** n = Σ nᵢ aneinandergereiht. Index = uniformIndex(S1, `image-online`, n) bzw. uniformIndex(S1, `text-online`, n). Der Index fällt in den Raum genau eines Anbieters (Gewichtung automatisch proportional zur Grösse) und wird dort aufgelöst (ID → Metadaten → Datei).
+3. Ein Treffer gilt nur, wenn der Anbieter die Freigabe **maschinenlesbar** bestätigt (`isPublicDomain=true`, `is_public_domain=true`, `dcterms:rights = «Public domain in the USA.»` und Typ `Text`) und die Datei bzw. der Volltext ladbar und formal gültig ist (JPEG/PNG vollständig; Gutenberg-Markierungen vorhanden, mindestens 20 Stellen). Alles andere – Lücken im ID-Raum, nicht freigegebene Objekte, bildlose Objekte, fremde Sprache, defekte Dateien, HTTP-Fehler – wird **verworfen und ersetzt**: `image-online#ersatz<i>` bzw. `text-online#ersatz<i>` über denselben Gesamtraum. Jeder Versuch steht mit Anbieter, Index, ID, Ergebnis und Dauer im Protokoll.
+4. Zeitbudget (Standard 12 s) und Versuche (Standard 12) sind endlich; danach kommt der betreffende Fund aus dem Bestand (`image` bzw. `text-work` wie bisher). Bild und Text fallen unabhängig voneinander zurück.
+5. Die Stelle wird wie beim Bestand mit uniformIndex(S1, `text-passage`, Anzahl Stellen des gezogenen Werks) gezogen; für Gutenberg-Volltexte gilt die Regel `passages-plain/1` (Absätze durch Leerzeilen; Überschriften = Abschnitte; Vers erkannt, Zeilenstruktur erhalten; Längenregel wie `passages/1`).
+6. Die Auswahlräume sind **nicht eingefroren** – die Datenbanken wachsen. Eine Online-Ziehung ist über das Protokoll (ID, URL, Prüfsumme der Bilddatei, Wortlaut-Prüfsumme) wiederholbar, aber nicht gegen einen späteren Datenbankstand neu berechenbar; `verifyRecord` meldet das als Hinweis (`notes`), nicht als Fehler.
+
+Rechte je Online-Fund (`rights`, `rights_class`, `rights_evidence`): Met und AIC → `cc0` mit dem geprüften API-Feld; Gutenberg → `public-domain-70pma`, wenn alle Urheber:innen laut RDF-Todesjahr seit mehr als 70 Jahren tot sind (Schutzfrist CH/EU abgelaufen), sonst `public-domain-usa` (nur in den USA belegt, ausserhalb unter Vorbehalt). Das ist eine Einordnung nach den Metadaten der Anbieter, keine Rechtsgarantie.
+
 ## 6. Protokoll (`konstellation-record/1`)
 
 | Feld | Inhalt |
 |---|---|
 | `id` | Zeitstempel + erste 8 Hexzeichen von S1 |
+| `culture.image_online`, `culture.text_online` | Online-Ziehung: Auswahlräume (Anbieter, Grösse, Abrufzeit), Gesamtgrösse, alle Versuche mit Ergebnis, Dauer; bei Rückfall Fehlergrund |
+| `seeds.draws.image_source`, `text_source` | `online` oder `local` |
 | `time` | `query_time_utc`, Zeitquelle |
-| `input` | Anzeigename, normalisierter Name, Normalisierungsregel, lat/lon (Zahl und Text), Ortsbeschriftung und deren Quelle |
+| `input` | Anzeigename, normalisierter Name, Normalisierungsregel, lat/lon (Zahl und Text), Ortsbeschriftung und deren Quelle, `online_first`, `text_languages` |
 | `seeds` | S0 und S1 je mit `hex` und `canonical_input`; `draws` für astro, image (Liste inkl. Ersatz), text_work (Liste), text_passage |
 | `science.weather` | Ebene, Quelle, Datenart, Datenzeit, Abrufzeit, angefragte/gelieferte Koordinaten, Entfernung, Werte mit Einheiten, Hinweise, Quell-URL, Rohantwort bzw. Rohdatenauszug, `used_for_seed` |
 | `science.astro` | id, Katalog, Datensatz, Einheiten, Quell-URL, Katalogabrufdatum, Hinweis, `used_for_seed` |

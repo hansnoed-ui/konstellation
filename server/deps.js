@@ -3,7 +3,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
-import { makeWeatherLive } from '../public/core/openmeteo.js';
+import { makeWeatherLive, fetchWithTimeout } from '../public/core/openmeteo.js';
+import { makeOnline } from '../public/core/online-deps.js';
+
+const UA = 'KONSTELLATION/0.2 (https://github.com/hansnoed-ui/konstellation)';
+const MAX_IMAGE_BYTES = 20e6;
 
 const sha256 = (b) => createHash('sha256').update(b).digest('hex');
 
@@ -33,9 +37,29 @@ export function makeCatalogLoader(catalogDir) {
   };
 }
 
+// Lädt eine Online-Bilddatei, prüft Format und Vollständigkeit, legt sie mit Prüfsumme unter data/runtime/online-images ab.
+export function makeImageFetcher(dir) {
+  return async function fetchImage(url, id, timeoutMs) {
+    const res = await fetchWithTimeout(globalThis.fetch, url, timeoutMs, { 'User-Agent': UA });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const len = Number(res.headers.get('content-length')); if (len > MAX_IMAGE_BYTES) throw new Error(`zu gross (${len} Bytes)`);
+    const buf = Buffer.from(await res.arrayBuffer()); if (buf.length > MAX_IMAGE_BYTES) throw new Error('zu gross');
+    const mime = sniff(buf); if (!mime) throw new Error('kein vollständiges JPEG/PNG');
+    const hash = sha256(buf); const file = `${id}.${hash.slice(0, 12)}.${mime === 'image/png' ? 'png' : 'jpg'}`;
+    writeAtomic(path.join(dir, file), buf);
+    return { file, url: `runtime/online-images/${file}`, sha256: hash, bytes: buf.length, mime, width: null, height: null };
+  };
+}
+
 export function makeNodeDeps(cfg, overrides = {}) {
   const catalogDir = path.resolve(cfg.root, cfg.catalogDir);
   const runtimeDir = path.resolve(cfg.root, cfg.runtimeDir);
+  const online = cfg.online?.enabled === false ? null : makeOnline(cfg.online, {
+    headers: { 'User-Agent': UA, 'AIC-User-Agent': UA },
+    fetchImage: makeImageFetcher(path.join(runtimeDir, 'online-images')),
+    loadIndex: async () => JSON.parse(fs.readFileSync(path.join(catalogDir, 'online', 'gutenberg-index.json'), 'utf8')),
+    ...(cfg.online?.providerOptions || {}),
+  });
   const cacheFile = path.join(runtimeDir, 'weather-cache.json');
   const key = (lat, lon) => `${lat.toFixed(2)},${lon.toFixed(2)}`;
   const readCache = () => { try { return JSON.parse(fs.readFileSync(cacheFile, 'utf8')); } catch { return {}; } };
@@ -45,6 +69,7 @@ export function makeNodeDeps(cfg, overrides = {}) {
     now: () => new Date(),
     monotonic: () => performance.now(),
     loadCatalog: makeCatalogLoader(catalogDir),
+    online,
     weatherLive: cfg.weather?.live === false ? null : makeWeatherLive({ base: cfg.weather?.forecastUrl, headers: { 'User-Agent': 'Konstellation/0.1 (lokal)' } }),
     async weatherCachePut(lat, lon, r) {
       const c = readCache(); const k = key(lat, lon);

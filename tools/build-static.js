@@ -25,12 +25,14 @@ copyDir(path.join(C, 'images', 'files'), path.join(K, 'images', 'files'));
 for (const w of JSON.parse(fs.readFileSync(path.join(C, 'texts', 'manifest.json'), 'utf8')).items) copy(path.join(C, 'texts', w.passages_file), path.join(K, 'texts', w.passages_file));
 copyDir(path.join(C, 'basemap'), path.join(K, 'basemap'));
 copyDir(path.join(C, 'names'), path.join(K, 'names'));
+copyDir(path.join(C, 'online'), path.join(K, 'online'));
 const b = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
 fs.writeFileSync(path.join(Z, 'VERSION.txt'), `KONSTELLATION ${b.version}, statische Fassung, gebaut ${new Date().toISOString()}\nQuelle: https://github.com/hansnoed-ui/konstellation\n`);
 
 if (ornament) {
   const f = path.join(Z, 'index.html'); let h = fs.readFileSync(f, 'utf8');
-  h = h.replace('<html lang="de">', '<html lang="de-CH">');
+  h = h.replace('<html lang="de">', '<html lang="de-CH" data-textproxy="proxy.php?u=">');
+  fs.copyFileSync(path.join(ROOT, 'tools', 'ornament-proxy.php'), path.join(Z, 'proxy.php'));
   h = h.replace('<link rel="stylesheet" href="vendor/leaflet/leaflet.css">', `<meta name="robots" content="noindex">
 <link rel="icon" href="../../b/bilder/signet/signet.svg">
 <link rel="stylesheet" href="../../vendor/fonts/fonts.css">

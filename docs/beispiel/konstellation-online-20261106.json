@@ -1,0 +1,587 @@
+{
+  "schema": "konstellation-record/1",
+  "id": "20261106-084357453-c3cfaf8c",
+  "algorithm_version": "konstellation/1",
+  "mode": "lokal (Node-Server)",
+  "time": {
+    "query_time_utc": "2026-11-06T08:43:57.453Z",
+    "time_source": "Systemuhr des lokalen Servers (Date) beim Empfang von «Konstellation erzeugen»",
+    "note": "Abfragezeitpunkt: einmal beim Auslösen erfasst. Datenzeitpunkt und Abrufzeitpunkt stehen getrennt bei den Funden."
+  },
+  "input": {
+    "display_name": "Ada Lovelace",
+    "normalized_name": "Ada Lovelace",
+    "name_normalization": "Unicode NFC; Leerraum zusammengefasst; aussen gekürzt",
+    "lat": 47.3769,
+    "lon": 8.5417,
+    "lat6": "47.376900",
+    "lon6": "8.541700",
+    "place_label": "Zürich",
+    "place_label_source": null,
+    "coordinate_note": "Die Koordinaten sind die verbindliche Eingabe; der Ortsname ist nur Beschriftung.",
+    "online_first": true,
+    "text_languages": [
+      "de"
+    ]
+  },
+  "seeds": {
+    "S0": {
+      "hex": "a36d6c20b4d292d14ea411818fe4b1de95b1bb43edf8f5de6025a1256c167817",
+      "canonical_input": "{\"algorithm\":\"konstellation/1\",\"lat\":\"47.376900\",\"lon\":\"8.541700\",\"name\":\"Ada Lovelace\",\"query_time_utc\":\"2026-11-06T08:43:57.453Z\",\"stage\":\"S0\"}"
+    },
+    "S1": {
+      "hex": "c3cfaf8cf37247a06e7f52a7d73b8cfacaf0f1f1818749f598804ee26243247c",
+      "canonical_input": "{\"algorithm\":\"konstellation/1\",\"astro\":{\"catalog\":\"NASA Exoplanet Archive pscomppars\",\"id\":\"Kepler-747 b\",\"record\":{\"dec\":41.0298175,\"decstr\":\"+41d01m47.34s\",\"disc_facility\":\"Kepler\",\"disc_year\":2016,\"discoverymethod\":\"Transit\",\"hostname\":\"Kepler-747\",\"pl_bmasse\":24.1,\"pl_bmassprov\":\"M-R relationship\",\"pl_eqt\":456,\"pl_name\":\"Kepler-747 b\",\"pl_orbeccen\":0,\"pl_orbper\":35.61760587,\"pl_orbsmax\":0.1916,\"pl_pubdate\":null,\"pl_rade\":5.27,\"ra\":288.4165196,\"rastr\":\"19h13m39.96s\",\"st_mass\":0.82,\"st_rad\":0.78,\"st_spectype\":null,\"st_teff\":5096,\"sy_dist\":3347.16,\"sy_pnum\":1,\"sy_snum\":1,\"sy_vmag\":15.595}},\"s0\":\"a36d6c20b4d292d14ea411818fe4b1de95b1bb43edf8f5de6025a1256c167817\",\"stage\":\"S1\",\"weather\":{\"data_kind\":\"Modelldaten (Open-Meteo «current», Best-Match-Wettermodelle; 15-Minuten-Werte)\",\"data_time_utc\":\"2026-11-06T08:30:00.000Z\",\"location_id\":null,\"provided_lat\":47.376667,\"provided_lon\":8.543693,\"source\":\"open-meteo-forecast\",\"units\":{\"cloud_cover\":\"%\",\"precipitation\":\"mm\",\"pressure_msl\":\"hPa\",\"temperature_2m\":\"°C\",\"wind_direction_10m\":\"°\",\"wind_speed_10m\":\"km/h\"},\"values\":{\"cloud_cover\":100,\"precipitation\":0,\"pressure_msl\":1024,\"temperature_2m\":6.1,\"wind_direction_10m\":320,\"wind_speed_10m\":2.8}}}"
+    },
+    "draws": {
+      "astro": {
+        "index": 4593,
+        "n": 6464,
+        "label": "astro",
+        "counter": 0,
+        "digest": "d41d6facbf919031c9286d62a010d7c5d6dc290c9a68e096782d69817cc2938c"
+      },
+      "image": [
+        {
+          "label": "image-online",
+          "n": 791000,
+          "index": 566568,
+          "counter": 0,
+          "provider": "met",
+          "provider_index": 278720,
+          "id": "met-416534"
+        }
+      ],
+      "image_source": "online",
+      "text_work": [
+        {
+          "label": "text-online",
+          "n": 2455,
+          "index": 911,
+          "counter": 0,
+          "provider": "gutenberg",
+          "provider_index": 911,
+          "id": "gutenberg-41931"
+        }
+      ],
+      "text_source": "online",
+      "text_passage": {
+        "index": 98,
+        "n": 241,
+        "label": "text-passage",
+        "counter": 0,
+        "digest": "596234741be612b09107813763b932ddd74e9507e5bd03d2a5ace6cf0f5874a9",
+        "n_passages": 241
+      }
+    }
+  },
+  "science": {
+    "weather": {
+      "level": "live",
+      "level_label": "Aktueller Abruf",
+      "source": "open-meteo-forecast",
+      "data_kind": "Modelldaten (Open-Meteo «current», Best-Match-Wettermodelle; 15-Minuten-Werte)",
+      "data_time_utc": "2026-11-06T08:30:00.000Z",
+      "retrieved_at": "2026-11-06T08:43:58.204Z",
+      "requested": {
+        "lat": 47.3769,
+        "lon": 8.5417
+      },
+      "provided": {
+        "lat": 47.376667,
+        "lon": 8.543693,
+        "elevation_m": 409,
+        "kind": "Rasterzelle des Wettermodells"
+      },
+      "distance_km": null,
+      "values": {
+        "temperature_2m": {
+          "value": 6.1,
+          "unit": "°C"
+        },
+        "wind_speed_10m": {
+          "value": 2.8,
+          "unit": "km/h"
+        },
+        "wind_direction_10m": {
+          "value": 320,
+          "unit": "°"
+        },
+        "pressure_msl": {
+          "value": 1024,
+          "unit": "hPa"
+        },
+        "cloud_cover": {
+          "value": 100,
+          "unit": "%"
+        },
+        "precipitation": {
+          "value": 0,
+          "unit": "mm"
+        }
+      },
+      "notes": [
+        "Niederschlag: Summe des vorangehenden Intervalls (interval_seconds)."
+      ],
+      "source_url": "https://api.open-meteo.com/v1/forecast?latitude=47.3769&longitude=8.5417&current=temperature_2m,wind_speed_10m,wind_direction_10m,pressure_msl,cloud_cover,precipitation&timezone=GMT&cell_selection=nearest&wind_speed_unit=kmh",
+      "raw": {
+        "response_text": "{\"latitude\":47.376667,\"longitude\":8.543693,\"generationtime_ms\":0.15223026275634766,\"utc_offset_seconds\":0,\"timezone\":\"GMT\",\"timezone_abbreviation\":\"GMT\",\"elevation\":409.0,\"current_units\":{\"time\":\"iso8601\",\"interval\":\"seconds\",\"temperature_2m\":\"°C\",\"wind_speed_10m\":\"km/h\",\"wind_direction_10m\":\"°\",\"pressure_msl\":\"hPa\",\"cloud_cover\":\"%\",\"precipitation\":\"mm\"},\"current\":{\"time\":\"2026-11-06T08:30\",\"interval\":900,\"temperature_2m\":6.1,\"wind_speed_10m\":2.8,\"wind_direction_10m\":320,\"pressure_msl\":1024.0,\"cloud_cover\":100,\"precipitation\":0.00}}"
+      },
+      "used_for_seed": {
+        "source": "open-meteo-forecast",
+        "data_kind": "Modelldaten (Open-Meteo «current», Best-Match-Wettermodelle; 15-Minuten-Werte)",
+        "data_time_utc": "2026-11-06T08:30:00.000Z",
+        "provided_lat": 47.376667,
+        "provided_lon": 8.543693,
+        "location_id": null,
+        "values": {
+          "temperature_2m": 6.1,
+          "wind_speed_10m": 2.8,
+          "wind_direction_10m": 320,
+          "pressure_msl": 1024,
+          "cloud_cover": 100,
+          "precipitation": 0
+        },
+        "units": {
+          "temperature_2m": "°C",
+          "wind_speed_10m": "km/h",
+          "wind_direction_10m": "°",
+          "pressure_msl": "hPa",
+          "cloud_cover": "%",
+          "precipitation": "mm"
+        }
+      }
+    },
+    "astro": {
+      "id": "Kepler-747 b",
+      "catalog": "NASA Exoplanet Archive – Planetary Systems Composite Parameters (pscomppars)",
+      "record": {
+        "pl_name": "Kepler-747 b",
+        "hostname": "Kepler-747",
+        "sy_snum": 1,
+        "sy_pnum": 1,
+        "discoverymethod": "Transit",
+        "disc_year": 2016,
+        "disc_facility": "Kepler",
+        "pl_orbper": 35.61760587,
+        "pl_orbsmax": 0.1916,
+        "pl_rade": 5.27,
+        "pl_bmasse": 24.1,
+        "pl_bmassprov": "M-R relationship",
+        "pl_orbeccen": 0,
+        "pl_eqt": 456,
+        "st_spectype": null,
+        "st_teff": 5096,
+        "st_mass": 0.82,
+        "st_rad": 0.78,
+        "sy_dist": 3347.16,
+        "ra": 288.4165196,
+        "dec": 41.0298175,
+        "rastr": "19h13m39.96s",
+        "decstr": "+41d01m47.34s",
+        "sy_vmag": 15.595,
+        "pl_pubdate": null
+      },
+      "units": {
+        "pl_orbper": "Tage",
+        "pl_orbsmax": "AE",
+        "pl_rade": "Erdradien",
+        "pl_bmasse": "Erdmassen",
+        "pl_eqt": "K",
+        "st_teff": "K",
+        "st_mass": "Sonnenmassen",
+        "st_rad": "Sonnenradien",
+        "sy_dist": "pc",
+        "ra": "Grad",
+        "dec": "Grad",
+        "sy_vmag": "mag"
+      },
+      "source_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Kepler-747",
+      "catalog_retrieved_at": "2026-11-06T07:41:53.529Z",
+      "note": "Katalogauswahl. Keine Aussage über Sichtbarkeit am gewählten Ort oder Zeitpunkt.",
+      "used_for_seed": {
+        "catalog": "NASA Exoplanet Archive pscomppars",
+        "id": "Kepler-747 b",
+        "record": {
+          "pl_name": "Kepler-747 b",
+          "hostname": "Kepler-747",
+          "sy_snum": 1,
+          "sy_pnum": 1,
+          "discoverymethod": "Transit",
+          "disc_year": 2016,
+          "disc_facility": "Kepler",
+          "pl_orbper": 35.61760587,
+          "pl_orbsmax": 0.1916,
+          "pl_rade": 5.27,
+          "pl_bmasse": 24.1,
+          "pl_bmassprov": "M-R relationship",
+          "pl_orbeccen": 0,
+          "pl_eqt": 456,
+          "st_spectype": null,
+          "st_teff": 5096,
+          "st_mass": 0.82,
+          "st_rad": 0.78,
+          "sy_dist": 3347.16,
+          "ra": 288.4165196,
+          "dec": 41.0298175,
+          "rastr": "19h13m39.96s",
+          "decstr": "+41d01m47.34s",
+          "sy_vmag": 15.595,
+          "pl_pubdate": null
+        }
+      }
+    }
+  },
+  "culture": {
+    "image": {
+      "source_mode": "online",
+      "id": "met-416534",
+      "provider": "met",
+      "title": "Florence Baker, Corsair Co., from the Actors and Actresses series (N45, Type 6) for Virginia Brights Cigarettes",
+      "artist": "Allen & Ginter",
+      "artist_bio": "American, Richmond, Virginia",
+      "date": "ca. 1888",
+      "medium": "Albumen photograph",
+      "culture": null,
+      "department": "Drawings and Prints",
+      "object_number": "63.350.203.45.1090",
+      "credit_line": "The Jefferson R. Burdick Collection, Gift of Jefferson R. Burdick",
+      "source_url": "https://www.metmuseum.org/art/collection/search/416534",
+      "source_name": "The Metropolitan Museum of Art, Open Access (Live-Abruf)",
+      "rights": "Public Domain – Met Open Access (CC0 1.0); API-Feld isPublicDomain=true",
+      "rights_class": "cc0",
+      "rights_evidence": {
+        "field": "isPublicDomain",
+        "value": true,
+        "metadataDate": "2025-03-06T04:54:30Z"
+      },
+      "retrieved_at": "2026-11-06T08:44:00.198Z",
+      "image_url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP831196.jpg",
+      "file": "met-416534.08517e72c741.jpg",
+      "local_url": "runtime/online-images/met-416534.08517e72c741.jpg",
+      "sha256": "08517e72c741fa87f03540757153379b2e7fd21c71437fcd31e55dd6503c2c76",
+      "bytes": 176717,
+      "mime": "image/jpeg",
+      "width": null,
+      "height": null,
+      "verified_locally": true,
+      "raw_metadata": {
+        "objectID": 416534,
+        "isHighlight": false,
+        "accessionNumber": "63.350.203.45.1090",
+        "accessionYear": "1963",
+        "isPublicDomain": true,
+        "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP831196.jpg",
+        "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP831196.jpg",
+        "additionalImages": [],
+        "constituents": [
+          {
+            "constituentID": 161586,
+            "role": "Publisher",
+            "name": "Issued by Allen &amp; Ginter",
+            "constituentULAN_URL": "(not assigned)",
+            "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q4731490",
+            "gender": ""
+          }
+        ],
+        "department": "Drawings and Prints",
+        "objectName": "Photograph",
+        "title": "Florence Baker, Corsair Co., from the Actors and Actresses series (N45, Type 6) for Virginia Brights Cigarettes",
+        "culture": "",
+        "period": "",
+        "dynasty": "",
+        "reign": "",
+        "portfolio": "",
+        "artistRole": "Publisher",
+        "artistPrefix": "Issued by",
+        "artistDisplayName": "Allen & Ginter",
+        "artistDisplayBio": "American, Richmond, Virginia",
+        "artistSuffix": "",
+        "artistAlphaSort": "Allen & Ginter",
+        "artistNationality": "American",
+        "artistBeginDate": "",
+        "artistEndDate": "",
+        "artistGender": "",
+        "artistWikidata_URL": "https://www.wikidata.org/wiki/Q4731490",
+        "artistULAN_URL": "(not assigned)",
+        "objectDate": "ca. 1888",
+        "objectBeginDate": 1885,
+        "objectEndDate": 1891,
+        "medium": "Albumen photograph",
+        "dimensions": "Sheet: 2 15/16 x 1 11/16 in. (7.4 x 4.3 cm)",
+        "measurements": [
+          {
+            "elementName": "Sheet",
+            "elementDescription": null,
+            "elementMeasurements": {
+              "Height": 7.4,
+              "Width": 4.3
+            }
+          }
+        ],
+        "creditLine": "The Jefferson R. Burdick Collection, Gift of Jefferson R. Burdick",
+        "geographyType": "",
+        "city": "",
+        "state": "",
+        "county": "",
+        "country": "",
+        "region": "",
+        "subregion": "",
+        "locale": "",
+        "locus": "",
+        "excavation": "",
+        "river": "",
+        "classification": "Photographs",
+        "rightsAndReproduction": "",
+        "linkResource": "",
+        "metadataDate": "2025-03-06T04:54:30Z",
+        "repository": "Metropolitan Museum of Art, New York, NY",
+        "objectURL": "https://www.metmuseum.org/art/collection/search/416534",
+        "tags": [
+          {
+            "term": "Portraits",
+            "AAT_URL": "http://vocab.getty.edu/page/aat/300015637",
+            "Wikidata_URL": "https://www.wikidata.org/wiki/Q134307"
+          },
+          {
+            "term": "Women",
+            "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+            "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+          },
+          {
+            "term": "Actresses",
+            "AAT_URL": "http://vocab.getty.edu/page/aat/300025658",
+            "Wikidata_URL": "https://www.wikidata.org/wiki/Q21169216"
+          }
+        ],
+        "objectWikidata_URL": "",
+        "isTimelineWork": false,
+        "GalleryNumber": ""
+      }
+    },
+    "image_online": {
+      "rule_version": "online/1",
+      "rule": "Gesamtraum = aneinandergereihte Auswahlräume der Anbieter (Grösse zum Abfragezeitpunkt); Index = uniformIndex(S1, «<art>-online», n); nicht auflösbare, nicht freigegebene oder nicht ladbare Treffer werden mit «<art>-online#ersatz<i>» über denselben Gesamtraum neu gezogen; endliches Zeitbudget und endliche Versuche, sonst Bestand.",
+      "spaces": [
+        {
+          "provider": "aic",
+          "name": "Art Institute of Chicago (public API, Open Access)",
+          "total": 287848,
+          "retrieved_at": "2026-11-06T08:43:58.883Z",
+          "note": "ID-Raum 1…287848 (133165 Werke, Lücken werden ersetzt)"
+        },
+        {
+          "provider": "met",
+          "name": "The Metropolitan Museum of Art, Open Access (Collection API)",
+          "total": 503152,
+          "retrieved_at": "2026-11-06T08:43:59.521Z",
+          "note": "alle Objekt-IDs der Sammlung"
+        }
+      ],
+      "total": 791000,
+      "draws": [
+        {
+          "label": "image-online",
+          "n": 791000,
+          "index": 566568,
+          "counter": 0,
+          "provider": "met",
+          "provider_index": 278720,
+          "id": "met-416534",
+          "outcome": "ok",
+          "duration_ms": 676
+        }
+      ],
+      "outcome": "ok",
+      "duration_ms": 1992
+    },
+    "text": {
+      "work": {
+        "source_mode": "online",
+        "id": "gutenberg-41931",
+        "provider": "gutenberg",
+        "title": "Sklaven der Liebe, und andere Novellen",
+        "author": "Hamsun, Knut",
+        "creators": [
+          {
+            "name": "Hamsun, Knut",
+            "birth": 1859,
+            "death": 1952
+          }
+        ],
+        "languages": [
+          "de"
+        ],
+        "issued": "2013-01-27",
+        "subjects": [
+          "Fiction",
+          "Short stories",
+          "PT"
+        ],
+        "bookshelves": [
+          "Category: Short Stories",
+          "Category: Novels",
+          "Category: German Literature",
+          "Nobel Prizes in Literature"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/41931",
+        "text_url": "https://www.gutenberg.org/cache/epub/41931/pg41931.txt",
+        "text_url_rdf": "https://www.gutenberg.org/ebooks/41931.txt.utf-8",
+        "source_name": "Project Gutenberg (Live-Abruf)",
+        "rights": "Public Domain in den USA laut Project Gutenberg (dcterms:rights «Public domain in the USA.»). Urheber:innen gestorben 1952: Schutzfrist 70 Jahre nach dem Tod (CH/EU) abgelaufen. Nutzung nach der Project-Gutenberg-Lizenz (Markenname nur unverändert).",
+        "rights_class": "public-domain-70pma",
+        "rights_evidence": {
+          "field": "dcterms:rights",
+          "value": "Public domain in the USA.",
+          "deathdates": [
+            1952
+          ],
+          "year_checked": 2026
+        },
+        "attribution": "Hamsun, Knut: Sklaven der Liebe, und andere Novellen. Project Gutenberg eBook #41931, https://www.gutenberg.org/ebooks/41931.",
+        "retrieved_at": "2026-11-06T08:43:59.046Z",
+        "text_sha256": null,
+        "text_bytes": 197408,
+        "passage_count": 241
+      },
+      "passage": {
+        "n": 99,
+        "text": "Nyke senkte sinnend das Haupt.\n\n»Was Sie da sagen, hat etwas für sich, und ich habe auch schon daran gedacht. Die Öffnung in dem Eimer des Stewarts war wirklich zu eng dazu. Deshalb bin ich auch nicht zum Kapitän gegangen, das wäre zu dumm gewesen --« Und Herr Nyke meinte, was er sagte. Es wäre doch wirklich ein abscheulicher Scherz. Schließlich sprach er seine Besorgnis vor einem »gewissen Fall« aus, der bei ihm einzutreten pflege, wenn er »solchen Schweinkram« gegessen hatte.",
+        "words": 81,
+        "form": "prosa",
+        "chapter": 21,
+        "heads": [
+          "Ein Reisebrief"
+        ],
+        "p_from": 57,
+        "p_to": 58,
+        "part": null,
+        "sha256": "4a84a52ec65194591d060441d69d62e038316caf405ae0cc1048ff822a74a14b"
+      },
+      "passage_rule": "passages-plain/1",
+      "passage_stats": {
+        "excluded": {
+          "zu kurz": 34,
+          "Satzstück ausserhalb Längenregel": 4
+        },
+        "paragraphs": 845
+      }
+    },
+    "text_online": {
+      "rule_version": "online/1",
+      "rule": "Gesamtraum = aneinandergereihte Auswahlräume der Anbieter (Grösse zum Abfragezeitpunkt); Index = uniformIndex(S1, «<art>-online», n); nicht auflösbare, nicht freigegebene oder nicht ladbare Treffer werden mit «<art>-online#ersatz<i>» über denselben Gesamtraum neu gezogen; endliches Zeitbudget und endliche Versuche, sonst Bestand.",
+      "spaces": [
+        {
+          "provider": "gutenberg",
+          "name": "Project Gutenberg (Sprachen de, Katalogindex)",
+          "total": 2455,
+          "retrieved_at": "2026-11-06T08:37:23.235Z",
+          "note": "Werke mit Sprache de laut pg_catalog.csv (Stand 2026-11-06T08:37:23.235Z)"
+        }
+      ],
+      "total": 2455,
+      "draws": [
+        {
+          "label": "text-online",
+          "n": 2455,
+          "index": 911,
+          "counter": 0,
+          "provider": "gutenberg",
+          "provider_index": 911,
+          "id": "gutenberg-41931",
+          "outcome": "ok",
+          "duration_ms": 836
+        }
+      ],
+      "outcome": "ok",
+      "duration_ms": 838
+    }
+  },
+  "catalogs": {
+    "exoplanets": {
+      "version": "b45d7557590bab2fcb7d269ab1c31d338a8173f44d0a3066a8aae355cff1a2aa",
+      "item_count": 6464
+    },
+    "images": {
+      "version": "fe90d3bd2f91acb5f782f0221f7d6b97be3c5903e5cf5e4dc4298edee035d39a",
+      "item_count": 60
+    },
+    "texts": {
+      "version": "235844461ee9aca0ec463a69cbd85fa01c8b5909c90e02e6bf5ed61595e20143",
+      "item_count": 30
+    }
+  },
+  "rules": {
+    "algorithm": "konstellation/1",
+    "canonical": "JSON, Schlüssel sortiert (UTF-16), ohne Leerzeichen, Zahlen in ECMAScript-Darstellung (an RFC 8785 angelehnt)",
+    "s0": "S0 = SHA-256(kanonisch({algorithm, stage:\"S0\", name: NFC+Leerraum normalisiert, lat/lon: 6 Nachkommastellen als Text, query_time_utc}))",
+    "s1": "S1 = SHA-256(kanonisch({algorithm, stage:\"S1\", s0, weather: verwendeter Wetterdatensatz, astro: verwendeter Katalogeintrag}))",
+    "draw": "Index = u mod n mit u = erste 8 Bytes von SHA-256(seed|label|k), verworfen solange u ≥ floor(2^64/n)·n",
+    "streams": {
+      "astro": "S0|astro",
+      "image": "S1|image",
+      "text_work": "S1|text-work",
+      "text_passage": "S1|text-passage"
+    },
+    "replacement": "Ist ein gezogener Bild-/Texteintrag lokal beschädigt (Prüfsumme/Datei), wird er aus der sortierten Menge entfernt und mit dem Label «<label>#ersatz<i>» erneut gezogen; jeder Ersatz wird protokolliert.",
+    "weather_order": "Live (Open-Meteo, gesamt höchstens 5 s, höchstens 2 Versuche, kein Wiederholen nach 429) → Cache (gleiche Koordinaten auf 2 Nachkommastellen, Datenzeit höchstens 3 h vor Abfragezeitpunkt) → Archiv (weather-archive/1)",
+    "weather_archive": "weather-archive/1",
+    "online": "Standard «online zuerst»: Bild aus Strom S1|image-online, Werk aus Strom S1|text-online, jeweils Gesamtraum = aneinandergereihte Auswahlräume der Anbieter (Grösse zum Abfragezeitpunkt); Index = uniformIndex(S1, «<art>-online», n); nicht auflösbare, nicht freigegebene oder nicht ladbare Treffer werden mit «<art>-online#ersatz<i>» über denselben Gesamtraum neu gezogen; endliches Zeitbudget und endliche Versuche, sonst Bestand. Die Stelle wird wie im Bestand mit S1|text-passage über die Stellen des gezogenen Werks gezogen.",
+    "fallback": "Scheitert die Online-Ziehung (kein Anbieter, Zeitbudget, keine freigegebenen Treffer), kommt der betreffende Fund aus dem lokalen Bestand; Bild und Text fallen unabhängig voneinander zurück."
+  },
+  "technical_log": [
+    {
+      "step": "time.capture",
+      "outcome": "ok",
+      "query_time_utc": "2026-11-06T08:43:57.453Z",
+      "time_source": "Systemuhr des lokalen Servers (Date) beim Empfang von «Konstellation erzeugen»"
+    },
+    {
+      "step": "weather.live",
+      "attempt": 1,
+      "outcome": "ok",
+      "duration_ms": 710,
+      "provider": "open-meteo"
+    },
+    {
+      "step": "text.online.space",
+      "outcome": "ok",
+      "provider": "gutenberg",
+      "total": 2455,
+      "duration_ms": 0
+    },
+    {
+      "step": "image.online.space",
+      "outcome": "ok",
+      "provider": "aic",
+      "total": 287848,
+      "duration_ms": 675
+    },
+    {
+      "step": "text.online",
+      "outcome": "ok",
+      "id": "gutenberg-41931",
+      "provider": "gutenberg",
+      "tries": 1,
+      "total": 2455,
+      "duration_ms": 838
+    },
+    {
+      "step": "image.online.space",
+      "outcome": "ok",
+      "provider": "met",
+      "total": 503152,
+      "duration_ms": 1314
+    },
+    {
+      "step": "image.online",
+      "outcome": "ok",
+      "id": "met-416534",
+      "provider": "met",
+      "tries": 1,
+      "total": 791000,
+      "duration_ms": 1992
+    }
+  ],
+  "privacy": "Der Name wird nicht an Datenanbieter gesendet. An Open-Meteo gehen nur Koordinaten."
+}

@@ -52,6 +52,15 @@
 
     <details class="zuletzt" id="zuletzt-box"><summary>Zuletzt verwendete Orte</summary><ul id="zuletzt"></ul></details>
 
+    <fieldset class="quellen" id="quellen-box">
+      <legend>Quellen für Bild und Text</legend>
+      <div class="zeile">
+        <label class="check"><input type="checkbox" id="online-zuerst" checked> Online zuerst (grosse Datenbanken), Bestand nur als Rückfall</label>
+        <label>Textsprache <select id="textsprache"><option value="de" selected>Deutsch</option><option value="en">Englisch</option><option value="fr">Französisch</option><option value="">alle Sprachen (ganzer ID-Raum)</option></select></label>
+      </div>
+      <p class="hinweis" id="quellen-hinweis"></p>
+    </fieldset>
+
     <div class="aktion">
       <button type="submit" id="erzeugen" class="primaer">Konstellation erzeugen</button>
       <span id="status" class="status" role="status" aria-live="polite"></span>
@@ -82,12 +91,14 @@
   </article>
 
   <figure class="fund bild" aria-labelledby="h-bild"><h3 id="h-bild" data-n="03" style="text-align:left">Bild</h3>
+    <p id="b-herkunft"></p>
     <img id="b-img" alt="" decoding="async">
     <figcaption id="b-cap"></figcaption>
   </figure>
 
   <article class="fund text" aria-labelledby="h-text">
     <h3 id="h-text" data-n="04">Textstelle</h3>
+    <p id="t-herkunft"></p>
     <blockquote id="t-text"></blockquote>
     <p class="meta" id="t-meta"></p>
   </article>

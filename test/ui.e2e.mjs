@@ -46,6 +46,8 @@ async function run(label, url, viewport) {
   const img = page.locator('#b-img'); await img.waitFor();
   const ok = await img.evaluate((i) => i.complete && i.naturalWidth > 200); if (!ok) fail(label + ': Bild nicht geladen');
   const txt = await page.locator('#t-text').textContent(); if ((txt || '').split(/\s+/).length < 40) fail(label + ': Textstelle zu kurz');
+  const herk = await page.locator('#b-herkunft').textContent(); if (!/aus dem Bestand/.test(herk)) fail(label + ': offline müsste das Bild aus dem Bestand kommen: ' + herk);
+  if (await page.locator('#online-zuerst').isEnabled()) fail(label + ': Online-Schalter müsste offline gesperrt sein');
   const ebene = await page.locator('#w-ebene').textContent(); if (!/Archiv/.test(ebene)) fail(label + ': offline müsste Archiv sein: ' + ebene);
   const ort = await page.locator('#e-ort').textContent(); if (!ort.includes('0.500000, -29.000000')) fail(label + ': Koordinaten im Kopf fehlen: ' + ort);
   await page.screenshot({ path: path.join(out, `${label}-ergebnis.png`), fullPage: true });

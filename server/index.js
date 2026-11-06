@@ -15,7 +15,7 @@ export function loadConfig(overrides = {}) {
   const base = JSON.parse(fs.readFileSync(path.join(ROOT, 'config', 'default.json'), 'utf8'));
   let local = {}; try { local = JSON.parse(fs.readFileSync(path.join(ROOT, 'config', 'local.json'), 'utf8')); } catch {}
   const cfg = { ...base, ...local, ...overrides, root: ROOT };
-  if (process.env.KONSTELLATION_OFFLINE === '1') { cfg.weather = { ...cfg.weather, live: false }; cfg.geocoding = { ...cfg.geocoding, online: false }; cfg.map = { ...cfg.map, tilesEnabled: false }; }
+  if (process.env.KONSTELLATION_OFFLINE === '1') { cfg.weather = { ...cfg.weather, live: false }; cfg.geocoding = { ...cfg.geocoding, online: false }; cfg.map = { ...cfg.map, tilesEnabled: false }; cfg.online = { ...cfg.online, enabled: false }; }
   if (process.env.PORT) cfg.port = Number(process.env.PORT);
   return cfg;
 }
@@ -24,6 +24,7 @@ export function createServer(cfg, depsOverrides = {}) {
   const deps = makeNodeDeps(cfg, depsOverrides);
   const recDir = path.join(path.resolve(ROOT, cfg.runtimeDir), 'constellations');
   const catalogDir = path.resolve(ROOT, cfg.catalogDir);
+  const runtimeDir = path.resolve(ROOT, cfg.runtimeDir);
   const places = JSON.parse(fs.readFileSync(path.join(catalogDir, 'basemap', 'places.json'), 'utf8'));
   const send = (res, code, body, type = 'application/json; charset=utf-8', extra = {}) => {
     res.writeHead(code, { 'Content-Type': type, 'X-Content-Type-Options': 'nosniff', 'Cache-Control': 'no-store', ...extra });
@@ -44,7 +45,7 @@ export function createServer(cfg, depsOverrides = {}) {
     const url = new URL(req.url, 'http://x');
     const p = decodeURIComponent(url.pathname);
     try {
-      if (p === '/api/config') return send(res, 200, { mode: 'server', map: cfg.map, geocodingOnline: cfg.geocoding.online, weatherLive: cfg.weather.live !== false });
+      if (p === '/api/config') return send(res, 200, { mode: 'server', map: cfg.map, geocodingOnline: cfg.geocoding.online, weatherLive: cfg.weather.live !== false, online: cfg.online?.enabled !== false ? { images: cfg.online?.images ?? ['met', 'aic'], texts: cfg.online?.texts ?? ['gutenberg'], textLanguages: cfg.online?.textLanguages ?? ['de'] } : null });
       if (p === '/api/geocode') {
         const q = (url.searchParams.get('q') || '').slice(0, 100);
         let results = []; let source = 'lokal'; let note = null;
@@ -58,7 +59,7 @@ export function createServer(cfg, depsOverrides = {}) {
         let input; try { input = JSON.parse(body); } catch { return send(res, 400, { error: 'ungültiges JSON' }); }
         busy = true;
         try {
-          const record = await runConstellation({ name: input.name, lat: input.lat, lon: input.lon, place_label: input.place_label, place_label_source: input.place_label_source }, deps);
+          const record = await runConstellation({ name: input.name, lat: input.lat, lon: input.lon, place_label: input.place_label, place_label_source: input.place_label_source, online_first: input.online_first !== false, text_languages: Array.isArray(input.text_languages) ? input.text_languages.slice(0, 5) : undefined }, deps);
           writeAtomic(path.join(recDir, record.id + '.json'), JSON.stringify(record, null, 2));
           return send(res, 201, record);
         } catch (e) { return send(res, 400, { error: e.message }); } finally { busy = false; }
@@ -74,10 +75,12 @@ export function createServer(cfg, depsOverrides = {}) {
         if (!m[2]) return send(res, 200, r);
         if (m[2] === '/verify') return send(res, 200, await verifyRecord(r, deps));
         if (m[3] === 'json') return send(res, 200, JSON.stringify(r, null, 2), 'application/json; charset=utf-8', { 'Content-Disposition': `attachment; filename="konstellation-${r.id}.json"` });
-        const img = fs.readFileSync(path.join(catalogDir, 'images', r.culture.image.file));
+        const im = r.culture.image; let img = null;
+        try { img = fs.readFileSync(im.source_mode === 'online' ? path.join(runtimeDir, 'online-images', path.basename(im.file)) : path.join(catalogDir, 'images', im.file)); } catch { img = null; }
         return send(res, 200, Buffer.from(buildPackage(r, img)), 'application/zip', { 'Content-Disposition': `attachment; filename="konstellation-${r.id}.zip"` });
       }
       if (p.startsWith('/catalog/')) return serveFile(res, catalogDir, p.slice('/catalog'.length));
+      if (p.startsWith('/runtime/online-images/')) return serveFile(res, path.join(runtimeDir, 'online-images'), p.slice('/runtime/online-images'.length));
       if (p.startsWith('/api/')) return send(res, 404, { error: 'unbekannt' });
       return serveFile(res, path.join(ROOT, 'public'), p === '/' ? '/index.html' : p);
     } catch (e) { return send(res, 500, { error: 'interner Fehler: ' + e.message }); }

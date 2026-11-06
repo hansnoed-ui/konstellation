@@ -1,6 +1,6 @@
 # Grundbestand: Herkunft, Rechte, Auswahl
 
-Stand 6. November 2026. Prüfung: `npm run verify`. Versionen (SHA-256 der Manifest-Einträge) stehen in `data/catalog/<bestand>/manifest.json`; jede Version bleibt unter `manifests/` erhalten.
+Stand 6. November 2026. Seit Version 0.2.0 ist der Bestand **Rückfall**: Bild und Werk werden zuerst online gezogen (Met, Art Institute of Chicago, Project Gutenberg; siehe README «Online-Quellen und Rechte» und [AUSWAHL.md](AUSWAHL.md)). Prüfung: `npm run verify`. Versionen (SHA-256 der Manifest-Einträge) stehen in `data/catalog/<bestand>/manifest.json`; jede Version bleibt unter `manifests/` erhalten.
 
 ## Exoplaneten – 6 464 Einträge
 
@@ -42,3 +42,7 @@ Rohdaten (ISD-Auszüge als CSV, Open-Meteo-Antworten als JSON) unter `weather-ar
 - **Natural Earth** (gemeinfrei): Länder 1:110 Mio. (177 Features, Koordinaten auf 3 Nachkommastellen gerundet) und Orte aus `populated_places_simple` 1:10 Mio. (2 700 Orte: Hauptstädte und Bedeutungsrang ≤ 3). Bezug über den offiziellen GitHub-Spiegel `nvkelso/natural-earth-vector`.
 - **Leaflet 1.9.4** (BSD-2) lokal unter `public/vendor/leaflet/`.
 - **Namenslisten** (`names/names.json`): 60 Vornamen, 56 Familiennamen, für dieses Projekt zusammengestellt.
+
+## Online-Katalogindex (`online/gutenberg-index.json`)
+
+Für die Online-Ziehung bei Project Gutenberg: aus der offiziellen Gesamtliste `pg_catalog.csv.gz` (Abruf 6. 11. 2026, SHA-256 im Index) die IDs aller Einträge vom Typ «Text» je gewünschter Sprache (Standard `de`: 2 455 von 78 461 Texten, 79 712 Zeilen) sowie die höchste ID (79 899) für den Modus «alle Sprachen». Der Index enthält keine Texte; Metadaten und Volltext werden je Ziehung live geladen. Aktualisieren: `npm run import:gutenberg-index -- de,en,fr`.

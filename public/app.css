@@ -89,3 +89,10 @@ a { color: var(--acc); text-decoration-thickness: 1px; text-underline-offset: 2p
 .fund, .funde { min-width: 0; }
 .werte { grid-template-columns: fit-content(50%) minmax(0, 1fr); }
 .werte dd, .werte dt { overflow-wrap: anywhere; }
+
+.quellen .zeile { align-items: center; flex-wrap: wrap; gap: .75rem 1.5rem; }
+.quellen .check { display: inline-flex; align-items: center; gap: .5rem; }
+.quellen select { font: inherit; padding: .3rem .4rem; border: 1px solid var(--line); background: var(--card); color: inherit; border-radius: 3px; }
+.herkunft { display: inline-block; font: .72rem/1.4 var(--mono); letter-spacing: .02em; padding: .1rem .45rem; border: 1px solid var(--line); border-radius: 3px; margin-bottom: .5rem; }
+.herkunft.online { border-color: var(--accent); color: var(--accent); }
+.text blockquote.vers { white-space: pre-wrap; }

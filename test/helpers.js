@@ -10,6 +10,7 @@ export function fakeDeps(over = {}) {
   return makeNodeDeps({ ...cfg, runtimeDir: 'data/runtime/test-' + process.pid }, {
     now: over.now || (() => new Date('2026-11-06T07:00:00.000Z')),
     monotonic: over.monotonic || (() => (t += 1)),
+    online: over.online === undefined ? null : over.online,
     weatherLive: over.weatherLive === undefined ? null : over.weatherLive,
     weatherCacheGet: over.weatherCacheGet === undefined ? null : over.weatherCacheGet,
     weatherCachePut: over.weatherCachePut === undefined ? null : over.weatherCachePut,

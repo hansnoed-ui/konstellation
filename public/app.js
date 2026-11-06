@@ -17,7 +17,8 @@ async function detectMode() {
     if (r.ok) { const j = await r.json(); if (j.mode === 'server') return { mode: 'server', cfg: j }; }
   } catch {}
   const offline = new URLSearchParams(location.search).has('offline');
-  return { mode: 'static', cfg: { map: { tiles: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', tilesAttribution: '© OpenStreetMap-Mitwirkende', tilesEnabled: !offline }, geocodingOnline: !offline, weatherLive: !offline } };
+  const textProxy = document.documentElement.dataset.textproxy || null;
+  return { mode: 'static', cfg: { map: { tiles: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png', tilesAttribution: '© OpenStreetMap-Mitwirkende', tilesEnabled: !offline }, geocodingOnline: !offline, weatherLive: !offline, online: offline ? null : { images: ['met', 'aic'], texts: textProxy ? ['gutenberg'] : [], textLanguages: ['de'] }, textProxy } };
 }
 
 async function loadJson(url) { const r = await fetch(url, { cache: 'no-cache' }); if (!r.ok) throw new Error(`${url}: HTTP ${r.status}`); return r.json(); }
@@ -109,23 +110,31 @@ function render(r) {
   $('a-werte').innerHTML = rows.filter(([, v]) => v !== null && v !== undefined).map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
   $('a-meta').innerHTML = `${esc(a.catalog)}, Katalogstand ${esc(fmtTime(a.catalog_retrieved_at))}. ${esc(a.note)} <a href="${esc(a.source_url)}" rel="noopener">Eintrag im Archiv</a>`;
   const b = r.culture.image;
-  $('b-img').src = 'catalog/images/' + b.file; $('b-img').alt = `${b.artist || 'Unbekannt'}: ${b.title}`;
+  $('b-img').src = b.source_mode === 'online' ? (b.local_url || b.image_url) : 'catalog/images/' + b.file; $('b-img').alt = `${b.artist || 'Unbekannt'}: ${b.title}`;
+  const io = r.culture.image_online; const to = r.culture.text_online;
+  const herkunft = (mode, on, kind) => mode === 'online'
+    ? `<span class="herkunft online">online gezogen · ${esc(on.spaces.map((s) => `${s.provider} ${s.total.toLocaleString('de-CH')}`).join(' + '))} = ${on.total.toLocaleString('de-CH')} Einträge · ${on.draws.length} ${on.draws.length === 1 ? 'Versuch' : 'Versuche'}</span>`
+    : `<span class="herkunft">aus dem Bestand${on ? ' – online ' + esc(on.outcome) : ''}</span>`;
+  $('b-herkunft').innerHTML = herkunft(b.source_mode, io, 'image');
   $('b-cap').innerHTML = `${esc(b.artist || 'Unbekannt')}${b.artist_bio ? ' (' + esc(b.artist_bio) + ')' : ''}: <i>${esc(b.title)}</i>${b.date ? ', ' + esc(b.date) : ''}${b.medium ? '. ' + esc(b.medium) : ''}. ${esc(b.source_name)}${b.credit_line ? ' – ' + esc(b.credit_line) : ''}. ${esc(b.rights)}. <a href="${esc(b.source_url)}" rel="noopener">Quelle</a>`;
   const t = r.culture.text;
-  $('t-text').textContent = t.passage.text;
+  $('t-herkunft').innerHTML = herkunft(t.work.source_mode, to, 'text');
+  $('t-text').textContent = t.passage.text; $('t-text').classList.toggle('vers', t.passage.form === 'vers');
   $('t-meta').innerHTML = `${esc(t.work.author)}: <i>${esc(t.work.title)}</i>${t.work.first_edition ? ' (' + esc(t.work.first_edition) + ')' : ''}. Stelle ${t.passage.n} von ${r.seeds.draws.text_passage.n_passages}, Kapitel ${t.passage.chapter}${t.passage.heads?.length ? ' («' + esc(t.passage.heads.join(' – ')) + '»)' : ''}, Absatz ${t.passage.p_from}${t.passage.p_to !== t.passage.p_from ? '–' + t.passage.p_to : ''}${t.passage.part ? ', Teil ' + esc(t.passage.part) : ''}. ${esc(t.work.rights)}. <a href="${esc(t.work.textgrid_url || t.work.source_url)}" rel="noopener">Quelle</a>`;
+  $('t-meta').innerHTML = $('t-meta').innerHTML.replace('Kapitel ' + t.passage.chapter, t.work.source_mode === 'online' ? 'Abschnitt ' + t.passage.chapter : 'Kapitel ' + t.passage.chapter);
   $('verlauf').innerHTML = `
     <p><b>Zeit:</b> Abfragezeitpunkt ${esc(r.time.query_time_utc)} (${esc(r.time.time_source)}). Algorithmus ${esc(r.algorithm_version)}, Betriebsart ${esc(r.mode)}.</p>
     <p><b>S0</b> = SHA-256 von <code>${esc(r.seeds.S0.canonical_input)}</code><br>= <code>${r.seeds.S0.hex}</code></p>
     <p><b>Astronomie-Ziehung</b> aus S0: Index ${r.seeds.draws.astro.index} von ${r.seeds.draws.astro.n} (Strom «astro», Zähler ${r.seeds.draws.astro.counter}).</p>
     <p><b>S1</b> = SHA-256 von (S0, verwendeter Wetterdatensatz, verwendeter Katalogeintrag) = <code>${r.seeds.S1.hex}</code></p>
-    <p><b>Bild:</b> ${r.seeds.draws.image.map((d) => `Index ${d.index} von ${d.n} (${esc(d.label)}) → ${esc(d.id)}`).join('; ')}.
-       <b>Werk:</b> ${r.seeds.draws.text_work.map((d) => `Index ${d.index} von ${d.n} (${esc(d.label)}) → ${esc(d.id)}`).join('; ')}.
+    <p><b>Bild:</b> ${r.seeds.draws.image.map((d) => `Index ${d.index} von ${d.n} (${esc(d.label)}${d.provider ? ', ' + esc(d.provider) + ' #' + d.provider_index : ''}) → ${esc(d.id)}`).join('; ')}.
+       <b>Werk:</b> ${r.seeds.draws.text_work.map((d) => `Index ${d.index} von ${d.n} (${esc(d.label)}${d.provider ? ', ' + esc(d.provider) + ' #' + d.provider_index : ''}) → ${esc(d.id)}`).join('; ')}.
        <b>Stelle:</b> Index ${r.seeds.draws.text_passage.index} von ${r.seeds.draws.text_passage.n}.</p>
+    ${[['Bild', io], ['Text', to]].filter(([, o]) => o).map(([k, o]) => `<p><b>${k} online:</b> ${esc(o.outcome)}${o.error ? ' (' + esc(o.error) + ')' : ''}. ${o.spaces?.length ? 'Auswahlräume: ' + esc(o.spaces.map((s) => `${s.provider} ${s.total}${s.note ? ' – ' + s.note : ''}`).join('; ')) + '.' : ''} Versuche: ${esc(o.draws.map((d) => `${d.label} → ${d.provider} #${d.provider_index}${d.id ? ' (' + d.id + ')' : ''}: ${d.outcome}`).join('; ')) || 'keine'}.</p>`).join('')}
     <p><b>Wetter-Rückfallebene:</b> ${esc(w.level_label)}. Angefragt ${w.requested.lat}, ${w.requested.lon}; geliefert ${w.provided ? esc(w.provided.lat + ', ' + w.provided.lon + ' (' + (w.provided.kind || '') + ')') : '–'}.</p>
     <table><thead><tr><th>Schritt</th><th>Ergebnis</th><th>Details</th></tr></thead><tbody>${r.technical_log.map((l) => `<tr><td>${esc(l.step)}</td><td>${esc(l.outcome)}</td><td>${esc(Object.entries(l).filter(([k]) => !['step', 'outcome'].includes(k)).map(([k, v]) => `${k}: ${v}`).join(' · '))}</td></tr>`).join('')}</tbody></table>
     <p><b>Bestände:</b> ${Object.entries(r.catalogs).map(([k, c]) => `${esc(k)} ${c.version.slice(0, 12)}… (${c.item_count ?? ''})`).join(', ')}</p>
-    <p><b>Bild:</b> ${esc(b.id)}, Datei ${esc(b.file)}, SHA-256 ${b.sha256}, abgerufen ${esc(b.retrieved_at)}, Rechte: ${esc(b.rights)}. <b>Text:</b> ${esc(t.work.id)}, ${esc(t.work.attribution)} Stellenregel ${esc(t.passage_rule)}.</p>
+    <p><b>Bild:</b> ${esc(b.id)}, Datei ${esc(b.file)}, SHA-256 ${b.sha256}, abgerufen ${esc(b.retrieved_at)}, Rechte: ${esc(b.rights)}. <b>Text:</b> ${esc(t.work.id)}, ${esc(t.work.attribution)} Rechte: ${esc(t.work.rights)} Stellenregel ${esc(t.passage_rule)}.</p>
     <p>${esc(r.privacy)}</p>
     <details><summary>Vollständiges Protokoll (JSON)</summary><pre>${esc(JSON.stringify(r, null, 2))}</pre></details>`;
   $('ergebnis').hidden = false;
@@ -139,7 +148,8 @@ async function generate(e) {
   if (!name.trim()) { $('fehler').textContent = 'Bitte einen Namen oder ein Pseudonym eingeben.'; $('name').focus(); return; }
   if (!Number.isFinite(lat) || !Number.isFinite(lon) || $('lat').value === '') { $('fehler').textContent = 'Bitte einen Ort wählen (Karte, Suche oder Koordinaten).'; $('lat').focus(); return; }
   $('erzeugen').disabled = true; $('status').textContent = 'Wetter und Katalog werden abgefragt (höchstens einige Sekunden) …';
-  const input = { name, lat, lon, place_label: state.label, place_label_source: state.labelSource };
+  const lang = $('textsprache').value; const input = { name, lat, lon, place_label: state.label, place_label_source: state.labelSource, online_first: $('online-zuerst').checked && Boolean(state.cfg.online), text_languages: lang ? [lang] : [] };
+  $('status').textContent = input.online_first ? 'Wetter, Katalog und Online-Datenbanken werden abgefragt (bis etwa 15 Sekunden) …' : 'Wetter und Katalog werden abgefragt (höchstens einige Sekunden) …';
   try {
     let record;
     if (state.mode === 'server') {
@@ -177,13 +187,17 @@ async function exportJson() { const r = state.record; if (!r) return; download(`
 async function exportZip() {
   const r = state.record; if (!r) return;
   if (state.mode === 'server') { location.href = `api/constellations/${encodeURIComponent(r.id)}/export.zip`; return; }
-  const img = new Uint8Array(await (await fetch('catalog/images/' + r.culture.image.file)).arrayBuffer());
+  const im = r.culture.image; let img = null;
+  try { const res = await fetch(im.source_mode === 'online' ? (im.local_url || im.image_url) : 'catalog/images/' + im.file); if (res.ok) img = new Uint8Array(await res.arrayBuffer()); } catch {}
   download(`konstellation-${r.id}.zip`, buildPackage(r, img), 'application/zip');
 }
 
 async function main() {
   const d = await detectMode(); state.mode = d.mode; state.cfg = d.cfg;
-  if (state.mode === 'static') state.deps = makeBrowserDeps({ weatherLive: state.cfg.weatherLive });
+  if (state.mode === 'static') state.deps = makeBrowserDeps({ weatherLive: state.cfg.weatherLive, online: Boolean(state.cfg.online), textProxy: state.cfg.textProxy || null });
+  const on = state.cfg.online;
+  if (!on) { $('online-zuerst').checked = false; $('online-zuerst').disabled = true; $('quellen-hinweis').textContent = 'Offline-Betrieb: Bild und Text kommen aus dem mitgelieferten Bestand.'; }
+  else $('quellen-hinweis').textContent = `Bild: ${on.images.map((k) => ({ met: 'Met Museum', aic: 'Art Institute of Chicago' })[k] || k).join(' + ')} (nur maschinenlesbar freigegebene Werke, CC0). Text: ${on.texts.length ? 'Project Gutenberg (Public Domain USA; Schutzfrist CH/EU wird aus dem Todesjahr eingeordnet)' : 'in dieser Betriebsart nur aus dem Bestand (kein Textproxy)'}. Bei Ausfall oder Zeitüberschreitung: lokaler Bestand.`;
   $('modus').textContent = state.mode === 'server' ? 'Betriebsart: lokaler Server.' : 'Betriebsart: statisch, der Ablauf läuft in diesem Browser.';
   state.names = await loadJson('catalog/names/names.json');
   initMap(); renderRecent(); listSaved();

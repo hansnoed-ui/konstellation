@@ -3,6 +3,7 @@
 import { ALGORITHM_VERSION, normalizeName, normalizeCoords, computeS0, computeS1, uniformIndex } from './seed.js';
 import { sha256Hex } from './canonical.js';
 import { WEATHER_FIELDS, pickFromArchive, ARCHIVE_RULE } from './weather.js';
+import { ONLINE_RULE } from './online.js';
 
 export const RULES = {
   algorithm: ALGORITHM_VERSION,
@@ -14,6 +15,8 @@ export const RULES = {
   replacement: 'Ist ein gezogener Bild-/Texteintrag lokal beschädigt (Prüfsumme/Datei), wird er aus der sortierten Menge entfernt und mit dem Label «<label>#ersatz<i>» erneut gezogen; jeder Ersatz wird protokolliert.',
   weather_order: 'Live (Open-Meteo, gesamt höchstens 5 s, höchstens 2 Versuche, kein Wiederholen nach 429) → Cache (gleiche Koordinaten auf 2 Nachkommastellen, Datenzeit höchstens 3 h vor Abfragezeitpunkt) → Archiv (' + ARCHIVE_RULE + ')',
   weather_archive: ARCHIVE_RULE,
+  online: 'Standard «online zuerst»: Bild aus Strom S1|image-online, Werk aus Strom S1|text-online, jeweils ' + ONLINE_RULE + ' Die Stelle wird wie im Bestand mit S1|text-passage über die Stellen des gezogenen Werks gezogen.',
+  fallback: 'Scheitert die Online-Ziehung (kein Anbieter, Zeitbudget, keine freigegebenen Treffer), kommt der betreffende Fund aus dem lokalen Bestand; Bild und Text fallen unabhängig voneinander zurück.',
 };
 
 const WEATHER_BUDGET_MS = 5000;
@@ -116,9 +119,33 @@ export async function runConstellation(input, deps) {
   // Stufe B – S1 aus S0 und den tatsächlich verwendeten wissenschaftlichen Daten
   const s1 = await computeS1({ s0: s0.hex, weatherForSeed: wSeed, astroForSeed });
 
-  const img = await drawWithReplacement({ seed: s1.hex, label: 'image', items: manifests.images.items, verify: deps.verifyImage, log, kind: 'image' });
-  let passagesDoc = null;
-  const work = await drawWithReplacement({
+  // Stufe B, kulturelle Funde: standardmässig «online zuerst» (grosse offene Datenbanken), der lokale Bestand ist Rückfall.
+  // Bild und Werk werden unabhängig voneinander gezogen und fallen unabhängig zurück.
+  const onlineWanted = input.online_first !== false && input.online_first !== 0;
+  const onlineDeps = typeof deps.online === 'function' ? deps.online(input) : deps.online;
+  const online = { image: null, text: null };
+  let img = null; let work = null; let passagesDoc = null;
+  const tryOnline = async (kind) => {
+    const fn = onlineDeps?.[kind];
+    if (!onlineWanted) { log.push({ step: `${kind}.online`, outcome: 'nicht gewünscht – Bestand' }); return null; }
+    if (!fn) { log.push({ step: `${kind}.online`, outcome: 'nicht verfügbar in dieser Betriebsart – Bestand' }); return null; }
+    const t0 = deps.monotonic();
+    try {
+      const r = await fn(s1.hex, log);
+      online[kind] = { ...r.online, outcome: 'ok', duration_ms: Math.round(deps.monotonic() - t0) };
+      log.push({ step: `${kind}.online`, outcome: 'ok', id: r.item.id, provider: r.item.provider, tries: r.online.draws.length, total: r.online.total, duration_ms: online[kind].duration_ms });
+      return r;
+    } catch (e) {
+      online[kind] = { outcome: 'fehlgeschlagen – Rückfall auf Bestand', error: String(e.message || e), draws: e.draws || [], spaces: e.spaces || [], duration_ms: Math.round(deps.monotonic() - t0) };
+      log.push({ step: `${kind}.online`, outcome: 'fehlgeschlagen – Rückfall auf Bestand', error: String(e.message || e), tries: (e.draws || []).length, duration_ms: online[kind].duration_ms });
+      return null;
+    }
+  };
+  const [oi, ot] = await Promise.all([tryOnline('image'), tryOnline('text')]);
+  if (oi) img = { item: oi.item, draws: oi.online.draws.map(({ outcome, duration_ms, ...d }) => d) };
+  if (ot) { const { passages_doc, ...item } = ot.item; passagesDoc = passages_doc; work = { item, draws: ot.online.draws.map(({ outcome, duration_ms, ...d }) => d) }; }
+  if (!img) img = await drawWithReplacement({ seed: s1.hex, label: 'image', items: manifests.images.items, verify: deps.verifyImage, log, kind: 'image' });
+  if (!work) work = await drawWithReplacement({
     seed: s1.hex, label: 'text-work', items: manifests.texts.items, log, kind: 'text-work',
     verify: async (w) => { try { passagesDoc = await deps.loadPassages(w); return null; } catch (e) { return String(e.message || e); } },
   });
@@ -136,11 +163,12 @@ export async function runConstellation(input, deps) {
       display_name: input.name, normalized_name: normalizedName, name_normalization: 'Unicode NFC; Leerraum zusammengefasst; aussen gekürzt',
       lat: c.lat, lon: c.lon, lat6: c.lat6, lon6: c.lon6, place_label: input.place_label || null, place_label_source: input.place_label_source || null,
       coordinate_note: 'Die Koordinaten sind die verbindliche Eingabe; der Ortsname ist nur Beschriftung.',
+      online_first: onlineWanted, text_languages: onlineDeps?.languages ?? null,
     },
     seeds: {
       S0: { hex: s0.hex, canonical_input: s0.canonical },
       S1: { hex: s1.hex, canonical_input: s1.canonical },
-      draws: { astro: astroDraw, image: img.draws, text_work: work.draws, text_passage: { ...pDraw, n_passages: passages.length } },
+      draws: { astro: astroDraw, image: img.draws, image_source: img.item.source_mode || 'local', text_work: work.draws, text_source: work.item.source_mode || 'local', text_passage: { ...pDraw, n_passages: passages.length } },
     },
     science: {
       weather: {
@@ -160,12 +188,14 @@ export async function runConstellation(input, deps) {
       },
     },
     culture: {
-      image: { ...img.item },
+      image: { source_mode: 'local', ...img.item },
+      image_online: online.image,
       text: {
-        work: { ...work.item },
-        passage: { n: passage.n, text: passage.text, words: passage.words, chapter: passage.chapter, heads: passage.heads, p_from: passage.p_from, p_to: passage.p_to, part: passage.part, sha256: await sha256Hex(passage.text) },
-        passage_rule: passagesDoc.rule,
+        work: { source_mode: 'local', ...work.item },
+        passage: { n: passage.n, text: passage.text, words: passage.words, form: passage.form || 'prosa', chapter: passage.chapter, heads: passage.heads, p_from: passage.p_from, p_to: passage.p_to, part: passage.part, sha256: await sha256Hex(passage.text) },
+        passage_rule: passagesDoc.rule, passage_stats: passagesDoc.excluded ? { excluded: passagesDoc.excluded, paragraphs: passagesDoc.paragraphs ?? null } : null,
       },
+      text_online: online.text,
     },
     catalogs: Object.fromEntries(Object.entries(manifests).map(([k, m]) => [k, { version: m.version, item_count: m.items.length }])),
     rules: RULES,
@@ -178,7 +208,7 @@ export async function runConstellation(input, deps) {
 
 // Rechnet S0, S1 und alle Ziehungen aus einem gespeicherten Protokoll und den aktuell geladenen Beständen nach.
 export async function verifyRecord(record, deps) {
-  const issues = [];
+  const issues = []; const notes = [];
   const s0 = await computeS0({ normalizedName: record.input.normalized_name, lat6: record.input.lat6, lon6: record.input.lon6, queryTimeUtc: record.time.query_time_utc });
   if (s0.hex !== record.seeds.S0.hex) issues.push('S0 weicht ab');
   const s1 = await computeS1({ s0: s0.hex, weatherForSeed: record.science.weather.used_for_seed, astroForSeed: record.science.astro.used_for_seed });
@@ -187,8 +217,10 @@ export async function verifyRecord(record, deps) {
     const m = await deps.loadCatalog(k);
     if (m.version !== record.catalogs[k].version) { issues.push(`Bestand ${k}: Version ${m.version.slice(0, 12)} ≠ ${record.catalogs[k].version.slice(0, 12)} – Neuauswahl nicht prüfbar`); continue; }
     if (k === 'exoplanets') { const d = await uniformIndex(s0.hex, 'astro', m.items.length); if (m.items[d.index].id !== record.science.astro.id) issues.push('Astronomie-Ziehung weicht ab'); }
+    if (k === 'images' && record.seeds.draws.image_source === 'online') { notes.push('Bild online gezogen (' + record.culture.image.provider + '): über ID/URL/Prüfsumme im Protokoll wiederholbar, gegen einen späteren Datenbankstand nicht neu berechenbar'); continue; }
+    if (k === 'texts' && record.seeds.draws.text_source === 'online') { notes.push('Text online gezogen (' + record.culture.text.work.provider + '): über ID/URL im Protokoll wiederholbar, gegen einen späteren Datenbankstand nicht neu berechenbar'); continue; }
     if (k === 'images') { const last = record.seeds.draws.image.at(-1); if (last.id !== record.culture.image.id) issues.push('Bild-Ziehung inkonsistent'); const d = await uniformIndex(s1.hex, 'image', m.items.length); if (m.items[d.index].id !== record.seeds.draws.image[0].id) issues.push('Bild-Ziehung weicht ab'); }
     if (k === 'texts') { const d = await uniformIndex(s1.hex, 'text-work', m.items.length); if (m.items[d.index].id !== record.seeds.draws.text_work[0].id) issues.push('Werk-Ziehung weicht ab'); }
   }
-  return { ok: issues.length === 0, issues, s0: s0.hex, s1: s1.hex };
+  return { ok: issues.length === 0, issues, notes, s0: s0.hex, s1: s1.hex };
 }
