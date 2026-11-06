@@ -1,0 +1,177 @@
+{
+ "id": "ld1-1643381040022-1643381044630-1",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1839"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "John Wood Dodge, born New York City 1807-died Pomona, TN 1893"
+    },
+    {
+     "label": "Sitter",
+     "content": "Elija Rice"
+    }
+   ],
+   "notes": [
+    {
+     "label": "Luce Center Label",
+     "content": "Colonel Elijah Rice invested heavily in sugar cane in Cuba, as a thriving part of the slave trade before the Civil War. His life ended in tragedy when he and all but one of his fourteen children died of consumption in Cuba. His widow, with her surviving daughter, Amanda, returned to Huntsville, Alabama, where John Wood Dodge painted this piece. The locket has elaborate hairwork on the reverse."
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Portrait male\\bust"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of Mr. and Mrs. Robert A. Blackford"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1973.40"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting-Miniature"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on ivory"
+    },
+    {
+     "label": "Dimensions",
+     "content": "image: sight 2 1/2 x 2 in. (6.4 x 5.2 cm) oval"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1830s"
+   ],
+   "name": [
+    "Dodge, John Wood",
+    "Rice, Elija"
+   ],
+   "topic": [
+    "Men",
+    "Portraits"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk77974c37e-5a12-45dd-b83e-835f9df05f9c",
+   "title": {
+    "label": "Title",
+    "content": "Colonel Elijah Rice"
+   },
+   "record_ID": "saam_1973.40",
+   "unit_code": "SAAM",
+   "title_sort": "COLONEL ELIJAH RICE",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=6904",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1973.40_2",
+      "guid": "http://n2t.net/ark:/65665/bj9bf16f4a3-51b6-4d69-83d8-d93703f0d215",
+      "type": "Images",
+      "idsId": "SAAM-1973.40_2",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 5327,
+      "height": 7360,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1973.40_2",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1973.40_2",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1973.40_2.tif",
+        "width": 2171,
+        "height": 3000,
+        "dimensions": "2171x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1973.40_2.jpg",
+        "width": 2171,
+        "height": 3000,
+        "dimensions": "2171x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1973.40_2_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1973.40_2_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1973.40",
+ "hash": "05f2c15155ef6f07c26c18bea5d4a2e2113ec808",
+ "docSignature": "9fd042e564f6ece2f787c5e42a929813",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793220300,
+ "title": "Colonel Elijah Rice"
+}

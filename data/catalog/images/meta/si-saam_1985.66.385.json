@@ -1,0 +1,178 @@
+{
+ "id": "ld1-1643381040022-1643381043049-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1832"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "George Catlin, born Wilkes-Barre, PA 1796-died Jersey City, NJ 1872"
+    }
+   ],
+   "notes": [
+    {
+     "label": "Luce Center Label",
+     "content": "George Catlin journeyed up the Missouri River in 1832. “I often landed my skiff,” he recalled, “and mounted the green carpeted bluffs whose soft grassy tops, invited me to recline, where I was at once lost in contemplation. Soul melting scenery that was about me! A place where the mind could think volumes; but the tongue must be silent that would speak, and the hand palsied that would write.” (Catlin, Letters and Notes, vol. 2, no. 32, 1841; reprint 1973)"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Western"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\mountain\\Nishnabottana Bluffs"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of Mrs. Joseph Harrison, Jr."
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1985.66.385"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "11 1/4 x 14 3/8 in. (28.5 x 36.6 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1830s"
+   ],
+   "name": [
+    "Catlin, George"
+   ],
+   "topic": [
+    "Western",
+    "Mountains",
+    "Landscapes",
+    "Nishnabottana Bluffs"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk730001277-6ea4-4220-be93-0c6296ad4134",
+   "title": {
+    "label": "Title",
+    "content": "Nishnabottana Bluffs, 1070 Miles above St. Louis"
+   },
+   "record_ID": "saam_1985.66.385",
+   "unit_code": "SAAM",
+   "title_sort": "NISHNABOTTANA BLUFFS, 1070 MILES ABOVE ST. LOUIS",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=4285",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1985.66.385_1",
+      "guid": "http://n2t.net/ark:/65665/bj9e5b4fd32-bbe1-42f8-8a2d-ed1917d0ff76",
+      "type": "Images",
+      "idsId": "SAAM-1985.66.385_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 2560,
+      "height": 1948,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1985.66.385_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1985.66.385_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.385_1.tif",
+        "width": 2657,
+        "height": 2022,
+        "dimensions": "2657x2022"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.385_1.jpg",
+        "width": 2657,
+        "height": 2022,
+        "dimensions": "2657x2022"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.385_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.385_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1985.66.385",
+ "hash": "018dc9cc747f13d75edf49a5c62c915006504052",
+ "docSignature": "965be30df13d4a6b9cd8ef3e34797484",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793270193,
+ "title": "Nishnabottana Bluffs, 1070 Miles above St. Louis"
+}

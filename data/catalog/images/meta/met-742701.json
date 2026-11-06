@@ -1,0 +1,103 @@
+{
+ "objectID": 742701,
+ "isHighlight": false,
+ "accessionNumber": "59.533.961",
+ "accessionYear": "1959",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP873756.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP873756.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 165095,
+   "role": "Artist and publisher",
+   "name": "Thomas Rowlandson",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500006930",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q318584",
+   "gender": ""
+  }
+ ],
+ "department": "Drawings and Prints",
+ "objectName": "Print",
+ "title": "View of the Interior of Simon Ward Alias St Brewer Church Cornwall",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist and publisher",
+ "artistPrefix": "",
+ "artistDisplayName": "Thomas Rowlandson",
+ "artistDisplayBio": "British, London 1757–1827 London",
+ "artistSuffix": "",
+ "artistAlphaSort": "Rowlandson, Thomas",
+ "artistNationality": "British",
+ "artistBeginDate": "1757",
+ "artistEndDate": "1827",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q318584",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500006930",
+ "objectDate": "April 1806",
+ "objectBeginDate": 1806,
+ "objectEndDate": 1806,
+ "medium": "Hand-colored etching",
+ "dimensions": "Sheet: 9 5/16 × 11 3/4 in. (23.7 × 29.8 cm)",
+ "measurements": [
+  {
+   "elementName": "Sheet",
+   "elementDescription": "trimmed",
+   "elementMeasurements": {
+    "Height": 23.7,
+    "Width": 29.8
+   }
+  }
+ ],
+ "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1959",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Prints",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/742701",
+ "tags": [
+  {
+   "term": "Satire",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300055934",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q128758"
+  },
+  {
+   "term": "Interiors",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300391239",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q2998430"
+  },
+  {
+   "term": "Churches",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300007466",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q16970"
+  },
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  },
+  {
+   "term": "Women",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q97771931",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

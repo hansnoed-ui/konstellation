@@ -1,0 +1,83 @@
+{
+ "objectID": 633050,
+ "isHighlight": false,
+ "accessionNumber": "26.57.22",
+ "accessionYear": "1926",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP869300.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP869300.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 94636,
+   "role": "Artist",
+   "name": "Anonymous, Italian, 16th century",
+   "constituentULAN_URL": "",
+   "constituentWikidata_URL": "",
+   "gender": ""
+  }
+ ],
+ "department": "Drawings and Prints",
+ "objectName": "Print",
+ "title": "Book illustration or more likely a trademark with a coat of arms featuring a lion and a tower set within an arch",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Anonymous, Italian, 16th century",
+ "artistDisplayBio": "",
+ "artistSuffix": "",
+ "artistAlphaSort": "Anonymous, Italian, 16th century",
+ "artistNationality": "Italian",
+ "artistBeginDate": "1500",
+ "artistEndDate": "1600",
+ "artistGender": "",
+ "artistWikidata_URL": "",
+ "artistULAN_URL": "",
+ "objectDate": "16th century",
+ "objectBeginDate": 1500,
+ "objectEndDate": 1599,
+ "medium": "Woodcut image on left side of a folded sheet, right side pen and ink mathematical calculations",
+ "dimensions": "Sheet: 11 13/16 × 17 15/16 in. (30 × 45.5 cm)",
+ "measurements": [
+  {
+   "elementName": "Sheet",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 30,
+    "Width": 45.5
+   }
+  }
+ ],
+ "creditLine": "Harris Brisbane Dick Fund, 1926",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Prints",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-07-03T04:50:21.307Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/633050",
+ "tags": [
+  {
+   "term": "Coat of Arms",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300126352",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q14659"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

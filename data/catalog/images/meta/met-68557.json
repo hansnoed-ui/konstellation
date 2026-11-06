@@ -1,0 +1,79 @@
+{
+ "objectID": 68557,
+ "isHighlight": false,
+ "accessionNumber": "30.75.68",
+ "accessionYear": "1930",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/RT729.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/RT729.jpg",
+ "additionalImages": [],
+ "constituents": null,
+ "department": "Asian Art",
+ "objectName": "Panel",
+ "title": "Panel",
+ "culture": "China",
+ "period": "Qing dynasty (1644–1911), Qianlong period (1736–95)",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "",
+ "artistPrefix": "",
+ "artistDisplayName": "",
+ "artistDisplayBio": "",
+ "artistSuffix": "",
+ "artistAlphaSort": "",
+ "artistNationality": "",
+ "artistBeginDate": "",
+ "artistEndDate": "",
+ "artistGender": "",
+ "artistWikidata_URL": "",
+ "artistULAN_URL": "",
+ "objectDate": "",
+ "objectBeginDate": 1736,
+ "objectEndDate": 1795,
+ "medium": "Silk;  on silk;  bordered with silk;  backed with silk",
+ "dimensions": "15 1/2 x 12 3/4 in. (39.37 x 32.38 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 39.37,
+    "Width": 32.385
+   }
+  }
+ ],
+ "creditLine": "Bequest of William Christian Paul, 1929",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Textiles-Embroidered",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2022-04-23T05:14:13.54Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/68557",
+ "tags": [
+  {
+   "term": "Human Figures",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300404114",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q5937779"
+  },
+  {
+   "term": "Horses",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300250148",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q726"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

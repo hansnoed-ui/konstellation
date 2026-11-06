@@ -1,0 +1,190 @@
+{
+ "id": "ld1-1643381040022-1643381042908-1",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1832"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "George Catlin, born Wilkes-Barre, PA 1796-died Jersey City, NJ 1872"
+    },
+    {
+     "label": "Sitter",
+     "content": "He Who Has Eyes Behind Him"
+    }
+   ],
+   "notes": [
+    {
+     "label": "Luce Center Label",
+     "content": "George Catlin may have painted Broken Arm, a member of the Plains Cree tribe, in St. Louis, at the same time the Light passed through the city on his way to Washington (see 1985.66.474). Broken Arm wears over his temples a pair of “hair pipes,” Bahamian conch shell ornaments distributed in the 1830s by white traders on the Upper Missouri. (Truettner, The Natural Man Observed, 1979)"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Indian"
+    },
+    {
+     "label": "Topic",
+     "content": "Indian\\Cree"
+    },
+    {
+     "label": "Topic",
+     "content": "Portrait male"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of Mrs. Joseph Harrison, Jr."
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1985.66.176"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "29 x 24 in. (73.7 x 60.9 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1830s"
+   ],
+   "name": [
+    "Catlin, George",
+    "He Who Has Eyes Behind Him"
+   ],
+   "topic": [
+    "Men",
+    "Portraits"
+   ],
+   "culture": [
+    "Indians of North America",
+    "Cree Indians",
+    "Native Americans"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk732058ec2-15b6-4de5-bd28-b0394fb8fd41",
+   "title": {
+    "label": "Title",
+    "content": "Eeh-tow-wées-ka-zeet, He Who Has Eyes Behind Him (also known as Broken Arm), a Foremost Brave"
+   },
+   "record_ID": "saam_1985.66.176",
+   "unit_code": "SAAM",
+   "title_sort": "EEH-TOW-WÉES-KA-ZEET, HE WHO HAS EYES BEHIND HIM (ALSO KNOWN AS BROKEN ARM), A FOREMOST BRAVE",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=4092",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1985.66.176_1",
+      "guid": "http://n2t.net/ark:/65665/bj94858b6e1-144b-4eb1-a7a2-fafe36e15464",
+      "type": "Images",
+      "idsId": "SAAM-1985.66.176_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 1832,
+      "height": 2240,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1985.66.176_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1985.66.176_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.176_1.tif",
+        "width": 1869,
+        "height": 2285,
+        "dimensions": "1869x2285"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.176_1.jpg",
+        "width": 1869,
+        "height": 2285,
+        "dimensions": "1869x2285"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.176_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.176_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1985.66.176",
+ "hash": "0551dcaa864ab43f689e875a6525fad7cc548d88",
+ "docSignature": "f5b7e1f69793601f6e2c707cf4131a20",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793270193,
+ "title": "Eeh-tow-wées-ka-zeet, He Who Has Eyes Behind Him (also known as Broken Arm), a Foremost Brave"
+}

@@ -1,0 +1,115 @@
+{
+ "objectID": 437305,
+ "isHighlight": false,
+ "accessionNumber": "64.154.1",
+ "accessionYear": "1964",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DT1867.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1867.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 162257,
+   "role": "Artist",
+   "name": "Camille Pissarro",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500001924",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q134741",
+   "gender": ""
+  }
+ ],
+ "department": "European Paintings",
+ "objectName": "Painting",
+ "title": "A Washerwoman at Eragny",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Camille Pissarro",
+ "artistDisplayBio": "French, Charlotte Amalie, Saint Thomas 1830–1903 Paris",
+ "artistSuffix": "",
+ "artistAlphaSort": "Pissarro, Camille",
+ "artistNationality": "French",
+ "artistBeginDate": "1830",
+ "artistEndDate": "1903",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q134741",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500001924",
+ "objectDate": "1893",
+ "objectBeginDate": 1893,
+ "objectEndDate": 1893,
+ "medium": "Oil on canvas",
+ "dimensions": "18 x 15 in. (45.7 x 38.1 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 45.7,
+    "Width": 38.1
+   }
+  },
+  {
+   "elementName": "Framed",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Depth": 10.795022,
+    "Height": 68.262634,
+    "Width": 60.96012
+   }
+  },
+  {
+   "elementName": "Glazing",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Length": 49.530098,
+    "Width": 41.27508
+   }
+  }
+ ],
+ "creditLine": "Gift of Mr. and Mrs. Richard Rodgers, 1964",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Paintings",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2026-10-28T04:58:06.227Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/437305",
+ "tags": [
+  {
+   "term": "Gardens",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300008090",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q1107656"
+  },
+  {
+   "term": "Women",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+  },
+  {
+   "term": "Washing",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300053042",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q23841"
+  },
+  {
+   "term": "Working",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300412186",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q6958747"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q19912926",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

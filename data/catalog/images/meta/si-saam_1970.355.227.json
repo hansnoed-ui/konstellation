@@ -1,0 +1,171 @@
+{
+ "id": "ld1-1643381040022-1643381056855-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1900"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Mary Vaux Walcott, born Philadelphia, PA 1860-died St. Andrews, New Brunswick, Canada 1940"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Willow"
+    },
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Salix"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the artist"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1970.355.227"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 10 x 6 7/8 in. (25.5 x 17.6 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1900s"
+   ],
+   "name": [
+    "Walcott, Mary Vaux"
+   ],
+   "topic": [
+    "Salix",
+    "Willow",
+    "Botanical study"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk754a21dc2-2910-4a6d-89dd-c1250b6106d6",
+   "title": {
+    "label": "Title",
+    "content": "Willow (Salix)"
+   },
+   "record_ID": "saam_1970.355.227",
+   "unit_code": "SAAM",
+   "title_sort": "WILLOW (SALIX)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=26575",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1970.355.227_2",
+      "guid": "http://n2t.net/ark:/65665/bj94226b15a-1e15-448b-993d-fe12a27c9126",
+      "type": "Images",
+      "idsId": "SAAM-1970.355.227_2",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 5748,
+      "height": 8000,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.227_2",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.227_2",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.227_2.tif",
+        "width": 2156,
+        "height": 3000,
+        "dimensions": "2156x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.227_2.jpg",
+        "width": 2156,
+        "height": 3000,
+        "dimensions": "2156x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.227_2_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.227_2_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1970.355.227",
+ "hash": "03ecbf9e1d34faa291ef26534819f2b523fac269",
+ "docSignature": "dde0897ebd3c94a1455da23d1ab518dd",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "Willow (Salix)"
+}

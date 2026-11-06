@@ -1,0 +1,88 @@
+{
+ "objectID": 437962,
+ "isHighlight": false,
+ "accessionNumber": "48.187.495",
+ "accessionYear": "1948",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DT200585.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT200585.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 162780,
+   "role": "Artist",
+   "name": "Christian Friedrich Zincke",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500011388",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q1028749",
+   "gender": ""
+  }
+ ],
+ "department": "European Paintings",
+ "objectName": "Painting, miniature",
+ "title": "Portrait of a Young Man",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Christian Friedrich Zincke",
+ "artistDisplayBio": "German, Dresden 1683/85–1767 London",
+ "artistSuffix": "",
+ "artistAlphaSort": "Zincke, Christian Friedrich",
+ "artistNationality": "German",
+ "artistBeginDate": "1683",
+ "artistEndDate": "1767",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q1028749",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500011388",
+ "objectDate": "",
+ "objectBeginDate": 1703,
+ "objectEndDate": 1767,
+ "medium": "Enamel",
+ "dimensions": "Oval, 1 3/4 x 1 3/8 in. (45 x 36 mm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 4.4,
+    "Width": 3.5
+   }
+  }
+ ],
+ "creditLine": "Bequest of Catherine D. Wentworth, 1948",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Miniatures",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-01-30T04:54:21.21Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/437962",
+ "tags": [
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  },
+  {
+   "term": "Portraits",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300015637",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q134307"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q19913831",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

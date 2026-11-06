@@ -1,0 +1,171 @@
+{
+ "id": "ld1-1643381040022-1643381056862-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1902"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Mary Vaux Walcott, born Philadelphia, PA 1860-died St. Andrews, New Brunswick, Canada 1940"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Wood-nymph"
+    },
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Moneses uniflora"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the artist"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1970.355.147"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 10 x 7 in. (25.4 x 17.7 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1900s"
+   ],
+   "name": [
+    "Walcott, Mary Vaux"
+   ],
+   "topic": [
+    "Moneses uniflora",
+    "Botanical study",
+    "Wood-nymph"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk7ff217493-c359-48e6-a916-43e324b0f1c7",
+   "title": {
+    "label": "Title",
+    "content": "Wood-Nymph (Moneses uniflora)"
+   },
+   "record_ID": "saam_1970.355.147",
+   "unit_code": "SAAM",
+   "title_sort": "WOOD-NYMPH (MONESES UNIFLORA)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=26582",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1970.355.147_2",
+      "guid": "http://n2t.net/ark:/65665/bj92c25314d-3fd2-4101-92b8-be62d2d06aca",
+      "type": "Images",
+      "idsId": "SAAM-1970.355.147_2",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 4950,
+      "height": 7040,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.147_2",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.147_2",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.147_2.tif",
+        "width": 2110,
+        "height": 3000,
+        "dimensions": "2110x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.147_2.jpg",
+        "width": 2110,
+        "height": 3000,
+        "dimensions": "2110x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.147_2_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.147_2_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1970.355.147",
+ "hash": "02235afd3a80e1fc006cc737cd8326e1dc17a8cf",
+ "docSignature": "3095bea990de953f7a1e0dac43e76687",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "Wood-Nymph (Moneses uniflora)"
+}

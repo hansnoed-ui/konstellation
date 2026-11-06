@@ -1,0 +1,103 @@
+{
+ "objectID": 55659,
+ "isHighlight": false,
+ "accessionNumber": "JP3452",
+ "accessionYear": "1975",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/DP122783.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP122783.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 164764,
+   "role": "Artist",
+   "name": "Utagawa Hiroshige",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500019641",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q200798",
+   "gender": ""
+  }
+ ],
+ "department": "Asian Art",
+ "objectName": "Print",
+ "title": "東海道五十三次　三島",
+ "culture": "Japan",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Utagawa Hiroshige",
+ "artistDisplayBio": "Japanese, Tokyo (Edo) 1797–1858 Tokyo (Edo)",
+ "artistSuffix": "",
+ "artistAlphaSort": "Utagawa, Hiroshige",
+ "artistNationality": "Japanese",
+ "artistBeginDate": "1797",
+ "artistEndDate": "1858",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q200798",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500019641",
+ "objectDate": "early 20th century",
+ "objectBeginDate": 1900,
+ "objectEndDate": 1933,
+ "medium": "Woodblock print; ink and color on paper",
+ "dimensions": "7 x 9 in. (17.8 x 22.9 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 17.8,
+    "Width": 22.9
+   }
+  }
+ ],
+ "creditLine": "Gift of Cole J. Younger, 1975",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Prints",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/55659",
+ "tags": [
+  {
+   "term": "Houses",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300005433",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q3947"
+  },
+  {
+   "term": "Bridges",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300386855",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q12280"
+  },
+  {
+   "term": "Landscapes",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300132294",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q191163"
+  },
+  {
+   "term": "Trees",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300132410",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q10884"
+  },
+  {
+   "term": "Snow",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300055381",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q7561"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

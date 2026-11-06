@@ -1,0 +1,171 @@
+{
+ "id": "ld1-1643381040022-1643381056664-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1920"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Mary Vaux Walcott, born Philadelphia, PA 1860-died St. Andrews, New Brunswick, Canada 1940"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Sarracenia rubra"
+    },
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Sweet pitcherplant"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the artist"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1970.355.588"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 10 x 7 in. (25.5 x 17.8 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1920s"
+   ],
+   "name": [
+    "Walcott, Mary Vaux"
+   ],
+   "topic": [
+    "Sarracenia rubra",
+    "Sweet pitcherplant",
+    "Botanical study"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk71055bd25-9415-4a47-8310-7d8799373d79",
+   "title": {
+    "label": "Title",
+    "content": "Sweet Pitcherplant (Sarracenia rubra)"
+   },
+   "record_ID": "saam_1970.355.588",
+   "unit_code": "SAAM",
+   "title_sort": "SWEET PITCHERPLANT (SARRACENIA RUBRA)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=26383",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1970.355.588_1",
+      "guid": "http://n2t.net/ark:/65665/bj99b9f7960-99eb-4001-93dd-81d625c6f695",
+      "type": "Images",
+      "idsId": "SAAM-1970.355.588_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 2018,
+      "height": 2880,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.588_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.588_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.588_1.tif",
+        "width": 2102,
+        "height": 3000,
+        "dimensions": "2102x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.588_1.jpg",
+        "width": 2102,
+        "height": 3000,
+        "dimensions": "2102x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.588_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.588_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1970.355.588",
+ "hash": "01cfe9e6702aeb6d6b8bbdc3cf14f3ead1a6cb3c",
+ "docSignature": "f994d19a1d06f2a28f0f4c125f734495",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "Sweet Pitcherplant (Sarracenia rubra)"
+}

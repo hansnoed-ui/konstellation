@@ -1,0 +1,90 @@
+{
+ "objectID": 685679,
+ "isHighlight": false,
+ "accessionNumber": "1970.659.339",
+ "accessionYear": "1970",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ph/original/DP-386-099.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP-386-099.jpg",
+ "additionalImages": [
+  "https://images.metmuseum.org/CRDImages/ph/original/DP-386-100.jpg"
+ ],
+ "constituents": [
+  {
+   "constituentID": 183970,
+   "role": "Photography Studio",
+   "name": "John and Charles Watkins",
+   "constituentULAN_URL": "",
+   "constituentWikidata_URL": "",
+   "gender": ""
+  }
+ ],
+ "department": "Photographs",
+ "objectName": "Carte-de-visite",
+ "title": "[John Gibson]",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Photography Studio",
+ "artistPrefix": "",
+ "artistDisplayName": "John and Charles Watkins",
+ "artistDisplayBio": "British, active 1867–71",
+ "artistSuffix": "",
+ "artistAlphaSort": "John and Charles Watkins",
+ "artistNationality": "British",
+ "artistBeginDate": "1840",
+ "artistEndDate": "1875",
+ "artistGender": "",
+ "artistWikidata_URL": "",
+ "artistULAN_URL": "",
+ "objectDate": "1860s",
+ "objectBeginDate": 1860,
+ "objectEndDate": 1869,
+ "medium": "Albumen silver print",
+ "dimensions": "Approx. 10.2 x 6.3 cm (4 x 2 1/2 in.)",
+ "measurements": [
+  {
+   "elementName": "Image",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 10.2,
+    "Width": 6.3
+   }
+  }
+ ],
+ "creditLine": "The Albert Ten Eyck Gardner Collection, Gift of the Centennial Committee, 1970",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Photographs",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/685679",
+ "tags": [
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  },
+  {
+   "term": "Portraits",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300015637",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q134307"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

@@ -1,0 +1,183 @@
+{
+ "id": "ld1-1643381040022-1643381046682-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1841"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "George Peter Alexander Healy, born Boston, MA 1813-died Chicago, IL 1894"
+    },
+    {
+     "label": "Sitter",
+     "content": "Francois Pierre Guillaume Guizot"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Occupation\\political\\statesman"
+    },
+    {
+     "label": "Topic",
+     "content": "Portrait male"
+    },
+    {
+     "label": "Topic",
+     "content": "Object\\written matter\\book"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Transfer from the National Institute"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "XX111"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "94 x 56 in. (238.8 x 142.2 cm.)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1840s"
+   ],
+   "name": [
+    "Guizot, Francois Pierre Guillaume",
+    "Healy, George Peter Alexander"
+   ],
+   "topic": [
+    "Books and reading",
+    "Statesman",
+    "Occupations",
+    "Men",
+    "Portraits",
+    "Political"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk71fb33008-6f40-4e61-84c3-8c3d25d65099",
+   "title": {
+    "label": "Title",
+    "content": "Francois Pierre Guillaume Guizot"
+   },
+   "record_ID": "saam_XX111",
+   "unit_code": "SAAM",
+   "title_sort": "FRANCOIS PIERRE GUILLAUME GUIZOT",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=10163",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-XX111_1",
+      "guid": "http://n2t.net/ark:/65665/bj9c70060cd-2d39-4dd5-887d-81b264f0dc77",
+      "type": "Images",
+      "idsId": "SAAM-XX111_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 1942,
+      "height": 3200,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-XX111_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-XX111_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-XX111_1.tif",
+        "width": 1821,
+        "height": 3000,
+        "dimensions": "1821x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-XX111_1.jpg",
+        "width": 1821,
+        "height": 3000,
+        "dimensions": "1821x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-XX111_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-XX111_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_XX111",
+ "hash": "05b9b2288e622d0952c17139887ef09b3fde90be",
+ "docSignature": "8663d058ace3dd9e64951e3cd4a26131",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793270193,
+ "title": "Francois Pierre Guillaume Guizot"
+}

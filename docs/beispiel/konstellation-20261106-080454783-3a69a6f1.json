@@ -1,0 +1,357 @@
+{
+  "schema": "konstellation-record/1",
+  "id": "20261106-080454783-3a69a6f1",
+  "algorithm_version": "konstellation/1",
+  "mode": "lokal (Node-Server)",
+  "time": {
+    "query_time_utc": "2026-11-06T08:04:54.783Z",
+    "time_source": "Systemuhr des lokalen Servers (Date) beim Empfang von «Konstellation erzeugen»",
+    "note": "Abfragezeitpunkt: einmal beim Auslösen erfasst. Datenzeitpunkt und Abrufzeitpunkt stehen getrennt bei den Funden."
+  },
+  "input": {
+    "display_name": "Beispiel",
+    "normalized_name": "Beispiel",
+    "name_normalization": "Unicode NFC; Leerraum zusammengefasst; aussen gekürzt",
+    "lat": 46.948,
+    "lon": 7.4474,
+    "lat6": "46.948000",
+    "lon6": "7.447400",
+    "place_label": "Bern",
+    "place_label_source": "Kommandozeile",
+    "coordinate_note": "Die Koordinaten sind die verbindliche Eingabe; der Ortsname ist nur Beschriftung."
+  },
+  "seeds": {
+    "S0": {
+      "hex": "ffed2fd427998f94e476da6c4f29c9a5362c8991c6d0d848588589852c44990a",
+      "canonical_input": "{\"algorithm\":\"konstellation/1\",\"lat\":\"46.948000\",\"lon\":\"7.447400\",\"name\":\"Beispiel\",\"query_time_utc\":\"2026-11-06T08:04:54.783Z\",\"stage\":\"S0\"}"
+    },
+    "S1": {
+      "hex": "3a69a6f1343b6bae3c6f97f3d953f080085e288a4dc27248aaa9273f994c2d26",
+      "canonical_input": "{\"algorithm\":\"konstellation/1\",\"astro\":{\"catalog\":\"NASA Exoplanet Archive pscomppars\",\"id\":\"Kepler-656 b\",\"record\":{\"dec\":47.381538,\"decstr\":\"+47d22m53.54s\",\"disc_facility\":\"Kepler\",\"disc_year\":2016,\"discoverymethod\":\"Transit\",\"hostname\":\"Kepler-656\",\"pl_bmasse\":9.91,\"pl_bmassprov\":\"M-R relationship\",\"pl_eqt\":1569,\"pl_name\":\"Kepler-656 b\",\"pl_orbeccen\":0,\"pl_orbper\":1.260259094,\"pl_orbsmax\":0.02231,\"pl_pubdate\":null,\"pl_rade\":3.12,\"ra\":288.3278778,\"rastr\":\"19h13m18.69s\",\"st_mass\":0.86,\"st_rad\":0.82,\"st_spectype\":null,\"st_teff\":5281,\"sy_dist\":890.352,\"sy_pnum\":2,\"sy_snum\":1,\"sy_vmag\":15.549}},\"s0\":\"ffed2fd427998f94e476da6c4f29c9a5362c8991c6d0d848588589852c44990a\",\"stage\":\"S1\",\"weather\":{\"data_kind\":\"Modelldaten (Open-Meteo «current», Best-Match-Wettermodelle; 15-Minuten-Werte)\",\"data_time_utc\":\"2026-11-06T08:00:00.000Z\",\"location_id\":null,\"provided_lat\":46.951378,\"provided_lon\":7.4586725,\"source\":\"open-meteo-forecast\",\"units\":{\"cloud_cover\":\"%\",\"precipitation\":\"mm\",\"pressure_msl\":\"hPa\",\"temperature_2m\":\"°C\",\"wind_direction_10m\":\"°\",\"wind_speed_10m\":\"km/h\"},\"values\":{\"cloud_cover\":100,\"precipitation\":0,\"pressure_msl\":1023.8,\"temperature_2m\":5.5,\"wind_direction_10m\":315,\"wind_speed_10m\":2}}}"
+    },
+    "draws": {
+      "astro": {
+        "index": 4487,
+        "n": 6464,
+        "label": "astro",
+        "counter": 0,
+        "digest": "1720012a1af86c879e4c6af8e831cb97b09f432dbe3c63dc9de1dcf48ee3a3df"
+      },
+      "image": [
+        {
+          "label": "image",
+          "n": 60,
+          "index": 4,
+          "counter": 0,
+          "id": "met-404637"
+        }
+      ],
+      "text_work": [
+        {
+          "label": "text-work",
+          "n": 30,
+          "index": 13,
+          "counter": 0,
+          "id": "eltec-DEU042"
+        }
+      ],
+      "text_passage": {
+        "index": 192,
+        "n": 1611,
+        "label": "text-passage",
+        "counter": 0,
+        "digest": "8961b6ec424b5627b022cb77d8c367625225abd3ea961a3a2456a4cb67dbd873",
+        "n_passages": 1611
+      }
+    }
+  },
+  "science": {
+    "weather": {
+      "level": "live",
+      "level_label": "Aktueller Abruf",
+      "source": "open-meteo-forecast",
+      "data_kind": "Modelldaten (Open-Meteo «current», Best-Match-Wettermodelle; 15-Minuten-Werte)",
+      "data_time_utc": "2026-11-06T08:00:00.000Z",
+      "retrieved_at": "2026-11-06T08:04:59.505Z",
+      "requested": {
+        "lat": 46.948,
+        "lon": 7.4474
+      },
+      "provided": {
+        "lat": 46.951378,
+        "lon": 7.4586725,
+        "elevation_m": 554,
+        "kind": "Rasterzelle des Wettermodells"
+      },
+      "distance_km": null,
+      "values": {
+        "temperature_2m": {
+          "value": 5.5,
+          "unit": "°C"
+        },
+        "wind_speed_10m": {
+          "value": 2,
+          "unit": "km/h"
+        },
+        "wind_direction_10m": {
+          "value": 315,
+          "unit": "°"
+        },
+        "pressure_msl": {
+          "value": 1023.8,
+          "unit": "hPa"
+        },
+        "cloud_cover": {
+          "value": 100,
+          "unit": "%"
+        },
+        "precipitation": {
+          "value": 0,
+          "unit": "mm"
+        }
+      },
+      "notes": [
+        "Niederschlag: Summe des vorangehenden Intervalls (interval_seconds)."
+      ],
+      "source_url": "https://api.open-meteo.com/v1/forecast?latitude=46.948&longitude=7.4474&current=temperature_2m,wind_speed_10m,wind_direction_10m,pressure_msl,cloud_cover,precipitation&timezone=GMT&cell_selection=nearest&wind_speed_unit=kmh",
+      "raw": {
+        "response_text": "{\"latitude\":46.951378,\"longitude\":7.4586725,\"generationtime_ms\":0.13387203216552734,\"utc_offset_seconds\":0,\"timezone\":\"GMT\",\"timezone_abbreviation\":\"GMT\",\"elevation\":554.0,\"current_units\":{\"time\":\"iso8601\",\"interval\":\"seconds\",\"temperature_2m\":\"°C\",\"wind_speed_10m\":\"km/h\",\"wind_direction_10m\":\"°\",\"pressure_msl\":\"hPa\",\"cloud_cover\":\"%\",\"precipitation\":\"mm\"},\"current\":{\"time\":\"2026-11-06T08:00\",\"interval\":900,\"temperature_2m\":5.5,\"wind_speed_10m\":2.0,\"wind_direction_10m\":315,\"pressure_msl\":1023.8,\"cloud_cover\":100,\"precipitation\":0.00}}"
+      },
+      "used_for_seed": {
+        "source": "open-meteo-forecast",
+        "data_kind": "Modelldaten (Open-Meteo «current», Best-Match-Wettermodelle; 15-Minuten-Werte)",
+        "data_time_utc": "2026-11-06T08:00:00.000Z",
+        "provided_lat": 46.951378,
+        "provided_lon": 7.4586725,
+        "location_id": null,
+        "values": {
+          "temperature_2m": 5.5,
+          "wind_speed_10m": 2,
+          "wind_direction_10m": 315,
+          "pressure_msl": 1023.8,
+          "cloud_cover": 100,
+          "precipitation": 0
+        },
+        "units": {
+          "temperature_2m": "°C",
+          "wind_speed_10m": "km/h",
+          "wind_direction_10m": "°",
+          "pressure_msl": "hPa",
+          "cloud_cover": "%",
+          "precipitation": "mm"
+        }
+      }
+    },
+    "astro": {
+      "id": "Kepler-656 b",
+      "catalog": "NASA Exoplanet Archive – Planetary Systems Composite Parameters (pscomppars)",
+      "record": {
+        "pl_name": "Kepler-656 b",
+        "hostname": "Kepler-656",
+        "sy_snum": 1,
+        "sy_pnum": 2,
+        "discoverymethod": "Transit",
+        "disc_year": 2016,
+        "disc_facility": "Kepler",
+        "pl_orbper": 1.260259094,
+        "pl_orbsmax": 0.02231,
+        "pl_rade": 3.12,
+        "pl_bmasse": 9.91,
+        "pl_bmassprov": "M-R relationship",
+        "pl_orbeccen": 0,
+        "pl_eqt": 1569,
+        "st_spectype": null,
+        "st_teff": 5281,
+        "st_mass": 0.86,
+        "st_rad": 0.82,
+        "sy_dist": 890.352,
+        "ra": 288.3278778,
+        "dec": 47.381538,
+        "rastr": "19h13m18.69s",
+        "decstr": "+47d22m53.54s",
+        "sy_vmag": 15.549,
+        "pl_pubdate": null
+      },
+      "units": {
+        "pl_orbper": "Tage",
+        "pl_orbsmax": "AE",
+        "pl_rade": "Erdradien",
+        "pl_bmasse": "Erdmassen",
+        "pl_eqt": "K",
+        "st_teff": "K",
+        "st_mass": "Sonnenmassen",
+        "st_rad": "Sonnenradien",
+        "sy_dist": "pc",
+        "ra": "Grad",
+        "dec": "Grad",
+        "sy_vmag": "mag"
+      },
+      "source_url": "https://exoplanetarchive.ipac.caltech.edu/overview/Kepler-656",
+      "catalog_retrieved_at": "2026-11-06T07:41:53.529Z",
+      "note": "Katalogauswahl. Keine Aussage über Sichtbarkeit am gewählten Ort oder Zeitpunkt.",
+      "used_for_seed": {
+        "catalog": "NASA Exoplanet Archive pscomppars",
+        "id": "Kepler-656 b",
+        "record": {
+          "pl_name": "Kepler-656 b",
+          "hostname": "Kepler-656",
+          "sy_snum": 1,
+          "sy_pnum": 2,
+          "discoverymethod": "Transit",
+          "disc_year": 2016,
+          "disc_facility": "Kepler",
+          "pl_orbper": 1.260259094,
+          "pl_orbsmax": 0.02231,
+          "pl_rade": 3.12,
+          "pl_bmasse": 9.91,
+          "pl_bmassprov": "M-R relationship",
+          "pl_orbeccen": 0,
+          "pl_eqt": 1569,
+          "st_spectype": null,
+          "st_teff": 5281,
+          "st_mass": 0.86,
+          "st_rad": 0.82,
+          "sy_dist": 890.352,
+          "ra": 288.3278778,
+          "dec": 47.381538,
+          "rastr": "19h13m18.69s",
+          "decstr": "+47d22m53.54s",
+          "sy_vmag": 15.549,
+          "pl_pubdate": null
+        }
+      }
+    }
+  },
+  "culture": {
+    "image": {
+      "id": "met-404637",
+      "provider": "met",
+      "title": "F.L. Cushman, from the Old Judge series (N172) for Old Judge Cigarettes",
+      "artist": "Goodwin & Company",
+      "artist_bio": null,
+      "date": "1887–90",
+      "medium": "Albumen photograph",
+      "culture": null,
+      "department": "Drawings and Prints",
+      "department_id": 9,
+      "object_number": "63.350.215.172.1876",
+      "credit_line": "The Jefferson R. Burdick Collection, Gift of Jefferson R. Burdick",
+      "source_url": "https://www.metmuseum.org/art/collection/search/404637",
+      "source_name": "The Metropolitan Museum of Art, Open Access",
+      "rights": "Public Domain – Met Open Access (CC0 1.0); API-Feld isPublicDomain=true",
+      "rights_evidence": {
+        "isPublicDomain": true,
+        "metadataDate": "2025-03-06T04:54:30Z"
+      },
+      "retrieved_at": "2026-11-06T07:42:44.950Z",
+      "file": "files/met-404637.09d96262c370.jpg",
+      "sha256": "09d96262c370232d73b66aa036656be899716e7dff863ab1b4fb6e5f5933703c",
+      "bytes": 52884,
+      "mime": "image/jpeg",
+      "width": 355,
+      "height": 625,
+      "image_url": "https://images.metmuseum.org/CRDImages/dp/web-large/DP846485.jpg",
+      "content_type_header": "image/jpeg",
+      "raw_metadata_file": "meta/met-404637.json",
+      "raw_metadata_sha256": "e5fef37475c4c23754533584ccb9c9f44f506ceadfce56804b4973a39762d1a9"
+    },
+    "text": {
+      "work": {
+        "id": "eltec-DEU042",
+        "provider": "eltec-deu",
+        "language": "de",
+        "author": "Möllhausen, Balduin",
+        "author_birth": "1825",
+        "author_death": "1905",
+        "author_gnd": "http://d-nb.info/gnd/118784412",
+        "title": "Die Mandanenwaise",
+        "first_edition": "1865",
+        "first_edition_note": "Erstdruck: Berlin (Otto Janke) 1865",
+        "genre": "Roman/Erzählung (Prosa)",
+        "tei_file": "works/DEU042.b4dc7b9e0b64.xml.gz",
+        "tei_sha256": "b4dc7b9e0b64d92813eb0b37cc40091e24bb9c668224c534c678b4364f43683a",
+        "passages_file": "works/DEU042.feae488ecccf.passages.json",
+        "passages_sha256": "feae488ecccf6566608a1cbfefa8d89c2773218516eec1224564b748f99bd540",
+        "passage_count": 1611,
+        "passage_rule": "passages/1",
+        "source_url": "https://github.com/COST-ELTeC/ELTeC-deu/blob/master/level1/DEU042.xml",
+        "source_raw_url": "https://raw.githubusercontent.com/COST-ELTeC/ELTeC-deu/HEAD/level1/DEU042.xml",
+        "textgrid_uri": "textgrid:sf4q.0",
+        "textgrid_url": "https://textgridrep.org/textgrid:sf4q.0",
+        "source_name": "ELTeC-deu (COST Action CA16204), Textgrundlage: TextGrid Digitale Bibliothek",
+        "rights": "Text gemeinfrei; TEI-Auszeichnung ELTeC CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+        "attribution": "Möllhausen, Balduin: Die Mandanenwaise. ELTeC-deu, Release 1.0.0, DOI 10.5281/zenodo.4662482, CC BY 4.0. Textgrundlage TextGrid Repository textgrid:sf4q.0.",
+        "retrieved_at": "2026-11-06T07:45:16.177Z"
+      },
+      "passage": {
+        "n": 193,
+        "text": "So gelangten wir denn, gemeinschaftlich erzählend, bis zu dem Zusammentreffen mit Fräulein Brüsselbach. Aber auch hier begegneten sich unsere Gedanken wieder, indem keiner von uns der seltsamen Weissagung erwähnte, obwohl der phantastische Glaube an eine Offenbarung meiner Zukunft immer tiefer Wurzel in mir faßte, sich befestigte und schnell in die festeste Ueberzeugung verwandelte.\n\nIndem wir aber erzählten, uns gegenseitig aushalfen und bei dieser oder jener Scene bald mit scherzhaften, bald mit ernsteren Ausschmückungen länger verweilten, und der Tante sinnige Bemerkungen und des Onkels derbe Commandoworte und herzliches Lachen uns vielfach unterbrachen, bildete sich bald ein so freundschaftliches Verhältniß zwischen Johanna und mir, daß, wären wir in demselben Hause aufgewachsen, wir uns nicht vertraulicher gegen einander hätten benehmen können. Immer seltener trat das fremde Sie an Stelle des geschwisterlichen Du, und als wir unsere Erzählung schon längst beendigt hatten, glaubten wir noch immer einzelne, besonders erwähnenswerthe Nebenumstände vergessen zu haben, die dann natürlich noch einmal bedächtig hervorgehoben und geschildert wurden.",
+        "words": 159,
+        "chapter": 4,
+        "heads": [
+          "Viertes Capitel.",
+          "Der Oberstlieutenant."
+        ],
+        "p_from": 62,
+        "p_to": 63,
+        "part": null,
+        "sha256": "9402fd6ae942924d521d4aa898090add68fd76119d9fb55d85edfe1c9ce1da89"
+      },
+      "passage_rule": "passages/1"
+    }
+  },
+  "catalogs": {
+    "exoplanets": {
+      "version": "b45d7557590bab2fcb7d269ab1c31d338a8173f44d0a3066a8aae355cff1a2aa",
+      "item_count": 6464
+    },
+    "images": {
+      "version": "fe90d3bd2f91acb5f782f0221f7d6b97be3c5903e5cf5e4dc4298edee035d39a",
+      "item_count": 60
+    },
+    "texts": {
+      "version": "235844461ee9aca0ec463a69cbd85fa01c8b5909c90e02e6bf5ed61595e20143",
+      "item_count": 30
+    }
+  },
+  "rules": {
+    "algorithm": "konstellation/1",
+    "canonical": "JSON, Schlüssel sortiert (UTF-16), ohne Leerzeichen, Zahlen in ECMAScript-Darstellung (an RFC 8785 angelehnt)",
+    "s0": "S0 = SHA-256(kanonisch({algorithm, stage:\"S0\", name: NFC+Leerraum normalisiert, lat/lon: 6 Nachkommastellen als Text, query_time_utc}))",
+    "s1": "S1 = SHA-256(kanonisch({algorithm, stage:\"S1\", s0, weather: verwendeter Wetterdatensatz, astro: verwendeter Katalogeintrag}))",
+    "draw": "Index = u mod n mit u = erste 8 Bytes von SHA-256(seed|label|k), verworfen solange u ≥ floor(2^64/n)·n",
+    "streams": {
+      "astro": "S0|astro",
+      "image": "S1|image",
+      "text_work": "S1|text-work",
+      "text_passage": "S1|text-passage"
+    },
+    "replacement": "Ist ein gezogener Bild-/Texteintrag lokal beschädigt (Prüfsumme/Datei), wird er aus der sortierten Menge entfernt und mit dem Label «<label>#ersatz<i>» erneut gezogen; jeder Ersatz wird protokolliert.",
+    "weather_order": "Live (Open-Meteo, gesamt höchstens 5 s, höchstens 2 Versuche, kein Wiederholen nach 429) → Cache (gleiche Koordinaten auf 2 Nachkommastellen, Datenzeit höchstens 3 h vor Abfragezeitpunkt) → Archiv (weather-archive/1)",
+    "weather_archive": "weather-archive/1"
+  },
+  "technical_log": [
+    {
+      "step": "time.capture",
+      "outcome": "ok",
+      "query_time_utc": "2026-11-06T08:04:54.783Z",
+      "time_source": "Systemuhr des lokalen Servers (Date) beim Empfang von «Konstellation erzeugen»"
+    },
+    {
+      "step": "weather.live",
+      "attempt": 1,
+      "outcome": "fehler",
+      "duration_ms": 4002,
+      "error": "Zeitüberschreitung nach 4000 ms",
+      "http_status": null
+    },
+    {
+      "step": "weather.live",
+      "attempt": 2,
+      "outcome": "ok",
+      "duration_ms": 683,
+      "provider": "open-meteo"
+    }
+  ],
+  "privacy": "Der Name wird nicht an Datenanbieter gesendet. An Open-Meteo gehen nur Koordinaten."
+}

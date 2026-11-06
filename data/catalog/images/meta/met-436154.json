@@ -1,0 +1,83 @@
+{
+ "objectID": 436154,
+ "isHighlight": false,
+ "accessionNumber": "1991.277.1",
+ "accessionYear": "1991",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DT1044.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT1044.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 161821,
+   "role": "Artist",
+   "name": "Edgar Degas",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500115194",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q46373",
+   "gender": ""
+  }
+ ],
+ "department": "European Paintings",
+ "objectName": "Drawing",
+ "title": "Portraits at the Stock Exchange",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Edgar Degas",
+ "artistDisplayBio": "French, Paris 1834–1917 Paris",
+ "artistSuffix": "",
+ "artistAlphaSort": "Degas, Edgar",
+ "artistNationality": "French",
+ "artistBeginDate": "1834",
+ "artistEndDate": "1917",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q46373",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500115194",
+ "objectDate": "ca. 1878–79",
+ "objectBeginDate": 1878,
+ "objectEndDate": 1879,
+ "medium": "Pastel on paper, pieced, and laid down on canvas",
+ "dimensions": "28 3/8 x 22 7/8 in. (72.1 x 58.1 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 72.1,
+    "Width": 58.1
+   }
+  }
+ ],
+ "creditLine": "Gift of Janice H. Levin, 1991",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Drawings",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-12-20T04:50:39.43Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/436154",
+ "tags": [
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q19913215",
+ "isTimelineWork": true,
+ "GalleryNumber": "816"
+}

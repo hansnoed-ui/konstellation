@@ -1,0 +1,99 @@
+{
+ "objectID": 408062,
+ "isHighlight": false,
+ "accessionNumber": "53.600.1900",
+ "accessionYear": "1953",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP828615.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP828615.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 166212,
+   "role": "Artist",
+   "name": "Charles Reuben Ryley",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500000536",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q5081991",
+   "gender": ""
+  },
+  {
+   "constituentID": 75624,
+   "role": "Artist",
+   "name": "After John Hamilton Mortimer",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500015637",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q4208518",
+   "gender": ""
+  }
+ ],
+ "department": "Drawings and Prints",
+ "objectName": "Print",
+ "title": "Woman at Her Toilet",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Charles Reuben Ryley",
+ "artistDisplayBio": "British, London ca. 1752–1798 London",
+ "artistSuffix": "",
+ "artistAlphaSort": "Ryley, Charles Reuben",
+ "artistNationality": "British",
+ "artistBeginDate": "1747",
+ "artistEndDate": "1798",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q5081991",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500000536",
+ "objectDate": "March 1, 1780",
+ "objectBeginDate": 1780,
+ "objectEndDate": 1780,
+ "medium": "Etching",
+ "dimensions": "Plate: 10 5/16 x 9 3/8 in. (26.2 x 23.8 cm)\r\nSheet: 10 13/16 x 9 13/16 in. (27.4 x 25 cm)",
+ "measurements": [
+  {
+   "elementName": "Sheet",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 27.4,
+    "Width": 25
+   }
+  },
+  {
+   "elementName": "Plate",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 26.2,
+    "Width": 23.8
+   }
+  }
+ ],
+ "creditLine": "Harris Brisbane Dick Fund, 1953",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Prints",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/408062",
+ "tags": [
+  {
+   "term": "Women",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

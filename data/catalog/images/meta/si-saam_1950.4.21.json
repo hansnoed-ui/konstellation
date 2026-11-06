@@ -1,0 +1,180 @@
+{
+ "id": "ld1-1643381040022-1643381055566-1",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "ca. 1810"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Unidentified (British)"
+    },
+    {
+     "label": "Sitter",
+     "content": "unidentified"
+    }
+   ],
+   "notes": [
+    {
+     "label": "Luce Center Label",
+     "content": "This English gentleman’s springy curls, delicate facial features, and stylish attire create a romantic image typical of the early nineteenth century. The unknown artist concentrated on the sitter’s intriguing expression to evoke confidence and pride."
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Portrait male\\bust"
+    },
+    {
+     "label": "Topic",
+     "content": "English"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of Mrs. Henry L. Milmore"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1950.4.21"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting-Miniature"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on ivory"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sight 3 1/8 x 2 1/2 in. (7.8 x 6.4 cm) oval"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1810s"
+   ],
+   "topic": [
+    "Men",
+    "Portraits"
+   ],
+   "language": [
+    "English language"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk754c47ea1-636f-4a78-a31c-9d1658695f46",
+   "title": {
+    "label": "Title",
+    "content": "English Gentleman"
+   },
+   "record_ID": "saam_1950.4.21",
+   "unit_code": "SAAM",
+   "title_sort": "ENGLISH GENTLEMAN",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=24673",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1950.4.21_1",
+      "guid": "http://n2t.net/ark:/65665/bj9629a417d-be5b-42fb-b45f-d8783ec33954",
+      "type": "Images",
+      "idsId": "SAAM-1950.4.21_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 2880,
+      "height": 2057,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1950.4.21_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1950.4.21_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1950.4.21_1.tif",
+        "width": 3000,
+        "height": 2143,
+        "dimensions": "3000x2143"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1950.4.21_1.jpg",
+        "width": 3000,
+        "height": 2143,
+        "dimensions": "3000x2143"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1950.4.21_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1950.4.21_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1950.4.21",
+ "hash": "00c35fc2a19f87cf27fd733d63638c00b4ab4a34",
+ "docSignature": "b5ef64defe0118042f22a8946277cd39",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "English Gentleman"
+}

@@ -1,0 +1,102 @@
+{
+ "objectID": 437349,
+ "isHighlight": false,
+ "accessionNumber": "30.95.253",
+ "accessionYear": "1930",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP-14201-033.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-14201-033.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 162280,
+   "role": "Artist",
+   "name": "Pierre Puvis de Chavannes",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500008870",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q216873",
+   "gender": ""
+  }
+ ],
+ "department": "European Paintings",
+ "objectName": "Painting",
+ "title": "Sleep",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Pierre Puvis de Chavannes",
+ "artistDisplayBio": "French, Lyons 1824–1898 Paris",
+ "artistSuffix": "",
+ "artistAlphaSort": "Puvis de Chavannes, Pierre",
+ "artistNationality": "French",
+ "artistBeginDate": "1824",
+ "artistEndDate": "1898",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q216873",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500008870",
+ "objectDate": "ca. 1867–70",
+ "objectBeginDate": 1867,
+ "objectEndDate": 1870,
+ "medium": "Oil on canvas",
+ "dimensions": "26 1/8 x 41 3/4 in. (66.4 x 106 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 66.4,
+    "Width": 106
+   }
+  },
+  {
+   "elementName": "Framed",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Depth": 10.795,
+    "Height": 107.9502,
+    "Width": 147.3203
+   }
+  }
+ ],
+ "creditLine": "Theodore M. Davis Collection, Bequest of Theodore M. Davis, 1915",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Paintings",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-10-31T08:58:03.45Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/437349",
+ "tags": [
+  {
+   "term": "Sleeping",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300375130",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q35831"
+  },
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  },
+  {
+   "term": "Women",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q19905293",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

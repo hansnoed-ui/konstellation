@@ -1,0 +1,95 @@
+{
+ "objectID": 437824,
+ "isHighlight": false,
+ "accessionNumber": "49.7.15",
+ "accessionYear": "1949",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DP-17398-001.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-17398-001.jpg",
+ "additionalImages": [
+  "https://images.metmuseum.org/CRDImages/ep/original/LC-49_7_15-2.jpg",
+  "https://images.metmuseum.org/CRDImages/ep/original/LC-49_7_15-3.jpg"
+ ],
+ "constituents": [
+  {
+   "constituentID": 162552,
+   "role": "Artist",
+   "name": "Titian (Tiziano Vecellio)",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500031075",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q47551",
+   "gender": ""
+  }
+ ],
+ "department": "European Paintings",
+ "objectName": "Painting",
+ "title": "Madonna and Child",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Titian (Tiziano Vecellio)",
+ "artistDisplayBio": "Italian, Pieve di Cadore ca. 1485/90?–1576 Venice",
+ "artistSuffix": "",
+ "artistAlphaSort": "Titian (Tiziano Vecellio)",
+ "artistNationality": "Italian",
+ "artistBeginDate": "1485",
+ "artistEndDate": "1576",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q47551",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500031075",
+ "objectDate": "ca. 1508",
+ "objectBeginDate": 1503,
+ "objectEndDate": 1513,
+ "medium": "Oil on wood",
+ "dimensions": "Overall 18 x 22 in. (45.7 x 55.9 cm); painted surface 17 x 21 1/2 in. (43.2 x 54.6 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 45.7,
+    "Width": 55.9
+   }
+  },
+  {
+   "elementName": "Framed",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Depth": 9.525019,
+    "Height": 65.08763,
+    "Width": 77.47015
+   }
+  }
+ ],
+ "creditLine": "The Jules Bache Collection, 1949",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Paintings",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-10-09T04:51:37.793Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/437824",
+ "tags": [
+  {
+   "term": "Madonna and Child",
+   "AAT_URL": "http://vocab.getty.edu/page/ia/901000052",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q9309699"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q3842385",
+ "isTimelineWork": false,
+ "GalleryNumber": "608"
+}

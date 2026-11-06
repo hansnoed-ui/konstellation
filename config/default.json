@@ -1,0 +1,14 @@
+{
+  "port": 8787,
+  "host": "127.0.0.1",
+  "catalogDir": "data/catalog",
+  "runtimeDir": "data/runtime",
+  "weather": { "live": true, "forecastUrl": "https://api.open-meteo.com/v1/forecast", "budgetMs": 5000, "cacheMaxAgeHours": 3 },
+  "geocoding": { "online": true, "timeoutMs": 4000 },
+  "map": {
+    "tiles": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "tilesAttribution": "© OpenStreetMap-Mitwirkende",
+    "tilesEnabled": true
+  },
+  "jev": { "enabled": false, "note": "jev wird nur bei Importprüfungen verwendet (tools/jev-check.js), nie im Durchlauf." }
+}

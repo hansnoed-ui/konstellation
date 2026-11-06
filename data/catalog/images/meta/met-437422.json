@@ -1,0 +1,101 @@
+{
+ "objectID": 437422,
+ "isHighlight": false,
+ "accessionNumber": "1974.348",
+ "accessionYear": "1974",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ep/original/DT10776.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ep/web-large/DT10776.jpg",
+ "additionalImages": [
+  "https://images.metmuseum.org/CRDImages/ep/original/LC-1974_348-2.jpg",
+  "https://images.metmuseum.org/CRDImages/ep/original/LC-1974_348-3.jpg"
+ ],
+ "constituents": [
+  {
+   "constituentID": 162301,
+   "role": "Artist",
+   "name": "Guido Reni",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500030334",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q109061",
+   "gender": ""
+  }
+ ],
+ "department": "European Paintings",
+ "objectName": "Painting",
+ "title": "Charity",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Guido Reni",
+ "artistDisplayBio": "Italian, Bologna 1575–1642 Bologna",
+ "artistSuffix": "",
+ "artistAlphaSort": "Reni, Guido",
+ "artistNationality": "Italian",
+ "artistBeginDate": "1575",
+ "artistEndDate": "1642",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q109061",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500030334",
+ "objectDate": "ca. 1630",
+ "objectBeginDate": 1625,
+ "objectEndDate": 1635,
+ "medium": "Oil on canvas",
+ "dimensions": "54 x 41 3/4 in. (137.2 x 106 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 137.2,
+    "Width": 106
+   }
+  }
+ ],
+ "creditLine": "Gift of Mr. and Mrs. Charles Wrightsman, 1974",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Paintings",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2026-01-15T04:50:28.29Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/437422",
+ "tags": [
+  {
+   "term": "Children",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025945",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q7569"
+  },
+  {
+   "term": "Women",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+  },
+  {
+   "term": "Allegory",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300055866",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q18535"
+  },
+  {
+   "term": "Nursing",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300379905",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q174876"
+  }
+ ],
+ "objectWikidata_URL": "https://www.wikidata.org/wiki/Q19911778",
+ "isTimelineWork": true,
+ "GalleryNumber": "620"
+}

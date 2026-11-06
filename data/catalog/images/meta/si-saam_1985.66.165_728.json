@@ -1,0 +1,178 @@
+{
+ "id": "ld1-1643381040022-1643381054518-1",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "ca. 1890-1899"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Antonion Zeno Shindler, 1813 Bulgaria-died Washington, DC 1899"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Figure male"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\water"
+    },
+    {
+     "label": "Topic",
+     "content": "Melanesian"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Museum acquisition"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1985.66.165,728"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "42 x 28 3/4 in. (106.7 x 73.0 cm.)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1890s"
+   ],
+   "name": [
+    "Shindler, Antonion Zeno"
+   ],
+   "topic": [
+    "Water",
+    "Landscapes",
+    "Figure male"
+   ],
+   "culture": [
+    "Melanesians"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk7895f5812-72d8-4cd8-b2cd-e378c4c1f6fd",
+   "title": {
+    "label": "Title",
+    "content": "Melanesian Man"
+   },
+   "record_ID": "saam_1985.66.165_728",
+   "unit_code": "SAAM",
+   "title_sort": "MELANESIAN MAN",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=22321",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1985.66.165728_1",
+      "guid": "http://n2t.net/ark:/65665/bj99fcd7ab0-833c-48c3-819c-94b44b8c535d",
+      "type": "Images",
+      "idsId": "SAAM-1985.66.165728_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 2988,
+      "height": 4480,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1985.66.165728_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1985.66.165728_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.165728_1.tif",
+        "width": 2001,
+        "height": 3000,
+        "dimensions": "2001x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.165728_1.jpg",
+        "width": 2001,
+        "height": 3000,
+        "dimensions": "2001x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.165728_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1985.66.165728_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1985.66.165_728",
+ "hash": "040002515d6e3b029adab80c0d2855f971222dd4",
+ "docSignature": "6ab56f2f3a0f1b523614897a880b9b4a",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793270193,
+ "title": "Melanesian Man"
+}

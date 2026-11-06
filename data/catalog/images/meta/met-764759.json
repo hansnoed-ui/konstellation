@@ -1,0 +1,93 @@
+{
+ "objectID": 764759,
+ "isHighlight": false,
+ "accessionNumber": "2017.68.9",
+ "accessionYear": "2017",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ph/original/DP-15801-017.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP-15801-017.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 169986,
+   "role": "Artist",
+   "name": "Unknown",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500125274",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q24238356",
+   "gender": ""
+  }
+ ],
+ "department": "Photographs",
+ "objectName": "Carte-de-visite",
+ "title": "[Studio Portrait: Man Holding Basket of Oysters?, Venice]",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Unknown",
+ "artistDisplayBio": "Italian",
+ "artistSuffix": "",
+ "artistAlphaSort": "Unknown",
+ "artistNationality": "",
+ "artistBeginDate": "",
+ "artistEndDate": "",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q24238356",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500125274",
+ "objectDate": "1860s–70s",
+ "objectBeginDate": 1860,
+ "objectEndDate": 1879,
+ "medium": "Albumen silver print with applied color",
+ "dimensions": "Image: 9.4 x 5.9 cm\nMount: 10.2 x 6.0 cm",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 10.16002,
+    "Width": 6.350013
+   }
+  }
+ ],
+ "creditLine": "Gift of Drew Knowlton and William L. Schaeffer, in honor of Delaney H. and W. Bruce Lundberg, 2017",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Photographs",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/764759",
+ "tags": [
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  },
+  {
+   "term": "Portraits",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300015637",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q134307"
+  },
+  {
+   "term": "Baskets",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300194498",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q201097"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

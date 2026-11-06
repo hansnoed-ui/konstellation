@@ -1,0 +1,129 @@
+{
+ "objectID": 57553,
+ "isHighlight": false,
+ "accessionNumber": "JIB20",
+ "accessionYear": "1918",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/JIB20_001.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/JIB20_001.jpg",
+ "additionalImages": [
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_002.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_003.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_004.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_005.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_006.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_007.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_008.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_009.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_010.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_011.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_012.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_013.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_014.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_015.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_016.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_017.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_018.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_019.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_020.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_021.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_022.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_023.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_024.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_025.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_026.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_027.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_028.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_029.jpg",
+  "https://images.metmuseum.org/CRDImages/as/original/JIB20_004_crd.jpg"
+ ],
+ "constituents": [
+  {
+   "constituentID": 164560,
+   "role": "Artist",
+   "name": "Katsushika Hokusai 葛飾北斎",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500060426",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q5586",
+   "gender": ""
+  }
+ ],
+ "department": "Asian Art",
+ "objectName": "Illustrated book",
+ "title": "One Hundred Views of Mount Fuji (Fugaku Hyakkei sanpen) 富嶽百景[三編]",
+ "culture": "Japan",
+ "period": "Edo period (1615–1868)",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Katsushika Hokusai 葛飾北斎",
+ "artistDisplayBio": "Japanese, Tokyo (Edo) 1760–1849 Tokyo (Edo)",
+ "artistSuffix": "",
+ "artistAlphaSort": "Katsushika Hokusai 葛飾北斎",
+ "artistNationality": "Japanese",
+ "artistBeginDate": "1760",
+ "artistEndDate": "1849",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q5586",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500060426",
+ "objectDate": "ca. 1847",
+ "objectBeginDate": 1837,
+ "objectEndDate": 1857,
+ "medium": "Woodblock print; ink on paper",
+ "dimensions": "9 × 6 1/4 × 3/8 in. (22.9 × 15.9 × 1 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Depth": 0.9525019,
+    "Height": 22.860046,
+    "Width": 15.875031
+   }
+  }
+ ],
+ "creditLine": "Rogers Fund, 1918",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Illustrated Books",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/57553",
+ "tags": [
+  {
+   "term": "Human Figures",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300404114",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q5937779"
+  },
+  {
+   "term": "Bridges",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300386855",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q12280"
+  },
+  {
+   "term": "Mountains",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300008795",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8502"
+  },
+  {
+   "term": "Trees",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300132410",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q10884"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

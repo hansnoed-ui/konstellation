@@ -1,0 +1,166 @@
+{
+ "id": "ld1-1643381040022-1643381056722-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1886"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Mary Vaux Walcott, born Philadelphia, PA 1860-died St. Andrews, New Brunswick, Canada 1940"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Flower"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the artist"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1970.355.755"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 9 1/8 x 5 7/8 in. (23.3 x 14.9 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1880s"
+   ],
+   "name": [
+    "Walcott, Mary Vaux"
+   ],
+   "topic": [
+    "Flowers",
+    "Botanical study"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk7de48ca9d-b5ab-44fa-ad4f-4e424d4ba9e6",
+   "title": {
+    "label": "Title",
+    "content": "(Untitled--Flower Study)"
+   },
+   "record_ID": "saam_1970.355.755",
+   "unit_code": "SAAM",
+   "title_sort": "(UNTITLED--FLOWER STUDY)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=26441",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1970.355.755_2",
+      "guid": "http://n2t.net/ark:/65665/bj9b8eac00d-4549-4278-be9c-627d771add15",
+      "type": "Images",
+      "idsId": "SAAM-1970.355.755_2",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 3466,
+      "height": 5120,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.755_2",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.755_2",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.755_2.tif",
+        "width": 2031,
+        "height": 3000,
+        "dimensions": "2031x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.755_2.jpg",
+        "width": 2031,
+        "height": 3000,
+        "dimensions": "2031x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.755_2_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.755_2_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1970.355.755",
+ "hash": "024c6395d83f6c3100364ca20391fef11e308e81",
+ "docSignature": "ea9db00f2b832dff6caf33c0de4e296f",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "(Untitled--Flower Study)"
+}

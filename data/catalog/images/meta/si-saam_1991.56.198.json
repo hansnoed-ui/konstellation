@@ -1,0 +1,193 @@
+{
+ "id": "ld1-1643381040022-1643381061569-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "n.d."
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Miner Kilbourne Kellogg, born Manlius Square, NY 1814-died Toledo, OH 1889"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Figure"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\Egypt\\Thebes"
+    },
+    {
+     "label": "Topic",
+     "content": "Architecture\\monument\\statue"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Bequest of Martha F. Butler"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1991.56.198"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "pencil and watercolor on paper mounted on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 10 x 17 3/4 in. (25.3 x 45.0 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1810s",
+    "1880s"
+   ],
+   "name": [
+    "Kellogg, Miner Kilbourne"
+   ],
+   "place": [
+    "Egypt"
+   ],
+   "topic": [
+    "Landscapes",
+    "Architecture",
+    "Monuments",
+    "Statues",
+    "Thebes"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "geoLocation": [
+    {
+     "L1": {
+      "type": "Continent",
+      "content": "Africa"
+     },
+     "L2": {
+      "type": "Country",
+      "content": "Egypt"
+     }
+    }
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk72b83dbb5-8fc6-4776-8b60-ea4bc8984e03",
+   "title": {
+    "label": "Title",
+    "content": "Statues at Memnon, Thebes"
+   },
+   "record_ID": "saam_1991.56.198",
+   "unit_code": "SAAM",
+   "title_sort": "STATUES AT MEMNON, THEBES",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=34837",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1991.56.198_1",
+      "guid": "http://n2t.net/ark:/65665/bj9093b6254-68d1-4943-86ee-6df6e29a0c31",
+      "type": "Images",
+      "idsId": "SAAM-1991.56.198_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 3200,
+      "height": 1811,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1991.56.198_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1991.56.198_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1991.56.198_1.tif",
+        "width": 3000,
+        "height": 1697,
+        "dimensions": "3000x1697"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1991.56.198_1.jpg",
+        "width": 3000,
+        "height": 1697,
+        "dimensions": "3000x1697"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1991.56.198_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1991.56.198_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1991.56.198",
+ "hash": "045df855dfbf69a6ebc3d2927787ea500f0dcec0",
+ "docSignature": "f2e55d52d2360aef758b73a1347248c9",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793220300,
+ "title": "Statues at Memnon, Thebes"
+}

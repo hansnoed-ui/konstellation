@@ -1,0 +1,85 @@
+{
+ "objectID": 815716,
+ "isHighlight": false,
+ "accessionNumber": "46.147.9",
+ "accessionYear": "1946",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP885761.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP885761.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 101180,
+   "role": "Artist",
+   "name": "Giovanni Fattori",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500023835",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q710089",
+   "gender": ""
+  }
+ ],
+ "department": "Drawings and Prints",
+ "objectName": "Print",
+ "title": "Donkeys on a seashore in winter",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Giovanni Fattori",
+ "artistDisplayBio": "Italian, Livorno 1825–1908 Florence",
+ "artistSuffix": "",
+ "artistAlphaSort": "Fattori, Giovanni",
+ "artistNationality": "Italian",
+ "artistBeginDate": "1825",
+ "artistEndDate": "1908",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q710089",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500023835",
+ "objectDate": "1884–1908",
+ "objectBeginDate": 1884,
+ "objectEndDate": 1908,
+ "medium": "Etching",
+ "dimensions": "Plate: 10 7/16 × 17 1/8 in. (26.5 × 43.5 cm)\r\nSheet: 15 in. × 21 7/16 in. (38.1 × 54.5 cm)",
+ "measurements": [
+  {
+   "elementName": "Sheet",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 38.1,
+    "Width": 54.5
+   }
+  },
+  {
+   "elementName": "Plate",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 26.5,
+    "Width": 43.5
+   }
+  }
+ ],
+ "creditLine": "Harris Brisbane Dick Fund, 1946",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Prints",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/815716",
+ "tags": null,
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

@@ -1,0 +1,176 @@
+{
+ "id": "ld1-1643381040022-1643381056490-1",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1920"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Mary Vaux Walcott, born Philadelphia, PA 1860-died St. Andrews, New Brunswick, Canada 1940"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Hybrid pitcherplant"
+    },
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Sarracenia rubra"
+    },
+    {
+     "label": "Topic",
+     "content": "Study\\botanical study\\Purpurea venosa"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the artist"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1970.355.5"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 10 x 7 in. (25.4 x 17.9 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1920s"
+   ],
+   "name": [
+    "Walcott, Mary Vaux"
+   ],
+   "topic": [
+    "Sarracenia rubra",
+    "Purpurea venosa",
+    "Hybrid pitcherplant",
+    "Botanical study"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk719846fb9-77b9-476c-9afe-287d6083a7a7",
+   "title": {
+    "label": "Title",
+    "content": "Hybrid Pitcherplant (Sarracenia rubra xs purpurea venosa)"
+   },
+   "record_ID": "saam_1970.355.5",
+   "unit_code": "SAAM",
+   "title_sort": "HYBRID PITCHERPLANT (SARRACENIA RUBRA XS PURPUREA VENOSA)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=26080",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1970.355.5_2",
+      "guid": "http://n2t.net/ark:/65665/bj92327ee16-584d-49c9-94ac-cad1e7669a3c",
+      "type": "Images",
+      "idsId": "SAAM-1970.355.5_2",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 3775,
+      "height": 5440,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.5_2",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.5_2",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.5_2.tif",
+        "width": 2082,
+        "height": 3000,
+        "dimensions": "2082x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.5_2.jpg",
+        "width": 2082,
+        "height": 3000,
+        "dimensions": "2082x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.5_2_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.5_2_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1970.355.5",
+ "hash": "03e5de30790d6f74bec3e17c4825fc02d84ae3ec",
+ "docSignature": "258301cbbf6188e4c9ec28cbba409154",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "Hybrid Pitcherplant (Sarracenia rubra xs purpurea venosa)"
+}

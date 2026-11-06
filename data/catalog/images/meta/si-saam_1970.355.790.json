@@ -1,0 +1,166 @@
+{
+ "id": "ld1-1643381040022-1643381056751-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1875"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Mary Vaux Walcott, born Philadelphia, PA 1860-died St. Andrews, New Brunswick, Canada 1940"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Object\\flower\\lily"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the artist"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1970.355.790"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 8 1/8 x 6 3/4 in. (20.6 x 17.3 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1870s"
+   ],
+   "name": [
+    "Walcott, Mary Vaux"
+   ],
+   "topic": [
+    "Flowers",
+    "Lily"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk784dd7922-78c2-4b6a-bdcb-8721353a54cb",
+   "title": {
+    "label": "Title",
+    "content": "Untitled (Lily)"
+   },
+   "record_ID": "saam_1970.355.790",
+   "unit_code": "SAAM",
+   "title_sort": "UNTITLED (LILY)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=26471",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1970.355.790_1",
+      "guid": "http://n2t.net/ark:/65665/bj98db53acf-f526-4e21-8afe-14d2a7b009b4",
+      "type": "Images",
+      "idsId": "SAAM-1970.355.790_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 2375,
+      "height": 2880,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.790_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1970.355.790_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.790_1.tif",
+        "width": 2375,
+        "height": 2880,
+        "dimensions": "2375x2880"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.790_1.jpg",
+        "width": 2375,
+        "height": 2880,
+        "dimensions": "2375x2880"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.790_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1970.355.790_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1970.355.790",
+ "hash": "03a0c65254f8f5fc8d58a7842b218c3e502dd8dd",
+ "docSignature": "710516dd37593db2381995c30271d1df",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1792838601,
+ "title": "Untitled (Lily)"
+}

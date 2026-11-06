@@ -1,0 +1,37 @@
+# Optionale jev-Prüfung des Textbestands (TypeSafe System One). Braucht das Secret TYPESAFE_API_KEY; fehlt es,
+# schreibt das Werkzeug nur «nicht ausgeführt». Der Bericht wird nach docs/jev/ zurückgeschrieben.
+# jev prüft Stichproben von Textstellen auf Inhaltsverzeichnis/Vorspann/Fragmente – es wählt nie aus und ändert den Bestand nicht.
+name: jev-Pruefung
+
+on:
+  workflow_dispatch:
+    inputs:
+      stichprobe:
+        description: "Anzahl geprüfter Textstellen"
+        default: "60"
+
+permissions:
+  contents: write
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Bestand prüfen
+        run: npm run verify
+      - name: jev fragen
+        env:
+          TYPESAFE_API_KEY: ${{ secrets.TYPESAFE_API_KEY }}
+        run: node tools/jev-check.js --stichprobe "${{ inputs.stichprobe }}"
+      - name: Bericht zurückschreiben
+        run: |
+          git add docs/jev
+          if git diff --cached --quiet; then echo "kein neuer Bericht"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -m "jev-Textprüfung: Bericht"
+          git push

@@ -1,0 +1,182 @@
+{
+ "id": "ld1-1643381040022-1643381040829-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1897"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Edward Mitchell Bannister, born St. Andrews, New Brunswick, Canada 1828-died Providence, RI 1901"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Architecture\\bridge"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\building"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\river"
+    },
+    {
+     "label": "Topic",
+     "content": "Animal\\cattle"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of Louis J. Shatkin"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1983.95.144"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "36 1/8 x 48 in. (91.7 x 122.0 cm.)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1890s"
+   ],
+   "name": [
+    "Bannister, Edward Mitchell"
+   ],
+   "topic": [
+    "Bridges",
+    "Landscapes",
+    "Animals",
+    "Architecture",
+    "Cattle",
+    "Rivers"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk77e3ea12d-94a8-4733-a047-9bf207b03cd7",
+   "title": {
+    "label": "Title",
+    "content": "Untitled (forest scene with bridge, cows in stream in foreground)"
+   },
+   "record_ID": "saam_1983.95.144",
+   "unit_code": "SAAM",
+   "title_sort": "UNTITLED (FOREST SCENE WITH BRIDGE, COWS IN STREAM IN FOREGROUND)",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=1004",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1983.95.144_1",
+      "guid": "http://n2t.net/ark:/65665/bj9e71511e3-72d1-4d60-a9fa-432795e6a061",
+      "type": "Images",
+      "idsId": "SAAM-1983.95.144_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 6720,
+      "height": 5060,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1983.95.144_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1983.95.144_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1983.95.144_1.tif",
+        "width": 3000,
+        "height": 2259,
+        "dimensions": "3000x2259"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1983.95.144_1.jpg",
+        "width": 3000,
+        "height": 2259,
+        "dimensions": "3000x2259"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1983.95.144_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1983.95.144_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1983.95.144",
+ "hash": "0230454402fd53099ed3eb4b24ac8c41c372c47e",
+ "docSignature": "07a10407f048a4e5fa91e0f72b76948a",
+ "timestamp": 1663786514,
+ "lastTimeUpdated": 1793220300,
+ "title": "Untitled (forest scene with bridge, cows in stream in foreground)"
+}

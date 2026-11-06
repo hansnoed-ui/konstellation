@@ -1,0 +1,98 @@
+{
+ "objectID": 415962,
+ "isHighlight": false,
+ "accessionNumber": "59.654.17(20)",
+ "accessionYear": "1959",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP274091.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP274091.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 73905,
+   "role": "Artist",
+   "name": "Anonymous, French, 18th century",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500397994",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q4233718",
+   "gender": ""
+  }
+ ],
+ "department": "Drawings and Prints",
+ "objectName": "Print",
+ "title": "Hab.t de l'Acadie, from the playing cards (for quartets) \"Costumes des Peuples Étrangers\"",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "Costumes des Peuples Étrangers",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Anonymous, French, 18th century",
+ "artistDisplayBio": "",
+ "artistSuffix": "",
+ "artistAlphaSort": "Anonymous, French, 18th century",
+ "artistNationality": "French",
+ "artistBeginDate": "1700",
+ "artistEndDate": "1800",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q4233718",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500397994",
+ "objectDate": "1700–99",
+ "objectBeginDate": 1700,
+ "objectEndDate": 1799,
+ "medium": "Etching and hand coloring (watercolor)",
+ "dimensions": "3 3/16 × 2 1/16 in. (8.1 × 5.3 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 8.1,
+    "Width": 5.3
+   }
+  }
+ ],
+ "creditLine": "Gift of the Estate of James Hazen Hyde, 1959",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Prints",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-03-06T04:54:30Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/415962",
+ "tags": [
+  {
+   "term": "Children",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025945",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q7569"
+  },
+  {
+   "term": "Men",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025928",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q8441"
+  },
+  {
+   "term": "Women",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300025943",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q467"
+  },
+  {
+   "term": "Playing Cards",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300211294",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q47883"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

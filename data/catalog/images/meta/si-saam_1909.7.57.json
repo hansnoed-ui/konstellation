@@ -1,0 +1,197 @@
+{
+ "id": "ld1-1643381040022-1643381053522-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "ca. 1907"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Robert Reid, born Stockbridge, MA 1862-died Clifton Springs, NY 1929"
+    }
+   ],
+   "notes": [
+    {
+     "label": "Luce Center Label",
+     "content": "This painting shows Robert Reid’s young wife, Elizabeth Reeves, in the year of their wedding. Reid painted Elizabeth in a white gown surrounded by many different colored flowers to emphasize her flawless porcelain skin. Their marriage lasted only a few years, and here the delicate colors and idealized setting suggest the optimism of young love. Reid's many paintings of girls immersed in nature emphasize the fragility and beauty of women, as if he equated them with the flowers, trees, and clouds."
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Dress\\accessory\\umbrella"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\garden"
+    },
+    {
+     "label": "Topic",
+     "content": "Figure female\\knee length"
+    },
+    {
+     "label": "Topic",
+     "content": "Occupation\\domestic\\gathering"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\plant\\lily"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of William T. Evans"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1909.7.57"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "36 x 30 in. (91.4 x 76.2 cm.)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1900s"
+   ],
+   "name": [
+    "Reid, Robert"
+   ],
+   "topic": [
+    "Landscapes",
+    "Figure female",
+    "Occupations",
+    "Clothing and dress",
+    "Domestic",
+    "Dress accessories",
+    "Umbrellas",
+    "Gardens",
+    "Gathering",
+    "Plants",
+    "Lily"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk7f54a6d71-97a5-462d-b225-71761ece3033",
+   "title": {
+    "label": "Title",
+    "content": "The White Parasol"
+   },
+   "record_ID": "saam_1909.7.57",
+   "unit_code": "SAAM",
+   "title_sort": "THE WHITE PARASOL",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=20691",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1909.7.57_2",
+      "guid": "http://n2t.net/ark:/65665/bj95ea522cb-d2c9-450f-b362-ef469c30eefa",
+      "type": "Images",
+      "idsId": "SAAM-1909.7.57_2",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 4750,
+      "height": 5760,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1909.7.57_2",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1909.7.57_2",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1909.7.57_2.tif",
+        "width": 2474,
+        "height": 3000,
+        "dimensions": "2474x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1909.7.57_2.jpg",
+        "width": 2474,
+        "height": 3000,
+        "dimensions": "2474x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1909.7.57_2_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1909.7.57_2_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1909.7.57",
+ "hash": "019bfddf37311dd0b09c2248163acdaa9599fad2",
+ "docSignature": "2166c8adb77538db2a2c845d10771a41",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "The White Parasol"
+}

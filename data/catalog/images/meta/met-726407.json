@@ -1,0 +1,106 @@
+{
+ "objectID": 726407,
+ "isHighlight": false,
+ "accessionNumber": "2014.97.107",
+ "accessionYear": "2014",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/dp/original/DP703671.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP703671.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 199796,
+   "role": "Artist",
+   "name": "Johann Michael Leüchte",
+   "constituentULAN_URL": "",
+   "constituentWikidata_URL": "",
+   "gender": ""
+  },
+  {
+   "constituentID": 77559,
+   "role": "Publisher",
+   "name": "Martin Engelbrecht",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500008821",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q1903690",
+   "gender": ""
+  }
+ ],
+ "department": "Drawings and Prints",
+ "objectName": "Album; Print; Ornament & Architecture",
+ "title": "Design for a Monumental Altar, plate E from \"Unterschiedliche Neu Inventierte Altäre mit darzu gehörigen Profillen u. Grundrißen\"",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "Unterschiedliche Neu Inventierte Altäre mit darzu gehörigen Profillen u. Grundrißen",
+ "artistRole": "Artist",
+ "artistPrefix": "",
+ "artistDisplayName": "Johann Michael Leüchte",
+ "artistDisplayBio": "German, active Augsburg, died 1759",
+ "artistSuffix": "",
+ "artistAlphaSort": "Leüchte, Johann Michael",
+ "artistNationality": "German",
+ "artistBeginDate": "",
+ "artistEndDate": "",
+ "artistGender": "",
+ "artistWikidata_URL": "",
+ "artistULAN_URL": "",
+ "objectDate": "printed ca. 1750–56",
+ "objectBeginDate": 1745,
+ "objectEndDate": 1755,
+ "medium": "Etching",
+ "dimensions": "Overall: 8 7/16 × 13 3/4 in. (21.5 × 35 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 21.5,
+    "Width": 35
+   }
+  }
+ ],
+ "creditLine": "Purchase, Daniel Ergmann Gift, 2014",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Albums",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2026-02-24T04:58:17.317Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/726407",
+ "tags": [
+  {
+   "term": "Altars",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300003725",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q101687"
+  },
+  {
+   "term": "Monuments",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300006958",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q4989906"
+  },
+  {
+   "term": "Angels",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300379004",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q235113"
+  },
+  {
+   "term": "Reliquaries",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300187549",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q722604"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

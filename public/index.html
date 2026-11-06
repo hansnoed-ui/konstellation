@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KONSTELLATION</title>
+<meta name="description" content="Aus Name, Ort und Zeitpunkt entsteht in zwei Stufen eine Konstellation aus Wetter, Exoplanet, Kunstbild und Textstelle.">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<a class="skip" href="#haupt">Zum Inhalt</a>
+<header class="kopf">
+  <h1>KONSTELLATION</h1>
+  <p class="unter">Ein Name, ein Ort, ein Augenblick: Wetter, Exoplanet, Bild und Textstelle.</p>
+</header>
+
+<main id="haupt">
+<section id="eingabe" class="karte-block" aria-labelledby="h-eingabe">
+  <h2 id="h-eingabe" data-n="00">Eingabe</h2>
+  <form id="form" novalidate>
+    <div class="feld">
+      <label for="name">Name oder Pseudonym</label>
+      <div class="zeile">
+        <input id="name" name="name" type="text" autocomplete="off" maxlength="120" required>
+        <button type="button" id="zufallsname" class="sekundaer">Zufallsname</button>
+      </div>
+    </div>
+
+    <div class="feld">
+      <label for="ortsuche">Ort (weltweit frei wählbar)</label>
+      <div class="zeile">
+        <input id="ortsuche" type="search" autocomplete="off" placeholder="Ort suchen …" aria-describedby="ort-hinweis" aria-controls="treffer" aria-expanded="false">
+        <button type="button" id="suchen" class="sekundaer">Suchen</button>
+      </div>
+      <ul id="treffer" class="treffer" role="listbox" aria-label="Suchtreffer" hidden></ul>
+      <p id="ort-hinweis" class="hinweis">Suchen, den Punkt auf der Karte setzen oder verschieben, oder Koordinaten eingeben. Der Ort muss nicht dein Standort sein; auch Punkte auf dem Meer sind möglich.</p>
+    </div>
+
+    <div id="karte" class="karte" role="application" aria-label="Weltkarte zum Setzen des Punkts" tabindex="0"></div>
+    <p id="karte-hinweis" class="hinweis"></p>
+
+    <fieldset class="koord">
+      <legend>Koordinaten</legend>
+      <div class="zeile">
+        <label>Breite <input id="lat" type="number" step="0.000001" min="-90" max="90" inputmode="decimal" required></label>
+        <label>Länge <input id="lon" type="number" step="0.000001" min="-180" max="180" inputmode="decimal" required></label>
+        <button type="button" id="koord-setzen" class="sekundaer">Übernehmen</button>
+      </div>
+      <p class="hinweis" id="ortslabel"></p>
+    </fieldset>
+
+    <details class="zuletzt" id="zuletzt-box"><summary>Zuletzt verwendete Orte</summary><ul id="zuletzt"></ul></details>
+
+    <div class="aktion">
+      <button type="submit" id="erzeugen" class="primaer">Konstellation erzeugen</button>
+      <span id="status" class="status" role="status" aria-live="polite"></span>
+    </div>
+    <p id="fehler" class="fehler" role="alert"></p>
+  </form>
+</section>
+
+<section id="ergebnis" class="ergebnis" hidden aria-labelledby="h-ergebnis">
+  <header class="erg-kopf">
+    <h2 id="h-ergebnis"><span id="e-name"></span></h2>
+    <p><span id="e-ort"></span> · <time id="e-zeit"></time></p>
+  </header>
+
+  <div class="funde">
+  <article class="fund wetter" aria-labelledby="h-wetter">
+    <h3 id="h-wetter" data-n="01">Wetter</h3>
+    <p class="ebene" id="w-ebene"></p>
+    <dl id="w-werte" class="werte"></dl>
+    <p class="meta" id="w-meta"></p>
+  </article>
+
+  <article class="fund astro" aria-labelledby="h-astro">
+    <h3 id="h-astro" data-n="02">Exoplanet</h3>
+    <p class="objekt" id="a-name"></p>
+    <dl id="a-werte" class="werte"></dl>
+    <p class="meta" id="a-meta"></p>
+  </article>
+
+  <figure class="fund bild" aria-labelledby="h-bild"><h3 id="h-bild" data-n="03" style="text-align:left">Bild</h3>
+    <img id="b-img" alt="" decoding="async">
+    <figcaption id="b-cap"></figcaption>
+  </figure>
+
+  <article class="fund text" aria-labelledby="h-text">
+    <h3 id="h-text" data-n="04">Textstelle</h3>
+    <blockquote id="t-text"></blockquote>
+    <p class="meta" id="t-meta"></p>
+  </article>
+  </div>
+
+  <details class="verlauf">
+    <summary>Prozessverlauf, Herkunft und Rechte</summary>
+    <div id="verlauf"></div>
+  </details>
+
+  <div class="aktion">
+    <button type="button" id="neu" class="primaer">Neue Konstellation</button>
+    <button type="button" id="export-json" class="sekundaer">Protokoll (JSON)</button>
+    <button type="button" id="export-zip" class="sekundaer">Paket (ZIP)</button>
+  </div>
+</section>
+
+<section id="gespeichert" aria-labelledby="h-gesp">
+  <h2 id="h-gesp" data-n="05">Gespeicherte Konstellationen</h2>
+  <p class="hinweis" id="gesp-hinweis"></p>
+  <ul id="gesp-liste" class="liste"></ul>
+</section>
+</main>
+
+<footer class="fuss">
+  <p>Zufallsname und Karte laufen lokal. Wetter: Open-Meteo (nur Koordinaten werden gesendet). Exoplaneten: NASA Exoplanet Archive. Bilder: Met Museum und Smithsonian (CC0). Texte: ELTeC-deu / TextGrid. Karte: Leaflet, Natural Earth, OpenStreetMap. Keine Deutung, keine Astrologie.</p>
+  <p id="modus"></p>
+</footer>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>

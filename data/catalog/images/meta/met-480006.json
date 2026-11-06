@@ -1,0 +1,91 @@
+{
+ "objectID": 480006,
+ "isHighlight": false,
+ "accessionNumber": "08.21.243",
+ "accessionYear": "1908",
+ "isPublicDomain": true,
+ "primaryImage": "https://images.metmuseum.org/CRDImages/ma/original/DP10370.jpg",
+ "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ma/web-large/DP10370.jpg",
+ "additionalImages": [],
+ "constituents": [
+  {
+   "constituentID": 169986,
+   "role": "Designer",
+   "name": "Unknown Designer",
+   "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500125274",
+   "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q24238356",
+   "gender": ""
+  },
+  {
+   "constituentID": 165507,
+   "role": "Manufacturer",
+   "name": "J. Claude Frères &amp; Co.",
+   "constituentULAN_URL": "",
+   "constituentWikidata_URL": "",
+   "gender": ""
+  }
+ ],
+ "department": "Modern and Contemporary Art",
+ "objectName": "Textile sample",
+ "title": "Textile sample",
+ "culture": "",
+ "period": "",
+ "dynasty": "",
+ "reign": "",
+ "portfolio": "",
+ "artistRole": "Designer",
+ "artistPrefix": "",
+ "artistDisplayName": "Unknown Designer",
+ "artistDisplayBio": "",
+ "artistSuffix": "",
+ "artistAlphaSort": "Unknown Designer",
+ "artistNationality": "",
+ "artistBeginDate": "",
+ "artistEndDate": "",
+ "artistGender": "",
+ "artistWikidata_URL": "https://www.wikidata.org/wiki/Q24238356",
+ "artistULAN_URL": "http://vocab.getty.edu/page/ulan/500125274",
+ "objectDate": "ca. 1900",
+ "objectBeginDate": 1900,
+ "objectEndDate": 1900,
+ "medium": "Silk",
+ "dimensions": "8 5/8 × 9 3/4 in. (21.9 × 24.8 cm)",
+ "measurements": [
+  {
+   "elementName": "Overall",
+   "elementDescription": null,
+   "elementMeasurements": {
+    "Height": 21.907543,
+    "Width": 24.765049
+   }
+  }
+ ],
+ "creditLine": "Rogers Fund, 1908",
+ "geographyType": "",
+ "city": "",
+ "state": "",
+ "county": "",
+ "country": "",
+ "region": "",
+ "subregion": "",
+ "locale": "",
+ "locus": "",
+ "excavation": "",
+ "river": "",
+ "classification": "Textiles-Woven",
+ "rightsAndReproduction": "",
+ "linkResource": "",
+ "metadataDate": "2025-04-10T04:58:40.263Z",
+ "repository": "Metropolitan Museum of Art, New York, NY",
+ "objectURL": "https://www.metmuseum.org/art/collection/search/480006",
+ "tags": [
+  {
+   "term": "Leaves",
+   "AAT_URL": "http://vocab.getty.edu/page/aat/300011892",
+   "Wikidata_URL": "https://www.wikidata.org/wiki/Q33971"
+  }
+ ],
+ "objectWikidata_URL": "",
+ "isTimelineWork": false,
+ "GalleryNumber": ""
+}

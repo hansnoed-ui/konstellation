@@ -1,0 +1,183 @@
+{
+ "id": "ld1-1643381040022-1643381041277-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "ca. 1920"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Cecilia Beaux, born Philadelphia, PA 1855-died Gloucester, MA 1942"
+    },
+    {
+     "label": "Sitter",
+     "content": "David Beatty"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Occupation\\other\\aristocrat"
+    },
+    {
+     "label": "Topic",
+     "content": "Portrait male"
+    },
+    {
+     "label": "Topic",
+     "content": "Occupation\\military\\admiral"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Gift of the National Art Committee"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1923.6.4"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "62 1/2 x 45 5/8 in. (158.6 x 116.0 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1920s"
+   ],
+   "name": [
+    "Beatty, David",
+    "Beaux, Cecilia"
+   ],
+   "topic": [
+    "Admiral",
+    "Occupations",
+    "Men",
+    "Portraits",
+    "Aristocracy (Social class)",
+    "Military"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk7ed9f8c09-f077-4d25-9fc6-20620f04b768",
+   "title": {
+    "label": "Title",
+    "content": "Admiral Sir David Beatty, Lord Beatty"
+   },
+   "record_ID": "saam_1923.6.4",
+   "unit_code": "SAAM",
+   "title_sort": "ADMIRAL SIR DAVID BEATTY, LORD BEATTY",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=1633",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1923.6.4_1",
+      "guid": "http://n2t.net/ark:/65665/bj9d0c52e9e-3025-4f18-a152-629013d8cdcd",
+      "type": "Images",
+      "idsId": "SAAM-1923.6.4_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 5632,
+      "height": 7680,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1923.6.4_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1923.6.4_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1923.6.4_1.tif",
+        "width": 2200,
+        "height": 3000,
+        "dimensions": "2200x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1923.6.4_1.jpg",
+        "width": 2200,
+        "height": 3000,
+        "dimensions": "2200x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1923.6.4_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1923.6.4_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1923.6.4",
+ "hash": "03d11b3cbd68414e56f21de25db1ea03ad2b8ecb",
+ "docSignature": "ddf5865cd72ed78590a71e5a1786eb61",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "Admiral Sir David Beatty, Lord Beatty"
+}

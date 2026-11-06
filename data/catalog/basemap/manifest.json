@@ -1,0 +1,20 @@
+{
+ "sources": [
+  {
+   "file": "countries-110m.geojson",
+   "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson",
+   "upstream_sha256": "6866c877d39cba9c357620878839b336d569f8c662d3cfab4cb1dbe2d39c977f",
+   "sha256": "7654cd38efd6719e061d7d52eab64328f421112a6a6eb46b7c46737d224494a5",
+   "features": 177
+  },
+  {
+   "file": "places.json",
+   "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson",
+   "upstream_sha256": "fd3fa867a320cbd5c5b6bb5bc550afeec2939fb2cef688e508007282a55ac42f",
+   "sha256": "254b033bd40eff81fda42b36303139b803c786086bb195fbf9dc8cd164cfb03f",
+   "count": 2700
+  }
+ ],
+ "rights": "Natural Earth – gemeinfrei (public domain). «Made with Natural Earth.»",
+ "generated_at": "2026-11-06T07:48:41.145Z"
+}

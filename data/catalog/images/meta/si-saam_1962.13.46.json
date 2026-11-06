@@ -1,0 +1,201 @@
+{
+ "id": "ld1-1643381040022-1643381045994-1",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "1910"
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Cass Gilbert, born Zanesville, OH 1858-died Brockenhurst, England 1934"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Landscape\\cemetery"
+    },
+    {
+     "label": "Topic",
+     "content": "Architecture Exterior\\religious\\church"
+    },
+    {
+     "label": "Topic",
+     "content": "Architecture Exterior\\religious\\Winchester Cathedral"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\England\\Winchester"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Graphic Arts"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Bequest of Emily Finch Gilbert through Julia Post Bastedo, executor"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1962.13.46"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "watercolor and pencil on paper"
+    },
+    {
+     "label": "Dimensions",
+     "content": "sheet: 18 x 11 3/4 in. (45.8 x 29.8 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1910s"
+   ],
+   "name": [
+    "Gilbert, Cass"
+   ],
+   "place": [
+    "England"
+   ],
+   "topic": [
+    "Landscapes",
+    "Architecture",
+    "Religion",
+    "Cemetery",
+    "Winchester Cathedral",
+    "Church buildings"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "geoLocation": [
+    {
+     "L1": {
+      "type": "Continent",
+      "content": "Europe"
+     },
+     "L2": {
+      "type": "Country",
+      "content": "United Kingdom"
+     },
+     "L3": {
+      "type": "Country",
+      "content": "England"
+     }
+    }
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk76f912e3d-05ec-436c-bd3b-ddf1b206cf80",
+   "title": {
+    "label": "Title",
+    "content": "North Transept, Winchester Cathedral, England"
+   },
+   "record_ID": "saam_1962.13.46",
+   "unit_code": "SAAM",
+   "title_sort": "NORTH TRANSEPT, WINCHESTER CATHEDRAL, ENGLAND",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=9047",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1962.13.46_1",
+      "guid": "http://n2t.net/ark:/65665/bj95c6aa292-6744-4246-8275-0ed63afd6728",
+      "type": "Images",
+      "idsId": "SAAM-1962.13.46_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 1870,
+      "height": 2880,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1962.13.46_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1962.13.46_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1962.13.46_1.tif",
+        "width": 1948,
+        "height": 3000,
+        "dimensions": "1948x3000"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1962.13.46_1.jpg",
+        "width": 1948,
+        "height": 3000,
+        "dimensions": "1948x3000"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1962.13.46_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1962.13.46_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1962.13.46",
+ "hash": "03e0cf30e797294edad30b5e992fda7ca8553160",
+ "docSignature": "9dc64f3ab05fc1c2f00050043f9c20df",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "North Transept, Winchester Cathedral, England"
+}

@@ -1,0 +1,172 @@
+{
+ "id": "ld1-1643381040022-1643381040440-0",
+ "version": "",
+ "unitCode": "SAAM",
+ "linkedId": "",
+ "type": "edanmdm",
+ "content": {
+  "freetext": {
+   "date": [
+    {
+     "label": "Date",
+     "content": "n.d."
+    }
+   ],
+   "name": [
+    {
+     "label": "Artist",
+     "content": "Eliphalet Fraser Andrews, born Steubenville, OH 1835-died Washington, DC 1915"
+    }
+   ],
+   "topic": [
+    {
+     "label": "Topic",
+     "content": "Figure female"
+    },
+    {
+     "label": "Topic",
+     "content": "Landscape\\garden"
+    }
+   ],
+   "setName": [
+    {
+     "label": "See more items in",
+     "content": "Smithsonian American Art Museum Collection"
+    },
+    {
+     "label": "Department",
+     "content": "Painting and Sculpture"
+    }
+   ],
+   "creditLine": [
+    {
+     "label": "Credit Line",
+     "content": "Smithsonian American Art Museum, Given in memory of Eliphalet Fraser Andrews"
+    }
+   ],
+   "dataSource": [
+    {
+     "label": "Data Source",
+     "content": "Smithsonian American Art Museum"
+    }
+   ],
+   "identifier": [
+    {
+     "label": "Object number",
+     "content": "1916.6.46"
+    }
+   ],
+   "objectType": [
+    {
+     "label": "Type",
+     "content": "Painting"
+    }
+   ],
+   "objectRights": [
+    {
+     "label": "Restrictions & Rights",
+     "content": "CC0"
+    }
+   ],
+   "physicalDescription": [
+    {
+     "label": "Medium",
+     "content": "Oil on canvas"
+    },
+    {
+     "label": "Dimensions",
+     "content": "10 3/8 x 13 3/4 in. (26.3 x 34.8 cm)"
+    }
+   ]
+  },
+  "indexedStructured": {
+   "date": [
+    "1910s",
+    "1830s"
+   ],
+   "name": [
+    "Andrews, Eliphalet Fraser"
+   ],
+   "topic": [
+    "Landscapes",
+    "Figure female",
+    "Gardens"
+   ],
+   "usage_flag": [
+    "permcoll"
+   ],
+   "object_type": [
+    "Paintings"
+   ],
+   "online_media_type": [
+    "Images"
+   ]
+  },
+  "descriptiveNonRepeating": {
+   "guid": "http://n2t.net/ark:/65665/vk7945d8829-350e-43a4-84d7-f9dea299f6e1",
+   "title": {
+    "label": "Title",
+    "content": "Woman Seated in a Garden"
+   },
+   "record_ID": "saam_1916.6.46",
+   "unit_code": "SAAM",
+   "title_sort": "WOMAN SEATED IN A GARDEN",
+   "data_source": "Smithsonian American Art Museum",
+   "record_link": "https://americanart.si.edu/collections/search/artwork/?id=429",
+   "online_media": {
+    "media": [
+     {
+      "id": "media:SAAM-1916.6.46_1",
+      "guid": "http://n2t.net/ark:/65665/bj9f56b373a-51a4-45b9-9e6d-4a059323ad71",
+      "type": "Images",
+      "idsId": "SAAM-1916.6.46_1",
+      "usage": {
+       "access": "CC0"
+      },
+      "width": 3840,
+      "height": 2893,
+      "content": "https://ids.si.edu/ids/deliveryService?id=SAAM-1916.6.46_1",
+      "maxsize": 3000,
+      "thumbnail": "https://ids.si.edu/ids/deliveryService?id=SAAM-1916.6.46_1",
+      "altTextAccessibility": "",
+      "extDescrAccessibility": "",
+      "resources": [
+       {
+        "label": "High-resolution TIFF",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1916.6.46_1.tif",
+        "width": 3000,
+        "height": 2260,
+        "dimensions": "3000x2260"
+       },
+       {
+        "label": "High-resolution JPEG",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1916.6.46_1.jpg",
+        "width": 3000,
+        "height": 2260,
+        "dimensions": "3000x2260"
+       },
+       {
+        "label": "Screen Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1916.6.46_1_screen"
+       },
+       {
+        "label": "Thumbnail Image",
+        "url": "https://ids.si.edu/ids/download?id=SAAM-1916.6.46_1_thumb"
+       }
+      ]
+     }
+    ],
+    "mediaCount": 1
+   },
+   "metadata_usage": {
+    "access": "CC0"
+   }
+  }
+ },
+ "url": "edanmdm:saam_1916.6.46",
+ "hash": "003602d9462fc68167091900345d05f5fd5580ae",
+ "docSignature": "7ed3c883fcd452b259d6a23525136118",
+ "timestamp": 1663786513,
+ "lastTimeUpdated": 1793220300,
+ "title": "Woman Seated in a Garden"
+}
