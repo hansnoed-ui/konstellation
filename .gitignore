@@ -3,3 +3,4 @@ data/runtime/
 data/staging/
 config/local.json
 *.tmp-*
+dist/

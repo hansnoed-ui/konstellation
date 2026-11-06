@@ -32,6 +32,7 @@ Weitere Befehle:
 | `npm run import:texts:eltec -- [Anzahl Werke]` | ELTeC-deu (deutsche Romane, Textgrundlage TextGrid/DTA); bis 100 Werke, je Autor:in eines |
 | `npm run import:weather-archive` | Wetterarchiv: NOAA-ISD-Stationen (echte Messungen) und Open-Meteo-Vergangenheitswerte |
 | `npm run import:basemap` | Weltkarte und Ortsliste aus Natural Earth |
+| `node tools/build-static.js <ziel> [--ornament]` | Statische Fassung (Oberfläche + Bestand ohne Rohdaten) für einen Webspace; `--ornament` fügt Kopfzeilen für ornament.cloud ein |
 | `node tools/jev-check.js` | Optionale jev-Prüfung des Textbestands (braucht `TYPESAFE_API_KEY`), siehe unten |
 
 Importe schreiben Manifeste atomar und versioniert (`data/catalog/<bestand>/manifest.json`, Kopie unter `manifests/<version>.json`). Ein laufender Durchlauf bindet die Manifestversionen zu Beginn; Importe verändern seine Auswahlmenge nicht.
@@ -91,7 +92,7 @@ Stand und Herkunft in [docs/BESTAND.md](docs/BESTAND.md): 6 464 Exoplaneten (NAS
 
 ## jev (TypeSafe)
 
-jev wird **nicht** im Durchlauf verwendet und trifft keine Auswahl. Vorbereitet ist eine eng begrenzte Importprüfung: `tools/jev-check.js` fragt jev für eine deterministische Stichprobe von Textstellen, ob der Abschnitt Erzähltext, Inhaltsverzeichnis, Vorspann oder Fragment ist, und schreibt einen Bericht nach `docs/jev/`. Der Workflow `.github/workflows/jev-pruefung.yml` führt das mit dem Repository-Secret `TYPESAFE_API_KEY` aus. Das Ergebnis ist eine Modell-Einschätzung, keine verifizierte Tatsache und kein Lizenznachweis; es verändert den Bestand nicht. Ob der Aufruf erfolgreich war, steht in [docs/BERICHT.md](docs/BERICHT.md).
+jev wird **nicht** im Durchlauf verwendet und trifft keine Auswahl. Vorbereitet ist eine eng begrenzte Importprüfung: `tools/jev-check.js` fragt jev für eine deterministische Stichprobe von Textstellen, ob der Abschnitt Erzähltext, Inhaltsverzeichnis, Vorspann oder Fragment ist, und schreibt einen Bericht nach `docs/jev/`. Der Workflow `.github/workflows/jev-pruefung.yml` führt das mit dem Repository-Secret `TYPESAFE_API_KEY` aus. Das Ergebnis ist eine Modell-Einschätzung, keine verifizierte Tatsache und kein Lizenznachweis; es verändert den Bestand nicht. Erster erfolgreicher Lauf: 6. 11. 2026, 60 Stellen, keine auffällig ([docs/jev/](docs/jev/)); Details in [docs/BERICHT.md](docs/BERICHT.md).
 
 ## Grenzen
 

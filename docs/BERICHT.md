@@ -36,13 +36,13 @@ Zusätzlich: Kern-Tests (kanonische Serialisierung, Normalisierung, S0/S1, Gleic
 | NOAA ISD (AWS Open Data) | **Live überprüft**, 8 Stationen |
 | Natural Earth (GitHub-Spiegel) | **Live überprüft** |
 | OpenStreetMap-Kacheln | im Browser bei Bedarf; in der Entwicklungsumgebung gesperrt, daher nur der Rückfall auf die Natural-Earth-Karte getestet |
-| jev / TypeSafe | **implementierter Adapter, nicht getesteter Livezugriff** – siehe unten |
+| jev / TypeSafe | **Live überprüft** im GitHub-Workflow `jev-Pruefung` (6. 11. 2026, Lauf 1, Secret `TYPESAFE_API_KEY`): 60 Stellen gefragt, 0 Fehler, 0 auffällig – siehe unten |
 
 ## jev
 
 - Verwendet: nicht im Durchlauf. Vorbereitet: `tools/jev-check.js` (Textstellen-Stichprobe, Frage «Erzähltext / Inhaltsverzeichnis / Vorspann / Fragment», Form `POST /v1/systemone` mit `model`, `state`, `questions` wie in ornament-cloud) und Workflow `jev-pruefung.yml` mit dem Repository-Secret.
 - Nicht verwendet: keine ästhetische Vorauswahl, kein Austausch von Treffern, keine Rechteentscheidung.
-- Stand: Aus der Entwicklungsumgebung war kein Schlüssel verfügbar; der erste echte Aufruf geschieht im Workflow. Nach dem ersten Lauf liegt der Bericht unter `docs/jev/`.
+- Stand: Erster echter Lauf am 6. 11. 2026 im Workflow (https://github.com/hansnoed-ui/konstellation/actions/runs/42185537246), Modell `jev-latest`: alle 60 geprüften Stellen als «erzaehltext» eingeschätzt, keine Fehler. Bericht: `docs/jev/jev-textpruefung-2026-11-06.md` (+ JSON mit Wahrscheinlichkeiten je Stelle). Das ist eine Modell-Einschätzung über eine Stichprobe, keine Prüfung des ganzen Bestands.
 
 ## Verbleibende Einschränkungen
 
