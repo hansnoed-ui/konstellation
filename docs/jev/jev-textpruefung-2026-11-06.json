@@ -1,0 +1,743 @@
+{
+ "generated_at": "2026-11-06T08:08:29.488Z",
+ "model": "jev-latest",
+ "catalog_version": "235844461ee9aca0ec463a69cbd85fa01c8b5909c90e02e6bf5ed61595e20143",
+ "question": {
+  "art": {
+   "type": "choice",
+   "instructions": "Was ist dieser Abschnitt aus einem deutschsprachigen Roman des 19./frühen 20. Jahrhunderts am ehesten?",
+   "criteria": {
+    "erzaehltext": "Erzählender Text oder Dialog aus dem Roman selbst",
+    "inhaltsverzeichnis": "Inhaltsverzeichnis, Kapitelliste oder Navigation",
+    "vorspann": "Titelei, Vorwort des Herausgebers, Editions- oder Lizenzvermerk",
+    "fragment": "Abgebrochener oder zusammenhangloser Textrest (z. B. Satz mitten darin beginnend)"
+   }
+  }
+ },
+ "sample_size": 60,
+ "executed": true,
+ "results": [
+  {
+   "work": "eltec-DEU089",
+   "n": 446,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 1,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU014",
+   "n": 490,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU025",
+   "n": 114,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU095",
+   "n": 444,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 1215,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.92,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.08
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU055",
+   "n": 28,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.78,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.22
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU014",
+   "n": 369,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.95,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.05
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU055",
+   "n": 146,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.82,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.18
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU037",
+   "n": 14,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 1055,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.93,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.07
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU077",
+   "n": 409,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU094",
+   "n": 691,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU081",
+   "n": 1351,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 685,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU025",
+   "n": 125,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.95,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.05
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU092",
+   "n": 387,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.88,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.12
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU092",
+   "n": 372,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.94,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.06
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU004",
+   "n": 35,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU089",
+   "n": 656,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 1,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU055",
+   "n": 315,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.66,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.34
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU076",
+   "n": 358,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.95,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.05
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU014",
+   "n": 647,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.95,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.05
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU099",
+   "n": 622,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU042",
+   "n": 1083,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU005",
+   "n": 1263,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.85,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.15
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU005",
+   "n": 1335,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.8,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.2
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU079",
+   "n": 290,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU033",
+   "n": 59,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU014",
+   "n": 573,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.96,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.04
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU038",
+   "n": 846,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU075",
+   "n": 50,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.96,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.04
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU055",
+   "n": 40,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.84,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.16
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 624,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 1491,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.95,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.05
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU076",
+   "n": 888,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.94,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.06
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 1402,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU042",
+   "n": 808,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU094",
+   "n": 897,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU037",
+   "n": 284,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU042",
+   "n": 1155,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 221,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU094",
+   "n": 357,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU033",
+   "n": 49,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU037",
+   "n": 730,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.91,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.09
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU030",
+   "n": 1516,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 1,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU099",
+   "n": 35,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.94,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.06
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU037",
+   "n": 31,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU074",
+   "n": 463,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 1,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU094",
+   "n": 435,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU079",
+   "n": 217,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.83,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.17
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU089",
+   "n": 586,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU042",
+   "n": 1552,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU094",
+   "n": 72,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU089",
+   "n": 125,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.57,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.43
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU099",
+   "n": 353,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU079",
+   "n": 415,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU042",
+   "n": 100,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.94,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.06
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU038",
+   "n": 813,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.99,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.01
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU056",
+   "n": 202,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.98,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.02
+   },
+   "model": "jev-1.14.0"
+  },
+  {
+   "work": "eltec-DEU081",
+   "n": 301,
+   "choice": "erzaehltext",
+   "probabilities": {
+    "erzaehltext": 0.97,
+    "inhaltsverzeichnis": 0,
+    "vorspann": 0,
+    "fragment": 0.03
+   },
+   "model": "jev-1.14.0"
+  }
+ ],
+ "flagged": [],
+ "note": "Modell-Einschätzung von jev (TypeSafe). Keine verifizierte Tatsache, kein Lizenznachweis. Verändert den Bestand nicht."
+}
